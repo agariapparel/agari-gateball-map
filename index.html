@@ -184,7 +184,7 @@
       });
 
       // toggle label by zoom
-      const LABEL_MIN_ZOOM = 10;
+      const LABEL_MIN_ZOOM = 5;
 
       map.on("zoom", () => {
         const show = map.getZoom() >= LABEL_MIN_ZOOM;
