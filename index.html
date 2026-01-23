@@ -58,6 +58,8 @@
       z-index: 20;
     }
     .sheet-header {
+      position: relative;
+      padding-top: 2px;
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 6px 8px;
@@ -83,12 +85,13 @@
     /* ===== BADGES ===== */
     .sheet-badges {
       position: absolute;
-      top: 0;
+      top: 50%;
       right: 0;
       display: flex;
       gap: 6px;
       flex-wrap: wrap;
       align-items: center;
+      transform: translateY(-50%);
     }
     .status-badge, .verified-badge, .unverified-badge {
       display: inline-block;
