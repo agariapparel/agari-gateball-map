@@ -31,6 +31,21 @@
       box-shadow: 0 6px 12px rgba(0,0,0,0.35);
       transform: translate(-50%, -50%);
 }
+      .sheet {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    padding: 16px;
+    transform: translateY(100%);
+    transition: transform .3s ease;
+    z-index: 10;
+  }
+  
+      .sheet.show {
+        transform: translateY(0);
+}
 
   </style>
 </head>
@@ -38,6 +53,22 @@
 
   <div id="map"></div>
 
+  <div id="agari-sheet" class="sheet">
+    <div class="sheet-handle"></div>
+  
+    <h2 id="sheet-name"></h2>
+    <p id="sheet-address"></p>
+  
+    <div class="sheet-meta">
+      <div><strong>Community</strong> <span id="sheet-community"></span></div>
+      <div><strong>Courts</strong> <span id="sheet-courts"></span></div>
+      <div><strong>Surface</strong> <span id="sheet-surface"></span></div>
+      <div><strong>Location</strong> <span id="sheet-location"></span></div>
+    </div>
+  
+    <a id="sheet-directions" target="_blank">Get Directions</a>
+  </div>
+  
   <script>
     const DEBUG_HTML_MARKERS = true;
 
