@@ -38,6 +38,32 @@
       center: [116, -2.7],
       zoom: 3
     });
+
+    map.on("load", () => {
+  // 1. pastiin layer ada
+  if (!map.getLayer("Icon")) {
+    console.warn("Layer 'Icon' not found");
+    return;
+  }
+
+  // 2. ambil semua feature yang lagi ke-render
+  const iconFeatures = map.queryRenderedFeatures({
+    layers: ["Icon"]
+  });
+
+  const labelFeatures = map.queryRenderedFeatures({
+    layers: ["Label"]
+  });
+
+  console.log("Icon features:", iconFeatures.length);
+  console.log("Label features:", labelFeatures.length);
+
+  // 3. contoh akses 1 data
+  if (features.length) {
+    console.log("Sample court properties:", features[0].properties);
+  }
+});
+
   </script>
 
 </body>
