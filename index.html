@@ -160,6 +160,13 @@ return;
 map.setLayoutProperty("Icon", "visibility", "none");
 console.log("Icon layer hidden");
 
+if (!map.getLayer("Label")) {
+console.warn("Layer 'Label' not found");
+return;
+}
+map.setLayoutProperty("Label", "visibility", "none");
+console.log("Label layer hidden");
+
 // 2. ambil semua feature yang lagi ke-render
 const rawIconFeatures = map.querySourceFeatures("composite", {
 sourceLayer: "Gateball_Fields-67z7ix"
