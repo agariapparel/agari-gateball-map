@@ -51,22 +51,27 @@
       zoom: 3
     });
 
-      function dedupeByCoordinates(features) {
-    const seen = new Set();
-    const unique = [];
-  
-    features.forEach((f) => {
-      const coords = f.geometry.coordinates;
-      const key = `${coords[0].toFixed(6)},${coords[1].toFixed(6)}`;
-  
-      if (!seen.has(key)) {
-        seen.add(key);
-        unique.push(f);
-      }
-    });
-  
-    return unique;
-  }
+    function dedupeByFieldId(features, fieldName) {
+      const seen = new Set();
+      const unique = [];
+    
+      features.forEach((f) => {
+        const id = f.properties?.[fieldName];
+    
+        if (!id) {
+          console.warn("Feature without field_id:", f.properties);
+          return;
+        }
+    
+        if (!seen.has(id)) {
+          seen.add(id);
+          unique.push(f);
+        }
+      });
+    
+      return unique;
+    }
+
     
     map.on("load", () => {
 
@@ -83,12 +88,10 @@
     sourceLayer: "Gateball_Fields-67z7ix"
   });
       
-  const iconFeatures = dedupeByCoordinates(rawIconFeatures);
-      
-  console.log("Source Icon features:", iconFeatures.length);
-  console.log("Icon features:", iconFeatures.length);
-  console.log("Raw Icon features:", rawIconFeatures.length);
-  console.log("Deduped Icon features:", iconFeatures.length);
+  const iconFeatures = dedupeByFieldId(rawIconFeatures, "field_id");
+
+  console.log("Raw Icon features (from tileset):", rawIconFeatures.length);
+  console.log("Deduped Icon features (from tileset):", iconFeatures.length);
 
 
   // 3. contoh akses 1 data
