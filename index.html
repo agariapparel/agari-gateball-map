@@ -164,7 +164,7 @@ if (map.getLayer("Label")) {
 
   // 2. ambil semua feature yang lagi ke-render
   const rawIconFeatures = map.querySourceFeatures("composite", {
-    sourceLayer: "Gateball_Fields-67z7ix"
+    layers: "Icon"
   });
       
   const iconFeatures = dedupeByFieldId(rawIconFeatures, "field_id");
