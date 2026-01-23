@@ -132,6 +132,18 @@ const map = new mapboxgl.Map({
   center: [116, -2.7],
   zoom: 3
 });
+  map.on("load", () => {
+    console.log("Map loaded");
+  
+    // 🔥 HIDE MARKER & LABEL BAWAAN MAPBOX
+    if (map.getLayer("Icon")) {
+      map.setLayoutProperty("Icon", "visibility", "none");
+    }
+  
+    if (map.getLayer("Label")) {
+      map.setLayoutProperty("Label", "visibility", "visible");
+    }
+});
 
 // ===== GEOLOCATION =====
 if (navigator.geolocation) {
