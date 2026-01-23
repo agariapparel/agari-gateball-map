@@ -25,9 +25,16 @@
     .agari-marker {
       width: 36px;
       height: 36px;
-      background: #url("/markers/agari-pin-10kb.png") center / contain no-repeat
-      border: none;
+      background: url("/markers/agari-pin-10kb.png") center / contain no-repeat
+
+        /* border */
+      border: 2px solid #fff;
+
+        /* depth */
       box-shadow: 0 6px 12px rgba(0,0,0,0.35);
+      filter: drop-shadow(0 0 2px rgba(0,0,0,0.6);
+
+        /* anchor */
       transform: translate(-50%, -100%);
       cursor: pointer;
 }
