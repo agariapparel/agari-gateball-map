@@ -214,43 +214,44 @@ fetch("./public/gateball-fields.geojson")
   .then(data => {
     console.log("TOTAL FEATURES:", data.features.length);
 
-  data.features.forEach(feature => {
-  const el = document.createElement("div");
-  el.className = "agari-marker";
-
-  const marker = new mapboxgl.Marker(el)
-    .setLngLat(feature.geometry.coordinates)
-    .addTo(map);
-
-  // 👉 cursor pointer pas hover marker
-  el.addEventListener("mouseenter", () => {
-    map.getCanvas().style.cursor = "pointer";
-  });
-
-  el.addEventListener("mouseleave", () => {
-    map.getCanvas().style.cursor = "";
-  });
-
-  // 👉 klik marker
-  el.addEventListener("click", (e) => {
-    e.stopPropagation();
-
-    map.flyTo({
-      center: feature.geometry.coordinates,
-      zoom: 10,
-      offset: [0, -180],
-      essential: true
+  data.features.forEach((feature) => {
+    const el = document.createElement("div");
+    el.className = "agari-marker";
+  
+    // cursor pointer pas hover marker
+    el.addEventListener("mouseenter", () => {
+      map.getCanvas().style.cursor = "pointer";
     });
-
-    openBottomSheet(feature);
+  
+    el.addEventListener("mouseleave", () => {
+      map.getCanvas().style.cursor = "";
+    });
+  
+    const marker = new mapboxgl.Marker(el)
+      .setLngLat(feature.geometry.coordinates)
+      .addTo(map);
+  
+    // 👉 klik marker
+    el.addEventListener("click", (e) => {
+      e.stopPropagation();
+  
+      map.flyTo({
+        center: feature.geometry.coordinates,
+        zoom: 10,
+        offset: [0, -180],
+        essential: true
+      });
+  
+      openBottomSheet(feature);
+    });
   });
-});
+  
+  // 👉 klik area map kosong → tutup sheet
+  map.on("click", () => {
+    document.getElementById("agari-sheet").classList.remove("show");
+    document.body.classList.remove("sheet-open");
+  });
 
-
-map.on("click", () => {
-  document.getElementById("agari-sheet").classList.remove("show");
-  document.body.classList.remove("sheet-open");
-});
 </script>
 
 </body>
