@@ -283,12 +283,50 @@
   mapboxgl.accessToken =
     "pk.eyJ1IjoiYWdhcmlhcHBhcmVsIiwiYSI6ImNta2VmM2g4eDA2MnQzZ3F3bzl1a3dldjcifQ.O0kAhVcu1M_ujwu4NxmOXA";
 
+    // ===== GEOLOCATION CONFIG =====
+  const DEFAULT_CENTER = [116, -2.7];
+  const DEFAULT_ZOOM = 3;
+  const USER_ZOOM = 5;
+  
   const map = new mapboxgl.Map({
     container: "map",
     style: "mapbox://styles/agariapparel/cmkf5d8pj004c01sdaw4qfhzt",
-    center: [116, -2.7],
-    zoom: 3
+    center: DEFAULT_CENTER,
+    zoom: DEFAULT_ZOOM
   });
+
+  // ===== GEOLOCATION AUTO-CENTER =====
+  if ("geolocation" in navigator) {
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const userCenter = [
+          pos.coords.longitude,
+          pos.coords.latitude
+        ];
+
+        map.flyTo({
+          center: userCenter,
+          zoom: USER_ZOOM,
+          speed: 1.2,
+          curve: 1.4,
+          essential: true
+        });
+
+        // optional: marker lokasi user
+        new mapboxgl.Marker({ color: "#111" })
+          .setLngLat(userCenter)
+          .addTo(map);
+      },
+      () => {
+        console.log("Geolocation not available or denied");
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 5000
+      }
+    );
+  }
+
 
   function dedupeByFieldId(features, fieldName) {
     const seen = new Set();
