@@ -51,6 +51,23 @@
       zoom: 3
     });
 
+      function dedupeByCoordinates(features) {
+    const seen = new Set();
+    const unique = [];
+  
+    features.forEach((f) => {
+      const coords = f.geometry.coordinates;
+      const key = `${coords[0].toFixed(6)},${coords[1].toFixed(6)}`;
+  
+      if (!seen.has(key)) {
+        seen.add(key);
+        unique.push(f);
+      }
+    });
+  
+    return unique;
+  }
+    
     map.on("load", () => {
 
     console.log("DEBUG_HTML_MARKERS:", DEBUG_HTML_MARKERS);
@@ -62,17 +79,17 @@
   }
 
   // 2. ambil semua feature yang lagi ke-render
-  const iconFeatures = map.querySourceFeatures("composite", {
-    sourceLayer: "Gateball_Fields-67z7ix"
-  });
-
-  const labelFeatures = map.querySourceFeatures("composite", {
+  const rawIconFeatures = map.querySourceFeatures("composite", {
     sourceLayer: "Gateball_Fields-67z7ix"
   });
       
+  const iconFeatures = dedupeByCoordinates(rawIconFeatures);
+      
   console.log("Source Icon features:", iconFeatures.length);
   console.log("Icon features:", iconFeatures.length);
-  console.log("Label features:", labelFeatures.length);
+  console.log("Raw Icon features:", rawIconFeatures.length);
+  console.log("Deduped Icon features:", iconFeatures.length);
+
 
   // 3. contoh akses 1 data
   if (iconFeatures.length) {
