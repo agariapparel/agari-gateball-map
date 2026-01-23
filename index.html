@@ -82,6 +82,8 @@
     console.warn("Layer 'Icon' not found");
     return;
   }
+      map.setLayoutProperty("Icon", "visibility", "none");
+    console.log("Icon layer hidden");
 
   // 2. ambil semua feature yang lagi ke-render
   const rawIconFeatures = map.querySourceFeatures("composite", {
@@ -102,8 +104,8 @@
   if (!DEBUG_HTML_MARKERS) {
     console.log("HTML markers disabled (safe mode)");
     return;
-
-  iconFeatures.forEach((feature) => {
+  }
+  iconFeatures.forEach((feature, i) => {
     const el = document.createElement("div");
     el.className = "agari-marker";
 
