@@ -128,16 +128,17 @@
     }
     
     /* ===== VERIFY LINK ===== */
-    .sheet-verify {
-      display: block;
-      width: 100%;
-      text-align: center;
-    
+    .sheet-verify-wrap {
+      display: flex;
+      justify-content: center;
       margin: 8px 0 18px;
+    }
+    
+    .sheet-verify {
+      display: inline-block;
       font-size: 13px;
       color: #6b21a8;
       text-decoration: underline;
-      padding: 2px 4px;
     }
 
     body.sheet-open #agari-global-cta-wrapper { opacity:.25 }
@@ -225,12 +226,14 @@
     </div>
   </div>
 
-  <a id="sheet-verify-cta"
-     class="sheet-verify"
-     target="_blank"
-     href="https://www.agari.id/submit-your-location">
-     Help us verify this court
-  </a>
+  <div class="sheet-verify-wrap">
+    <a id="sheet-verify-cta"
+       class="sheet-verify"
+       target="_blank"
+       href="https://www.agari.id/submit-your-location">
+       Help us verify this court
+    </a>
+  </div>
 
   <a id="sheet-directions" class="sheet-button" target="_blank">
     Get Directions
@@ -324,7 +327,7 @@ if (navigator.geolocation) {
     // ===== VERIFIED =====
     verifiedEl.style.display = "none";
     unverifiedEl.style.display = "none";
-    verifyCTA.style.display = "block";
+    verifyCTA.style.display = "";
   
     const isVerified =
       p.verified === true ||
