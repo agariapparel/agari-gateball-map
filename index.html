@@ -163,7 +163,7 @@ if (map.getLayer("Label")) {
 }
 
   // 2. ambil semua feature yang lagi ke-render
-  const rawIconFeatures = map.querySourceFeatures("composite", {
+  const rawIconFeatures = map.queryRenderedFeatures({
     layers: "Icon"
   });
       
