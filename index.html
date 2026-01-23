@@ -147,44 +147,66 @@ if (navigator.geolocation) {
   );
 }
 
-function openBottomSheet(feature) {
-  const p = feature.properties;
-
-  sheet-name.innerText = p.name || "";
-  sheet-address.innerText = p.address || "";
-  sheet-community.innerText = p.community || "-";
-  sheet-courts.innerText = p.courts || "-";
-  sheet-surface.innerText = p.surface || "-";
-  sheet-location.innerText =
-    (p.city || "") +
-    (p.province ? ", " + p.province : "") +
-    (p.country ? ", " + p.country : "");
-
-  sheet-directions.href = p.google_maps_url || "#";
-
-  sheet-status.style.display = "none";
-  sheet-status.className = "status-badge";
-
-  if (p.status) {
-    sheet-status.innerText = p.status;
-    sheet-status.style.display = "inline-block";
-    sheet-status.classList.add(
-      p.status.toLowerCase() === "active"
-        ? "status-active"
-        : "status-inactive"
-    );
+  function openBottomSheet(feature) {
+    const p = feature.properties;
+  
+    const sheet = document.getElementById("agari-sheet");
+  
+    const nameEl = document.getElementById("sheet-name");
+    const addressEl = document.getElementById("sheet-address");
+    const communityEl = document.getElementById("sheet-community");
+    const courtsEl = document.getElementById("sheet-courts");
+    const surfaceEl = document.getElementById("sheet-surface");
+    const locationEl = document.getElementById("sheet-location");
+  
+    const statusEl = document.getElementById("sheet-status");
+    const verifiedEl = document.getElementById("sheet-verified");
+    const unverifiedEl = document.getElementById("sheet-unverified");
+    const verifyCTA = document.getElementById("sheet-verify-cta");
+    const directionsEl = document.getElementById("sheet-directions");
+  
+    nameEl.innerText = p.name || "";
+    addressEl.innerText = p.address || "";
+    communityEl.innerText = p.community || "-";
+    courtsEl.innerText = p.courts || "-";
+    surfaceEl.innerText = p.surface || "-";
+    locationEl.innerText =
+      (p.city || "") +
+      (p.province ? ", " + p.province : "") +
+      (p.country ? ", " + p.country : "");
+  
+    directionsEl.href = p.google_maps_url || "#";
+  
+    // ===== STATUS =====
+    statusEl.style.display = "none";
+    statusEl.className = "status-badge";
+  
+    if (p.status) {
+      const s = p.status.toLowerCase();
+      statusEl.innerText = p.status;
+      statusEl.style.display = "inline-block";
+  
+      if (s === "active") statusEl.classList.add("status-active");
+      if (s === "inactive" || s === "closed")
+        statusEl.classList.add("status-inactive");
+    }
+  
+    // ===== VERIFIED =====
+    verifiedEl.style.display = "none";
+    unverifiedEl.style.display = "none";
+    verifyCTA.style.display = "none";
+  
+    if (p.verified === true || p.verified === "true") {
+      verifiedEl.style.display = "inline-block";
+    } else {
+      unverifiedEl.style.display = "inline-block";
+      verifyCTA.style.display = "inline";
+    }
+  
+    sheet.classList.add("show");
+    document.body.classList.add("sheet-open");
   }
 
-  sheet-verified.style.display = p.verified === true || p.verified === "true"
-    ? "inline-block"
-    : "none";
-
-  sheet-unverified.style.display = p.verified ? "none" : "inline-block";
-  sheet-verify-cta.style.display = p.verified ? "none" : "inline";
-
-  agari-sheet.classList.add("show");
-  document.body.classList.add("sheet-open");
-}
 
 // ===== LOAD GEOJSON =====
 fetch("/public/gateball-fields.geojson")
