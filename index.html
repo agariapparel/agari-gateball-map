@@ -153,33 +153,38 @@
 
       if (!DEBUG_HTML_MARKERS) return;
 
-      iconFeatures.forEach((feature, i) => {
-        const el = document.createElement("div");
-        el.className = "agari-marker";
-
-        const el = document.createElement("div");
-        el.className = "agari-label";
-        el.appendChild(label);
-        
-        el.title = feature.properties.name || "Unnamed court";
-
-        const marker = new mapboxgl.Marker(el)
-          .setLngLat(feature.geometry.coordinates)
-          .addTo(map);
-
-        el.addEventListener("click", (e) => {
-          e.stopPropagation();
-
-          map.flyTo({
-            center: marker.getLngLat(),
-            zoom: Math.max(map.getZoom(), 10),
-            offset: [0, -180],
-            essential: true
-          });
-
-          openBottomSheetFromFeature(feature);
+         iconFeatures.forEach((feature, i) => {
+      // wrapper marker
+      const el = document.createElement("div");
+      el.className = "agari-marker";
+    
+      // label HTML (child)
+      const label = document.createElement("div");
+      label.className = "agari-label";
+      label.innerText = feature.properties.name || "";
+    
+      // masukin label ke marker
+      el.appendChild(label);
+    
+      el.title = feature.properties.name || "Unnamed court";
+    
+      const marker = new mapboxgl.Marker(el)
+        .setLngLat(feature.geometry.coordinates)
+        .addTo(map);
+    
+      el.addEventListener("click", (e) => {
+        e.stopPropagation();
+    
+        map.flyTo({
+          center: marker.getLngLat(),
+          zoom: Math.max(map.getZoom(), 10),
+          offset: [0, -180],
+          essential: true
         });
+    
+        openBottomSheetFromFeature(feature);
       });
+    });
 
       map.on("click", () => {
         document
