@@ -1,221 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AGARI Gateball Map</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AGARI Gateball Map</title>
 
-  <!-- MAPBOX -->
-  <link
-    href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css"
-    rel="stylesheet"
-  />
-  <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+<!-- MAPBOX -->
+<link
+href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css"
+rel="stylesheet"
+/>
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: system-ui, sans-serif;
-    }
-
-    #map {
-      position: fixed;
-      inset: 0;
-    }
-    .agari-marker {
-      width: 36px;
-      height: 36px;
-      position: relative;
-      transform: translate(-50%, -100%);
-      cursor: pointer;
-    }
-    
-    .agari-marker img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.35));
-    }
-
-      .sheet {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #fff;
-    padding: 16px;
-    transform: translateY(100%);
-    transition: transform .3s ease;
-    z-index: 10;
-  }
-  
-      .sheet.show {
-        transform: translateY(0);
+<style>
+body {
+margin: 0;
+font-family: system-ui, sans-serif;
 }
 
-  </style>
+#map {
+position: fixed;
+inset: 0;
+}
+.agari-marker {
+width: 36px;
+height: 36px;
+      background: url("/public/markers/agari-pin-10kb.png") center / contain no-repeat
+      background: url("/public/markers/agari-pin-10kb.png") center / contain no-repeat;
+
+/* depth */
+box-shadow: 0 6px 12px rgba(0,0,0,0.35);
+filter: drop-shadow(0 0 2px rgba(0,0,0,0.6);
+
+/* anchor */
+transform: translate(-50%, -100%);
+cursor: pointer;
+}
+.sheet {
+position: fixed;
+left: 0;
+right: 0;
+bottom: 0;
+background: #fff;
+padding: 16px;
+transform: translateY(100%);
+transition: transform .3s ease;
+z-index: 10;
+}
+
+.sheet.show {
+transform: translateY(0);
+}
+
+</style>
 </head>
 <body>
 
-  <div id="map"></div>
+<div id="map"></div>
 
-  <div id="agari-sheet" class="sheet">
-    <div class="sheet-handle"></div>
-  
-    <h2 id="sheet-name"></h2>
-    <p id="sheet-address"></p>
-  
-    <div class="sheet-meta">
-      <div><strong>Community</strong> <span id="sheet-community"></span></div>
-      <div><strong>Courts</strong> <span id="sheet-courts"></span></div>
-      <div><strong>Surface</strong> <span id="sheet-surface"></span></div>
-      <div><strong>Location</strong> <span id="sheet-location"></span></div>
-    </div>
-  
-    <a id="sheet-directions" target="_blank">Get Directions</a>
-  </div>
-  
-  <script>
-    const DEBUG_HTML_MARKERS = true;
+<div id="agari-sheet" class="sheet">
+<div class="sheet-handle"></div>
 
-    mapboxgl.accessToken =
-      "pk.eyJ1IjoiYWdhcmlhcHBhcmVsIiwiYSI6ImNta2VmM2g4eDA2MnQzZ3F3bzl1a3dldjcifQ.O0kAhVcu1M_ujwu4NxmOXA";
+<h2 id="sheet-name"></h2>
+<p id="sheet-address"></p>
 
-    const map = new mapboxgl.Map({
-      container: "map",
-      style: "mapbox://styles/agariapparel/cmkf5d8pj004c01sdaw4qfhzt",
-      center: [116, -2.7],
-      zoom: 3
-    });
+<div class="sheet-meta">
+<div><strong>Community</strong> <span id="sheet-community"></span></div>
+<div><strong>Courts</strong> <span id="sheet-courts"></span></div>
+<div><strong>Surface</strong> <span id="sheet-surface"></span></div>
+<div><strong>Location</strong> <span id="sheet-location"></span></div>
+</div>
 
-    function dedupeByFieldId(features, fieldName) {
-      const seen = new Set();
-      const unique = [];
-    
-      features.forEach((f) => {
-        const id = f.properties?.[fieldName];
-    
-        if (!id) {
-          console.warn("Feature without field_id:", f.properties);
-          return;
-        }
-    
-        if (!seen.has(id)) {
-          seen.add(id);
-          unique.push(f);
-        }
-      });
-    
-      return unique;
-    }
+<a id="sheet-directions" target="_blank">Get Directions</a>
+</div>
 
-    function openBottomSheetFromFeature(feature) {
-      const p = feature.properties;
-    
-      document.getElementById("sheet-name").innerText = p.name || "";
-      document.getElementById("sheet-address").innerText = p.address || "";
-      document.getElementById("sheet-community").innerText = p.community || "-";
-      document.getElementById("sheet-courts").innerText = p.courts || "-";
-      document.getElementById("sheet-surface").innerText = p.surface || "-";
-      document.getElementById("sheet-location").innerText =
-        (p.city || "") +
-        (p.province ? ", " + p.province : "") +
-        (p.country ? ", " + p.country : "");
-      document.getElementById("sheet-directions").href =
-        p.google_maps_url || "#";
-    
-      const sheet = document.getElementById("agari-sheet");
-      sheet.classList.add("show");
-}
-      function flyToFeature(feature) {
-    const coords = feature.geometry?.coordinates;
-  
-    if (!coords || coords.length !== 2) {
-      console.warn("Invalid coordinates for flyTo");
-      return;
-    }
-  
-    map.flyTo({
-      center: coords,
-      zoom: Math.max(map.getZoom(), 10), // zoom level kota
-      speed: 0.9,
-      curve: 1.4,
-      offset: [0, -180], // supaya marker ga ketutup bottom sheet
-      essential: true
-    });
-  }
+<script>
+const DEBUG_HTML_MARKERS = true;
 
-    map.on("load", () => {
+mapboxgl.accessToken =
+"pk.eyJ1IjoiYWdhcmlhcHBhcmVsIiwiYSI6ImNta2VmM2g4eDA2MnQzZ3F3bzl1a3dldjcifQ.O0kAhVcu1M_ujwu4NxmOXA";
 
-    console.log("DEBUG_HTML_MARKERS:", DEBUG_HTML_MARKERS);
-
-  // 1. pastiin layer ada
-// Matikan icon gateball Mapbox
-if (map.getLayer("Icon")) {
-  map.setLayoutProperty("Icon", "visibility", "none");
-  console.log("Gateball Icon layer hidden");
-}
-
-// Matikan label gateball Mapbox
-if (map.getLayer("Label")) {
-  map.setLayoutProperty("Label", "visibility", "none");
-  console.log("Gateball Label layer hidden");
-}
-
-  // 2. ambil semua feature yang lagi ke-render
-  const rawIconFeatures = map.queryRenderedFeatures({
-    layers: ["Icon"]
-  });
-      
-  const iconFeatures = dedupeByFieldId(rawIconFeatures, "field_id");
-
-  console.log("Raw Icon features (from tileset):", rawIconFeatures.length);
-  console.log("Deduped Icon features (from tileset):", iconFeatures.length);
-
-
-  // 3. contoh akses 1 data
-  if (iconFeatures.length) {
-    console.log("Sample court properties:", iconFeatures[0].properties);
-  }
-
-  if (!DEBUG_HTML_MARKERS) {
-    console.log("HTML markers disabled (safe mode)");
-    return;
-  }
-  iconFeatures.forEach((feature, i) => {
-    const el = document.createElement("div");
-    el.className = "agari-marker";
-
-    const img = document.createElement("img");
-    img.src = "public/markers/agari-pin-10kb.png";
-    img.alt = feature.properties.name || "Gateball Court";
-
-    el.appendChild(img);
-    
-  el.dataset.index = i;
-  el.title = feature.properties.name || "Unnamed court";
-
-  el.addEventListener("click", (e) => {
-    e.stopPropagation(); // penting
-    flyToFeature(feature);
-    openBottomSheetFromFeature(feature);
-  });
-
-  new mapboxgl.Marker(el)
-    .setLngLat(feature.geometry.coordinates)
-    .addTo(map);
+const map = new mapboxgl.Map({
+container: "map",
+style: "mapbox://styles/agariapparel/cmkf5d8pj004c01sdaw4qfhzt",
+center: [116, -2.7],
+zoom: 3
 });
 
-  // 4. OPTIONAL: klik map kosong → tutup sheet
-  map.on("click", () => {
-    document
-      .getElementById("agari-sheet")
-      .classList.remove("show");
-    });
+function dedupeByFieldId(features, fieldName) {
+const seen = new Set();
+const unique = [];
+
+features.forEach((f) => {
+const id = f.properties?.[fieldName];
+
+if (!id) {
+console.warn("Feature without field_id:", f.properties);
+return;
+}
+
+if (!seen.has(id)) {
+seen.add(id);
+unique.push(f);
+}
+});
+
+return unique;
+}
+
+function openBottomSheetFromFeature(feature) {
+const p = feature.properties;
+
+document.getElementById("sheet-name").innerText = p.name || "";
+document.getElementById("sheet-address").innerText = p.address || "";
+document.getElementById("sheet-community").innerText = p.community || "-";
+document.getElementById("sheet-courts").innerText = p.courts || "-";
+document.getElementById("sheet-surface").innerText = p.surface || "-";
+document.getElementById("sheet-location").innerText =
+(p.city || "") +
+(p.province ? ", " + p.province : "") +
+(p.country ? ", " + p.country : "");
+document.getElementById("sheet-directions").href =
+p.google_maps_url || "#";
+
+const sheet = document.getElementById("agari-sheet");
+sheet.classList.add("show");
+}
+function flyToFeature(feature) {
+const coords = feature.geometry?.coordinates;
+
+if (!coords || coords.length !== 2) {
+console.warn("Invalid coordinates for flyTo");
+return;
+}
+
+map.flyTo({
+center: coords,
+zoom: Math.max(map.getZoom(), 10), // zoom level kota
+speed: 0.9,
+curve: 1.4,
+offset: [0, -180], // supaya marker ga ketutup bottom sheet
+essential: true
+});
+}
+
+map.on("load", () => {
+
+console.log("DEBUG_HTML_MARKERS:", DEBUG_HTML_MARKERS);
+
+// 1. pastiin layer ada
+if (!map.getLayer("Icon")) {
+console.warn("Layer 'Icon' not found");
+return;
+}
+map.setLayoutProperty("Icon", "visibility", "none");
+console.log("Icon layer hidden");
+
+// 2. ambil semua feature yang lagi ke-render
+const rawIconFeatures = map.querySourceFeatures("composite", {
+sourceLayer: "Gateball_Fields-67z7ix"
+});
+
+const iconFeatures = dedupeByFieldId(rawIconFeatures, "field_id");
+
+console.log("Raw Icon features (from tileset):", rawIconFeatures.length);
+console.log("Deduped Icon features (from tileset):", iconFeatures.length);
+
+
+// 3. contoh akses 1 data
+if (iconFeatures.length) {
+console.log("Sample court properties:", iconFeatures[0].properties);
+}
+
+if (!DEBUG_HTML_MARKERS) {
+console.log("HTML markers disabled (safe mode)");
+return;
+}
+iconFeatures.forEach((feature, i) => {
+const el = document.createElement("div");
+el.className = "agari-marker";
+
+el.dataset.index = i;
+el.title = feature.properties.name || "Unnamed court";
+
+el.addEventListener("click", (e) => {
+e.stopPropagation(); // penting
+flyToFeature(feature);
+openBottomSheetFromFeature(feature);
+});
+
+new mapboxgl.Marker(el)
+.setLngLat(feature.geometry.coordinates)
+.addTo(map);
+});
+
+// 4. OPTIONAL: klik map kosong → tutup sheet
+map.on("click", () => {
+document
+.getElementById("agari-sheet")
+.classList.remove("show");
+});
 
 });
 
-  </script>
+</script>
 
 </body>
 </html>
