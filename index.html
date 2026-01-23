@@ -1,10 +1,44 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>AGARI Gateball Map</title>
-  </head>
-  <body>
-    <h1>AGARI Gateball Map is alive</h1>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AGARI Gateball Map</title>
+
+  <!-- MAPBOX -->
+  <link
+    href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css"
+    rel="stylesheet"
+  />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+    }
+
+    #map {
+      position: fixed;
+      inset: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="map"></div>
+
+  <script>
+    mapboxgl.accessToken =
+      "pk.eyJ1IjoiYWdhcmlhcHBhcmVsIiwiYSI6ImNta2VmM2g4eDA2MnQzZ3F3bzl1a3dldjcifQ.O0kAhVcu1M_ujwu4NxmOXA";
+
+    const map = new mapboxgl.Map({
+      container: "map",
+      style: "mapbox://styles/agariapparel/cmkf5d8pj004c01sdaw4qfhzt",
+      center: [116, -2.7],
+      zoom: 3
+    });
+  </script>
+
+</body>
 </html>
