@@ -312,10 +312,6 @@
           essential: true
         });
 
-        // optional: marker lokasi user
-        new mapboxgl.Marker({ color: "#111" })
-          .setLngLat(userCenter)
-          .addTo(map);
       },
       () => {
         console.log("Geolocation not available or denied");
