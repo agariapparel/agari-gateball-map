@@ -218,11 +218,6 @@ fetch("/public/gateball-fields.geojson")
       const el = document.createElement("div");
       el.className = "agari-marker";
 
-      const label = document.createElement("div");
-      label.className = "agari-label";
-      label.innerText = feature.properties.name || "";
-      el.appendChild(label);
-
       const marker = new mapboxgl.Marker(el)
         .setLngLat(feature.geometry.coordinates)
         .addTo(map);
