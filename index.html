@@ -255,8 +255,9 @@ fetch("./public/gateball-fields.geojson")
   
       map.flyTo({
         center: feature.geometry.coordinates,
-        zoom: 10,
-        offset: [0, -180],
+        zoom: Math.max(map.getZoom(), 12),
+        speed: 0.8,
+        offset: [0, -200],
         essential: true
       });
   
