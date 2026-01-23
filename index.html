@@ -209,35 +209,46 @@ if (navigator.geolocation) {
 
 
 // ===== LOAD GEOJSON =====
-fetch("/public/gateball-fields.geojson")
+fetch("./public/gateball-fields.geojson")
   .then(res => res.json())
   .then(data => {
     console.log("TOTAL FEATURES:", data.features.length);
 
-    data.features.forEach(feature => {
-      const el = document.createElement("div");
-      el.className = "agari-marker";
+  data.features.forEach(feature => {
+  const el = document.createElement("div");
+  el.className = "agari-marker";
 
-      const marker = new mapboxgl.Marker(el)
-        .setLngLat(feature.geometry.coordinates)
-        .addTo(map);
+  const marker = new mapboxgl.Marker(el)
+    .setLngLat(feature.geometry.coordinates)
+    .addTo(map);
 
-      el.onclick = (e) => {
-        e.stopPropagation();
-        map.flyTo({ center: feature.geometry.coordinates, zoom: 10, offset:[0,-180]});
-        openBottomSheet(feature);
-      };
-    });
-
-    map.on("zoom", () => {
-      const show = map.getZoom() >= 7;
-      document.querySelectorAll(".agari-label")
-        .forEach(l => l.style.opacity = show ? 1 : 0);
-    });
+  // 👉 cursor pointer pas hover marker
+  el.addEventListener("mouseenter", () => {
+    map.getCanvas().style.cursor = "pointer";
   });
 
+  el.addEventListener("mouseleave", () => {
+    map.getCanvas().style.cursor = "";
+  });
+
+  // 👉 klik marker
+  el.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    map.flyTo({
+      center: feature.geometry.coordinates,
+      zoom: 10,
+      offset: [0, -180],
+      essential: true
+    });
+
+    openBottomSheet(feature);
+  });
+});
+
+
 map.on("click", () => {
-  agari-sheet.classList.remove("show");
+  document.getElementById("agari-sheet").classList.remove("show");
   document.body.classList.remove("sheet-open");
 });
 </script>
