@@ -52,6 +52,9 @@
     });
 
     map.on("load", () => {
+
+    console.log("DEBUG_HTML_MARKERS:", DEBUG_HTML_MARKERS);
+
   // 1. pastiin layer ada
   if (!map.getLayer("Icon")) {
     console.warn("Layer 'Icon' not found");
