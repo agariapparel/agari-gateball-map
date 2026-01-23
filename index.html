@@ -188,24 +188,32 @@ console.log("HTML markers disabled (safe mode)");
 return;
 }
 iconFeatures.forEach((feature, i) => {
-const el = document.createElement("div");
-el.className = "agari-marker";
+  const el = document.createElement("div");
+  el.className = "agari-marker";
 
-el.dataset.index = i;
-el.title = feature.properties.name || "Unnamed court";
+  el.dataset.index = i;
+  el.title = feature.properties.name || "Unnamed court";
 
-el.addEventListener("click", (e) => {
-e.stopPropagation(); // penting
-  const lngLat = marker.getLngLat();
+  // 1. bikin marker dulu
+  const marker = new mapboxgl.Marker(el)
+    .setLngLat(feature.geometry.coordinates)
+    .addTo(map);
 
-  map.flyTo({
-    center: lngLat,
-    zoom: Math.max(map.getZoom(), 10),
-    offset: [0, -180],
-    essential: true
+  // 2. baru pasang click handler
+  el.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    const lngLat = marker.getLngLat(); // ✅ sekarang defined
+
+    map.flyTo({
+      center: lngLat,
+      zoom: Math.max(map.getZoom(), 10),
+      offset: [0, -180],
+      essential: true
+    });
+
+    openBottomSheetFromFeature(feature);
   });
-
-  openBottomSheetFromFeature(feature);
 });
 
 new mapboxgl.Marker(el)
