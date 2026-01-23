@@ -312,7 +312,61 @@
             essential: true
           });
 
-          openBottomSheetFromFeature(feature);
+          function openBottomSheetFromFeature(feature) {
+            const p = feature.properties;
+          
+            // BASIC INFO
+            document.getElementById("sheet-name").innerText = p.name || "";
+            document.getElementById("sheet-address").innerText = p.address || "";
+            document.getElementById("sheet-community").innerText = p.community || "-";
+            document.getElementById("sheet-courts").innerText = p.courts || "-";
+            document.getElementById("sheet-surface").innerText = p.surface || "-";
+            document.getElementById("sheet-location").innerText =
+              (p.city || "") +
+              (p.province ? ", " + p.province : "") +
+              (p.country ? ", " + p.country : "");
+          
+            document.getElementById("sheet-directions").href =
+              p.google_maps_url || "#";
+          
+            // ===== STATUS BADGE =====
+            const statusEl = document.getElementById("sheet-status");
+            statusEl.style.display = "none";
+            statusEl.className = "status-badge";
+          
+            if (p.status) {
+              const status = p.status.toLowerCase();
+              statusEl.innerText = p.status;
+              statusEl.style.display = "inline-block";
+          
+              if (status === "active") {
+                statusEl.classList.add("status-active");
+              } else if (status === "inactive" || status === "closed") {
+                statusEl.classList.add("status-inactive");
+              }
+            }
+          
+            // ===== VERIFIED LOGIC =====
+            const verifiedEl = document.getElementById("sheet-verified");
+            const unverifiedEl = document.getElementById("sheet-unverified");
+            const verifyCTA = document.getElementById("sheet-verify-cta");
+          
+            // reset dulu
+            verifiedEl.style.display = "none";
+            unverifiedEl.style.display = "none";
+            verifyCTA.style.display = "none";
+          
+            if (p.verified === true || p.verified === "true") {
+              verifiedEl.style.display = "inline-block";
+            } else {
+              unverifiedEl.style.display = "inline-block";
+              verifyCTA.style.display = "inline";
+            }
+          
+            // SHOW SHEET
+            document.getElementById("agari-sheet").classList.add("show");
+          }
+
         });
       });
 
