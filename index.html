@@ -207,13 +207,18 @@ if (navigator.geolocation) {
     unverifiedEl.style.display = "none";
     verifyCTA.style.display = "none";
   
-    if (p.verified === true) {
+    const isVerified =
+      p.verified === true ||
+      p.verified === "true" ||
+      p.verified === "TRUE";
+    
+    if (isVerified) {
       verifiedEl.style.display = "inline-block";
     } else {
       unverifiedEl.style.display = "inline-block";
       verifyCTA.style.display = "inline";
     }
-  
+    
     sheet.classList.add("show");
     document.body.classList.add("sheet-open");
   }
