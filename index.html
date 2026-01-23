@@ -186,6 +186,12 @@ if (map.getLayer("Label")) {
     const el = document.createElement("div");
     el.className = "agari-marker";
 
+    const img = document.createElement("img");
+    img.src = "/public/markers/agari-pin-10kb.png";
+    img.alt = feature.properties.name || "Gateball Court";
+
+    el.appendChild(img);
+    
   el.dataset.index = i;
   el.title = feature.properties.name || "Unnamed court";
 
