@@ -62,14 +62,15 @@
   }
 
   // 2. ambil semua feature yang lagi ke-render
-  const iconFeatures = map.queryRenderedFeatures({
-    layers: ["Icon"]
+  const iconFeatures = map.querySourceFeatures("composite", {
+    sourceLayer: "Icon"
   });
 
-  const labelFeatures = map.queryRenderedFeatures({
-    layers: ["Label"]
+  const labelFeatures = map.querySourceFeatures("composite", {
+    sourceLayer: "Label"
   });
-
+      
+  console.log("Source Icon features:", iconFeatures.length);
   console.log("Icon features:", iconFeatures.length);
   console.log("Label features:", labelFeatures.length);
 
