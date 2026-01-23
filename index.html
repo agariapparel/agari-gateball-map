@@ -25,7 +25,7 @@
     .agari-marker {
       width: 36px;
       height: 36px;
-      background: url("/public/markers/agari-pin-10kb.png") center / contain no-repeat;
+      background: url("/markers/agari-pin-10kb.png") center / contain no-repeat;
 
         /* depth */
       box-shadow: 0 6px 12px rgba(0,0,0,0.35);
@@ -148,12 +148,17 @@
     console.log("DEBUG_HTML_MARKERS:", DEBUG_HTML_MARKERS);
 
   // 1. pastiin layer ada
-  if (!map.getLayer("Icon")) {
-    console.warn("Layer 'Icon' not found");
-    return;
-  }
-      map.setLayoutProperty("Icon", "visibility", "none");
-    console.log("Icon layer hidden");
+// Matikan icon gateball Mapbox
+if (map.getLayer("Icon")) {
+  map.setLayoutProperty("Icon", "visibility", "none");
+  console.log("Gateball Icon layer hidden");
+}
+
+// Matikan label gateball Mapbox
+if (map.getLayer("Label")) {
+  map.setLayoutProperty("Label", "visibility", "none");
+  console.log("Gateball Label layer hidden");
+}
 
   // 2. ambil semua feature yang lagi ke-render
   const rawIconFeatures = map.querySourceFeatures("composite", {
