@@ -22,20 +22,23 @@ font-family: system-ui, sans-serif;
 position: fixed;
 inset: 0;
 }
+      
 .agari-marker {
-width: 36px;
-height: 36px;
-      background: url("/public/markers/agari-pin-10kb.png") center / contain no-repeat
-      background: url("/public/markers/agari-pin-10kb.png") center / contain no-repeat;
+  width: 36px;
+  height: 36px;
 
-/* depth */
-box-shadow: 0 6px 12px rgba(0,0,0,0.35);
-filter: drop-shadow(0 0 2px rgba(0,0,0,0.6);
+  background-image: url("public/markers/agari-pin-10kb.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 
-/* anchor */
-transform: translate(-50%, -100%);
-cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.35);
+  filter: drop-shadow(0 0 2px rgba(0,0,0,0.6));
+
+  transform: translate(-50%, -100%);
+  cursor: pointer;
 }
+
 .sheet {
 position: fixed;
 left: 0;
