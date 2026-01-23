@@ -58,15 +58,18 @@
       z-index: 20;
     }
     .sheet-header {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 6px 8px;
+      align-items: start;
     }
     .sheet-header h2 {
       font-size: 20px;
       font-weight: 600;
       margin: 0;
+    
+      line-height: 1.25;
+      word-break: break-word;
     }
     .sheet.show { transform: translateY(0);
     }
