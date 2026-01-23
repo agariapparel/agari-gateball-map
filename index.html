@@ -166,9 +166,63 @@
       border-radius: 12px;
       text-decoration: none;
     }
+
+        /* ===== GLOBAL FLOATING CTA (SAFE OVER MAP) ===== */
+    #agari-global-cta-wrapper {
+      position: fixed;
+      top: 16px;
+      right: 12px;
+      z-index: 50;
+      pointer-events: none; /* 🔑 map tetap bisa di-drag */
+    }
+        /* CTA redup saat bottom sheet terbuka */
+    body.sheet-open #agari-global-cta-wrapper {
+      opacity: 0.25;
+      transition: opacity 0.2s ease;
+    }
+
+    #agari-global-cta {
+      pointer-events: auto; /* 🔑 cuma tombol yang clickable */
+    
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 12px;
+      line-height: 1;
+    
+      background: rgba(0, 0, 0, 0.35);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 999px;
+    
+      backdrop-filter: blur(6px);
+    }
+    
+    @media (min-width: 768px) {
+      #agari-global-cta-wrapper {
+        top: 20px;
+        right: 16px;
+      }
+    
+      #agari-global-cta {
+        padding: 8px 14px;
+        font-size: 13px;
+      }
+    }
+
   </style>
 </head>
 <body>
+
+  <!-- GLOBAL FLOATING CTA -->
+<div id="agari-global-cta-wrapper">
+  <a
+    href="https://www.agari.id/submit-your-location"
+    target="_blank"
+    id="agari-global-cta"
+  >
+    + Submit court
+  </a>
+</div>
 
 <div id="map"></div>
 
@@ -298,6 +352,7 @@
     }
 
     document.getElementById("agari-sheet").classList.add("show");
+    document.body.classList.add("sheet-open");
   }
 
   map.on("load", () => {
@@ -356,6 +411,8 @@
 
     map.on("click", () => {
       document.getElementById("agari-sheet").classList.remove("show");
+      document.body.classList.remove("sheet-open");
+
     });
   });
 </script>
