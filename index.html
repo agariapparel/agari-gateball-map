@@ -72,6 +72,24 @@
       return unique;
     }
 
+    function openBottomSheetFromFeature(feature) {
+      const p = feature.properties;
+    
+      document.getElementById("sheet-name").innerText = p.name || "";
+      document.getElementById("sheet-address").innerText = p.address || "";
+      document.getElementById("sheet-community").innerText = p.community || "-";
+      document.getElementById("sheet-courts").innerText = p.courts || "-";
+      document.getElementById("sheet-surface").innerText = p.surface || "-";
+      document.getElementById("sheet-location").innerText =
+        (p.city || "") +
+        (p.province ? ", " + p.province : "") +
+        (p.country ? ", " + p.country : "");
+      document.getElementById("sheet-directions").href =
+        p.google_maps_url || "#";
+    
+      const sheet = document.getElementById("agari-sheet");
+      sheet.classList.add("show");
+}
     
     map.on("load", () => {
 
@@ -112,10 +130,22 @@
   el.dataset.index = i;
   el.title = feature.properties.name || "Unnamed court";
 
+  el.addEventListener("click", (e) => {
+    e.stopPropagation(); // penting
+    openBottomSheetFromFeature(feature);
+  });
+
   new mapboxgl.Marker(el)
     .setLngLat(feature.geometry.coordinates)
     .addTo(map);
 });
+
+  // 4. OPTIONAL: klik map kosong → tutup sheet
+  map.on("click", () => {
+    document
+      .getElementById("agari-sheet")
+      .classList.remove("show");
+    });
 
 });
 
