@@ -148,8 +148,12 @@
     }
 
     /* ===== CTA ===== */
+    .sheet-cta-wrap {
+      display: flex;
+      justify-content: center;
+    }
+    
     .sheet-button {
-      display: block;
       width: 100%;
       text-align: center;
       padding: 14px;
@@ -159,6 +163,7 @@
       border-radius: 12px;
       font-size: 15px;
     }
+
     #agari-global-cta {
       pointer-events: auto;
       padding: 6px 12px;
@@ -235,10 +240,12 @@
     </a>
   </div>
 
-  <a id="sheet-directions" class="sheet-button" target="_blank">
-    Get Directions
-  </a>
-</div>
+  <div class="sheet-cta-wrap">
+    <a id="sheet-directions" class="sheet-button" target="_blank">
+      Get Directions
+    </a>
+  </div>
+
   
   <!-- POWERED BY AGARI -->
   <div id="agari-powered">
