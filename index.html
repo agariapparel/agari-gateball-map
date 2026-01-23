@@ -196,8 +196,16 @@ el.title = feature.properties.name || "Unnamed court";
 
 el.addEventListener("click", (e) => {
 e.stopPropagation(); // penting
-flyToFeature(feature);
-openBottomSheetFromFeature(feature);
+  const lngLat = marker.getLngLat();
+
+  map.flyTo({
+    center: lngLat,
+    zoom: Math.max(map.getZoom(), 10),
+    offset: [0, -180],
+    essential: true
+  });
+
+  openBottomSheetFromFeature(feature);
 });
 
 new mapboxgl.Marker(el)
