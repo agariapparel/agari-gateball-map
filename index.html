@@ -121,7 +121,24 @@
       const sheet = document.getElementById("agari-sheet");
       sheet.classList.add("show");
 }
-    
+      function flyToFeature(feature) {
+    const coords = feature.geometry?.coordinates;
+  
+    if (!coords || coords.length !== 2) {
+      console.warn("Invalid coordinates for flyTo");
+      return;
+    }
+  
+    map.flyTo({
+      center: coords,
+      zoom: Math.max(map.getZoom(), 10), // zoom level kota
+      speed: 0.9,
+      curve: 1.4,
+      offset: [0, -180], // supaya marker ga ketutup bottom sheet
+      essential: true
+    });
+  }
+
     map.on("load", () => {
 
     console.log("DEBUG_HTML_MARKERS:", DEBUG_HTML_MARKERS);
@@ -163,6 +180,7 @@
 
   el.addEventListener("click", (e) => {
     e.stopPropagation(); // penting
+    flyToFeature(feature);
     openBottomSheetFromFeature(feature);
   });
 
