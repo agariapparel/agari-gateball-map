@@ -61,22 +61,6 @@
       filter: drop-shadow(0 2px 3px rgba(0,0,0,0.25));
     }
 
-    .agari-label {
-      position: absolute;
-      left: 42px;
-      top: 50%;
-      transform: translateY(-50%);
-      padding: 4px 8px;
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(4px);
-      border-radius: 6px;
-      font-size: 12px;
-      white-space: nowrap;
-      opacity: 0;
-      transition: opacity .2s ease;
-      pointer-events: none;
-    }
-
     /* ===== BOTTOM SHEET ===== */
     .sheet {
       position: fixed;
@@ -422,7 +406,7 @@ mapboxgl.accessToken = "pk.eyJ1IjoiYWdhcmlhcHBhcmVsIiwiYSI6ImNta2VmM2g4eDA2MnQzZ
 
 const map = new mapboxgl.Map({
   container: "map",
-  style: "mapbox://styles/agariapparel/cmkf5d8pj004c01sdaw4qfhzt",
+  style: "mapbox://styles/agariapparel/cmksk3qy2004001seatdvd9sz",
   center: [116, -2.7],
   zoom: 3
 });
@@ -553,6 +537,13 @@ if (navigator.geolocation) {
     document.body.classList.add("sheet-open");
   }
 
+    function closeBottomSheet() {
+    const sheet = document.getElementById("agari-sheet");
+    if (!sheet.classList.contains("show")) return;
+
+    sheet.classList.remove("show");
+    document.body.classList.remove("sheet-open");
+  }
 
 // ===== LOAD GEOJSON =====
 fetch("./public/gateball-fields.geojson")
@@ -573,12 +564,13 @@ fetch("./public/gateball-fields.geojson")
       map.getCanvas().style.cursor = "";
     });
   
-    const marker = new mapboxgl.Marker({
+    new mapboxgl.Marker({
       element: el,
       anchor: "bottom"
     })
-      .setLngLat(feature.geometry.coordinates)
-      .addTo(map);
+    .setLngLat(feature.geometry.coordinates)
+    .addTo(map);
+
   
     el.addEventListener("click", (e) => {
       e.stopPropagation();
@@ -597,10 +589,10 @@ fetch("./public/gateball-fields.geojson")
 });
   
   // 👉 klik area map kosong → tutup sheet
-  map.on("click", () => {
-    document.getElementById("agari-sheet").classList.remove("show");
-    document.body.classList.remove("sheet-open");
-    });
+    ["dragstart", "zoomstart", "rotatestart"].forEach(evt => {
+    map.on(evt, closeBottomSheet);
+});
+
 
       function isTextSelecting() {
       const selection = window.getSelection();
