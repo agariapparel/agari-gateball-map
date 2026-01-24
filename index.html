@@ -19,6 +19,38 @@
     body { margin: 0; font-family: "Noto Sans JP", system-ui, sans-serif; }
     #map { position: fixed; inset: 0; }
 
+        /* ===== PREVENT PULL TO REFRESH ===== */
+    html, body {
+      overscroll-behavior-y: none;
+    }
+
+    /* ===== LOCK SCROLL WHEN SHEET OPEN ===== */
+    body.sheet-open {
+      overflow: hidden;
+      touch-action: none;
+    }
+        /* ===== DRAG PREP ===== */
+    .sheet {
+      will-change: transform;
+      touch-action: pan-y;
+    }
+    .sheet-handle {
+      touch-action: pan-y;
+    }
+
+    .sheet.dragging {
+      transition: none; /* finger-follow */
+    }
+    /* ===== HARD BLOCK iOS CALLOUT ON MAPBOX CANVAS ===== */
+    .mapboxgl-canvas {
+      -webkit-user-select: none !important;
+      user-select: none !important;
+      -webkit-touch-callout: none !important;
+    }
+
+
+
+    /* ===== AGARI ===== */
     .agari-marker {
       width: 50px;
       height: 50px;
@@ -57,11 +89,16 @@
       box-shadow: 0 -10px 30px rgba(0,0,0,.15);
       z-index: 20;
     }
+    /* 👉 BIAR BUTTON & LINK GAK KETARIK DRAG */
+    .sheet a,
+    .sheet button {
+      touch-action: manipulation;
+    }
     .sheet-header {
       position: relative;
       padding-top: 2px;
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: minmax(0, 1fr) auto;
       gap: 6px 8px;
       align-items: start;
     }
@@ -70,10 +107,9 @@
       font-weight: 600;
       margin: 0;
       line-height: 1.25;
-      padding-right: 120px;
+      max-width: 100%;
       word-break: break-word;
     }
-
     .sheet.show { transform: translateY(0);
     }
     .sheet-handle {
@@ -84,14 +120,10 @@
     }
     /* ===== BADGES ===== */
     .sheet-badges {
-      position: absolute;
-      top: 50%;
-      right: 0;
+      flex-direction: column;
       display: flex;
       gap: 6px;
-      flex-wrap: wrap;
-      align-items: center;
-      transform: translateY(-50%);
+      align-items: flex-end;
     }
     .status-badge, .verified-badge, .unverified-badge {
       display: inline-block;
@@ -111,6 +143,8 @@
       color: #666;
       line-height: 1.4;
       margin: 8px 0 16px;
+      max-width: 100%;
+      word-break: break-word;
     }
     
     /* ===== META GRID ===== */
@@ -203,10 +237,102 @@
       color: rgba(255,255,255,0.8);
       white-space: nowrap;
     }
+    /* ===== DISCLAIMER OVERLAY ===== */
+
+    #disclaimer-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(0,0,0,0.45);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .disclaimer-card {
+      background: #fff;
+      max-width: 420px;
+      width: calc(100% - 32px);
+      padding: 24px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,.2);
+    }
+
+    .disclaimer-card h2 {
+      margin: 0 0 12px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .disclaimer-card p {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .disclaimer-card ul {
+      text-align: left;
+      padding-left: 18px;
+      margin: 0 0 18px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    .disclaimer-card li {
+      margin-bottom: 6px;
+    }
+
+    .disclaimer-card button {
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      border: none;
+      background: #111;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .disclaimer-card small {
+      display: block;
+      margin-top: 12px;
+      font-size: 12px;
+      color: #777;
+    }
+
   </style>
 </head>
 
 <body>
+
+<!-- ===== DISCLAIMER OVERLAY ===== -->
+<div id="disclaimer-overlay">
+  <div class="disclaimer-card">
+    <h2>AGARI Gateball Map</h2>
+
+    <p>
+      Community-driven map of everything Gateball-related. 
+      Some court data may be incomplete or not yet verified.
+    </p>
+
+    <ul>
+      <li>✔ AGARI Verified courts are reviewed</li>
+      <li>📍 Locations may change over time</li>
+      <li>⚠ Always confirm availability before visiting</li>
+    </ul>
+
+    <button id="disclaimer-accept">
+      Enter Map
+    </button>
+
+    <small>
+      Want to help improve this map?
+    </small>
+  </div>
+</div>
 
   <div id="overlay-root">
   <div id="agari-powered">
@@ -272,6 +398,26 @@
   </div>
 
 <script>
+  // ===== DISCLAIMER LOGIC =====
+  const overlay = document.getElementById("disclaimer-overlay");
+  const acceptBtn = document.getElementById("disclaimer-accept");
+
+  // cek apakah user udah pernah accept
+  const hasAccepted = localStorage.getItem("agari-map-disclaimer");
+
+  if (hasAccepted === "true") {
+    overlay.style.display = "none";
+  } else {
+    // lock body + map sementara
+    document.body.style.overflow = "hidden";
+  }
+
+  acceptBtn.addEventListener("click", () => {
+    localStorage.setItem("agari-map-disclaimer", "true");
+    overlay.style.display = "none";
+    document.body.style.overflow = "";
+  });
+
 mapboxgl.accessToken = "pk.eyJ1IjoiYWdhcmlhcHBhcmVsIiwiYSI6ImNta2VmM2g4eDA2MnQzZ3F3bzl1a3dldjcifQ.O0kAhVcu1M_ujwu4NxmOXA";
 
 const map = new mapboxgl.Map({
@@ -280,6 +426,27 @@ const map = new mapboxgl.Map({
   center: [116, -2.7],
   zoom: 3
 });
+
+  if (!localStorage.getItem("agari-map-disclaimer")) {
+    map.boxZoom.disable();
+    map.doubleClickZoom.disable();
+    map.dragPan.disable();
+    map.dragRotate.disable();
+    map.keyboard.disable();
+    map.scrollZoom.disable();
+    map.touchZoomRotate.disable();
+  }
+
+  document.getElementById("disclaimer-accept").addEventListener("click", () => {
+    map.boxZoom.enable();
+    map.doubleClickZoom.enable();
+    map.dragPan.enable();
+    map.dragRotate.enable();
+    map.keyboard.enable();
+    map.scrollZoom.enable();
+    map.touchZoomRotate.enable();
+  });
+
   map.on("load", () => {
     console.log("Map loaded");
   
@@ -292,6 +459,21 @@ const map = new mapboxgl.Map({
       map.setLayoutProperty("Label", "visibility", "visible");
     }
 });
+
+    const canvas = map.getCanvas();
+
+    // block long press & selection on MAP ONLY
+    ["touchstart", "touchmove", "touchend"].forEach(evt => {
+      canvas.addEventListener(evt, e => {
+        if (!e.target.closest("#agari-sheet")) {
+          e.preventDefault();
+        }
+      }, { passive: false });
+    });
+
+    canvas.addEventListener("contextmenu", e => e.preventDefault());
+
+
 
 // ===== GEOLOCATION =====
 if (navigator.geolocation) {
@@ -418,7 +600,101 @@ fetch("./public/gateball-fields.geojson")
   map.on("click", () => {
     document.getElementById("agari-sheet").classList.remove("show");
     document.body.classList.remove("sheet-open");
-  });
+    });
+
+      function isTextSelecting() {
+      const selection = window.getSelection();
+      return selection && selection.toString().length > 0;
+    }
+      function haptic(type = "light") {
+        if (!("vibrate" in navigator)) return;
+
+        if (type === "light") {
+          navigator.vibrate(10);      // tick kecil
+        } else if (type === "medium") {
+          navigator.vibrate([15, 10, 15]); // tick lebih kerasa
+        }
+    }
+
+
+    // ===== DRAG BOTTOM SHEET (VELOCITY + INTENT SAFE) =====
+    const sheet = document.getElementById("agari-sheet");
+
+    let startY = 0;
+    let currentY = 0;
+    let startTime = 0;
+
+    let dragging = false;
+    let isDraggingIntent = false;
+
+    const DRAG_INTENT_THRESHOLD = 10;   // px
+    const CLOSE_DISTANCE = 120;         // px
+    const CLOSE_VELOCITY = 0.6;         // px per ms (≈ flick)
+
+
+    // touch start
+    sheet.addEventListener("touchstart", (e) => {
+      if (e.target.closest("a, button")) return;
+
+      startY = e.touches[0].clientY;
+      currentY = startY;
+      startTime = Date.now();
+
+      dragging = true;
+      isDraggingIntent = false;
+    });
+
+    // touch move
+    sheet.addEventListener("touchmove", (e) => {
+      if (!dragging) return;
+
+      // 🔒 jangan ganggu text selection
+      if (isTextSelecting()) return;
+
+      currentY = e.touches[0].clientY;
+      const delta = currentY - startY;
+
+      if (!isDraggingIntent) {
+        if (Math.abs(delta) < DRAG_INTENT_THRESHOLD) return;
+
+        isDraggingIntent = true;
+        sheet.classList.add("dragging");
+      }
+
+      e.preventDefault();
+
+      if (delta > 0) {
+        sheet.style.transform = `translateY(${delta}px)`;
+      }
+    }, { passive: false });
+
+    // touch end
+    sheet.addEventListener("touchend", () => {
+      if (!dragging) return;
+
+      sheet.classList.remove("dragging");
+
+      const distance = currentY - startY;
+      const duration = Date.now() - startTime;
+      const velocity = distance / duration; // px/ms
+
+      const shouldClose =
+        (distance > CLOSE_DISTANCE) ||
+        (velocity > CLOSE_VELOCITY);
+
+      if (isDraggingIntent && shouldClose) {
+        haptic("medium");
+        sheet.classList.remove("show");
+        document.body.classList.remove("sheet-open");
+      }
+        else if (isDraggingIntent) {
+          haptic("light"); // 🔔 snap back feedback
+      }
+
+      sheet.style.transform = "";
+      dragging = false;
+      isDraggingIntent = false;
+    });
 
 </script>
 
