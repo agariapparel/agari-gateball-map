@@ -3,6 +3,32 @@
     {
       "type": "Feature",
       "properties": {
+        "field_id": "ID-WKM-PTC-02",
+        "courts": "3",
+        "verified": "TRUE",
+        "community": "Nusantara",
+        "city": "Pontianak City ",
+        "name": "Nusantara Gateball Court",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/D343FTWzuiEZrgtE8",
+        "province": "West Kalimantan",
+        "status": "Active",
+        "owner": "",
+        "address": "Gg. Purwodadi, Akcaya, Kec. Pontianak Sel., Kota Pontianak, Kalimantan Barat 78115",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          109.323963,
+          -0.056574
+        ],
+        "type": "Point"
+      },
+      "id": "00269d47db986362ac25d6ba6cbd307e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "field_id": "ID-SKL-BJR-01",
         "courts": "",
         "verified": "FALSE",
@@ -24,1723 +50,7 @@
         ],
         "type": "Point"
       },
-      "id": "05f1fe7c85320f3fa7744c288004a57a"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-JKT-NJK-01",
-        "courts": "5",
-        "verified": "TRUE",
-        "community": "GGC",
-        "city": "North Jakarta",
-        "name": "Gading Gateball Centre (GGC)",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.google.com/?cid=14482586330208753459",
-        "province": "DKI Jakarta",
-        "status": "Active",
-        "owner": "",
-        "address": "Komplek Imperial Gading blok D1 no 23, RT08, RW.08, Sukapura, Cilincing, North Jakarta City, Jakarta 14140",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          106.926902,
-          -6.158599
-        ],
-        "type": "Point"
-      },
-      "id": "0b7c4cadaac40e0bd43cc00f7bd76b19"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-ROY-YGC-02",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Yogyakarta City",
-        "name": "LAPANGAN NGAWU",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/G1iPcE5NvMPZPxyf9",
-        "province": "Special Region of Yogyakarta",
-        "status": "",
-        "owner": "",
-        "address": "Tumpak, Ngawu, Kec. Playen, Kabupaten Gunungkidul, Daerah Istimewa Yogyakarta 55861",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          110.548693,
-          -7.940411
-        ],
-        "type": "Point"
-      },
-      "id": "0eba672a6ea77b0106537a1cd91df1f9"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-EJV-LMR-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Lumajang Regency",
-        "name": "Lapangan Gateball SMAN 2 Lumajang",
-        "surface": "",
-        "google_maps_url": "https://maps.app.goo.gl/nyc22KGyzSbQi899A",
-        "province": "East Java",
-        "status": "",
-        "owner": "",
-        "address": "Jl. H. O.S. Cokroaminoto No.159, Tompokersan, Kec. Lumajang, Kabupaten Lumajang, Jawa Timur 67316",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          113.218488,
-          -8.126066
-        ],
-        "type": "Point"
-      },
-      "id": "12f15473b4247d2eff67de5e00461c6a"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-ACH-BAC-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Banda Aceh City",
-        "name": "Lapangan Gateball BWS-SI",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/Pmrzqd9GPUKeAnvHA",
-        "province": "Aceh",
-        "status": "",
-        "owner": "",
-        "address": "Jln. Ir. Mohd. Thaher No.14, Lueng Bata, Banda Aceh City, Aceh 23123",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          95.337085,
-          5.540063
-        ],
-        "type": "Point"
-      },
-      "id": "171436e2011cd2cdff0ddb31f4b4dba6"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-WJV-WBR-01",
-        "courts": "4",
-        "verified": "TRUE",
-        "community": "DSX Gateball Club",
-        "city": "West Bandung Regency",
-        "name": "DSX Gateball Field",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/wTSB9VgUAW4mjkAD7",
-        "province": "West Java",
-        "status": "Active",
-        "owner": "",
-        "address": "Langensari, Lembang, West Bandung Regency, West Java 40391",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          107.64129,
-          -6.827707
-        ],
-        "type": "Point"
-      },
-      "id": "17d44c69ec39cfd437b2aead330e6582"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-CPA-NBR-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "PJN VII PAPUA (NABIRE)",
-        "city": "Nabire Regency",
-        "name": "LAPANGAN GATEBALL DPUPR",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/GWQQBy1mPrhJUShC7",
-        "province": "Central Papua",
-        "status": "",
-        "owner": "",
-        "address": "Jl. Merdeka, Karang Mulia, Distrik Nabire, Kabupaten Nabire, Papua Tengah 98811",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          135.506798,
-          -3.370095
-        ],
-        "type": "Point"
-      },
-      "id": "1adeadb484f87c72a7ebb38ba65d3d4c"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-WJV-BDC-10",
-        "courts": "3",
-        "verified": "TRUE",
-        "community": "",
-        "city": "Bandung City",
-        "name": "Pusbangkom SDA dan Permukiman, Kementerian PUPR",
-        "surface": "Multiple Surfaces",
-        "google_maps_url": "https://maps.app.goo.gl/ziFmbbCFB1FZRh2F8",
-        "province": "West Java",
-        "status": "Active",
-        "owner": "",
-        "address": "Jl. Abdul Hamid No.5A, Jatihandap, Kec. Mandalajati, Kota Bandung, Jawa Barat 40195",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          107.662916,
-          -6.899435
-        ],
-        "type": "Point"
-      },
-      "id": "1f230e47675f2312b8bd6ac09c306cd1"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-SLS-GWR-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Gowa Regency",
-        "name": "Taman Sultan Hasanuddin",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/uaZBDAFB3r9Mt8UF6",
-        "province": "South Sulawesi",
-        "status": "",
-        "owner": "",
-        "address": "Jl. Tumanurung Raya, Pandang Pandang, Kec. Somba Opu, Kabupaten Gowa, Sulawesi Selatan 92114",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          119.448876,
-          -5.19931
-        ],
-        "type": "Point"
-      },
-      "id": "1f857b482aa082096084756af4721285"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-LPG-BLC-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Bandar Lampung City",
-        "name": "PERDANA GATEBALL CLUB",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/c5hYrnmh75gYTNHfA",
-        "province": "Lampung",
-        "status": "",
-        "owner": "",
-        "address": "Labuhan Dalam, Tanjung Senang, Bandar Lampung City, Lampung 35141",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          105.262246,
-          -5.351575
-        ],
-        "type": "Point"
-      },
-      "id": "228964dfcad12942920645c76cd21df7"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-CSL-PMR-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Parigi Moutong Regency",
-        "name": "LAPANGAN GATEBALL BOLANO",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/7komEZQD4Mghre668",
-        "province": "Central Sulawesi",
-        "status": "",
-        "owner": "",
-        "address": "Jl. Trans Sulawesi, Bolano, Kec. Bolano Lambunu, Kabupaten Parigi Moutong, Sulawesi Tengah 94479",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          120.955086,
-          0.443227
-        ],
-        "type": "Point"
-      },
-      "id": "266414ff352dbbd20422bb9317ba3d3e"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-WJV-BDC-09",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Bandung City",
-        "name": "Ponty Gateball Court",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/aL8iXHULv8K2NFAr6",
-        "province": "West Java",
-        "status": "",
-        "owner": "",
-        "address": "Jl. Dr. Setiabudi No.276, Ledeng, Kec. Cidadap, Kota Bandung, Jawa Barat 40143",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          107.594911,
-          -6.860235
-        ],
-        "type": "Point"
-      },
-      "id": "29e6c9d4d7213c56316a1c9083427a58"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-CJV-KDR-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "Pergatsi Kudus",
-        "city": "Kudus Regency",
-        "name": "Seluna Gateball Center",
-        "surface": "",
-        "google_maps_url": "https://maps.app.goo.gl/B8jWy2yKKmYMboPE6",
-        "province": "Central Java",
-        "status": "",
-        "owner": "",
-        "address": "Area Perkebunan, Garung Lor, Kec. Kaliwungu, Kabupaten Kudus, Jawa Tengah 59332",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          110.806932,
-          -6.79881
-        ],
-        "type": "Point"
-      },
-      "id": "2a0f011a99be5c99b2995d9b64beb0be"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-EJV-BTC-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Batu City",
-        "name": "Lapangan gateball Panorama",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/PYc5EGnNdsaE9Kiv8",
-        "province": "East Java",
-        "status": "",
-        "owner": "",
-        "address": "Pesanggrahan, Batu, Batu City, East Java 65313",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          112.515901,
-          -7.866251
-        ],
-        "type": "Point"
-      },
-      "id": "31f6de3488b53b18cc9f07d24d88058c"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-WJV-IDR-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Indramayu Regency",
-        "name": "Lapangan JAGE (Jatibarang Gateball)",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/okuLuxJ55tV6KW69A",
-        "province": "West Java",
-        "status": "",
-        "owner": "",
-        "address": "Jl. Letnan Joni, Jatibarang Baru, Kec. Jatibarang, Kabupaten Indramayu, Jawa Barat 45273",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          108.305388,
-          -6.481392
-        ],
-        "type": "Point"
-      },
-      "id": "32d13c51d55796f99d45b30aad4fa3e3"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-ACH-ABR-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Aceh Besar Regency",
-        "name": "Lapangan Gate Ball",
-        "surface": "",
-        "google_maps_url": "https://maps.app.goo.gl/PkMj7hZxB4yFVCCa8",
-        "province": "Aceh",
-        "status": "",
-        "owner": "",
-        "address": "Lamcot, Darul Imarah, Aceh Besar Regency, Aceh 23242",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          95.329152,
-          5.524193
-        ],
-        "type": "Point"
-      },
-      "id": "35b3036804f62b6b54b1e1a46d43a142"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-BLI-BLG-03",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Buleleng Regency",
-        "name": "Gate Ball Corner Lapangan Ngurah Rai",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/k2cyWkzgKntTYxJY7",
-        "province": "Bali",
-        "status": "",
-        "owner": "",
-        "address": "Singaraja, Banjar Jawa, Kec. Buleleng, Kabupaten Buleleng, Bali 81113",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          115.091067,
-          -8.116857
-        ],
-        "type": "Point"
-      },
-      "id": "4105a96ca7541c92a59cee412a524eca"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-SWP-SRC-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Sorong City",
-        "name": "LAPANGAN GATEBALL",
-        "surface": "",
-        "google_maps_url": "https://maps.app.goo.gl/BMWqjp55RNSgmvp38",
-        "province": "Southwest Papua",
-        "status": "",
-        "owner": "",
-        "address": "Jl. Sapta Taruna, Sawagumu, Kec. Sorong Utara, Kota Sorong, Papua Barat Daya 98416",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          131.321737,
-          -0.884344
-        ],
-        "type": "Point"
-      },
-      "id": "4708efaf2de6b13bea22a68c1e74dafd"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-GRT-GRC-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Gorontalo City",
-        "name": "D\"WINNER GATEBALL",
-        "surface": "",
-        "google_maps_url": "https://maps.app.goo.gl/uSQ6m4hdUcqSJTsi6",
-        "province": "Gorontalo",
-        "status": "",
-        "owner": "",
-        "address": "Dulomo Selatan, Kota Utara, Kota Gorontalo, Gorontalo 96128",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          123.074551,
-          0.568523
-        ],
-        "type": "Point"
-      },
-      "id": "4a515fec4ca0552b00aee65941039e67"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-WSM-PDC-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Padang City",
-        "name": "Dinas Bina Marga Cipta Karya dan Tata Ruang Provinsi Sumatera Barat",
-        "surface": "",
-        "google_maps_url": "https://maps.app.goo.gl/eD7eJN5HgwtBRzjM7",
-        "province": "West Sumatra",
-        "status": "",
-        "owner": "",
-        "address": "Jl. Tamansiswa No.1A, Alai Parak Kopi, Kec. Padang Utara, Kota Padang, Sumatera Barat 25139",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          100.363658,
-          -0.929895
-        ],
-        "type": "Point"
-      },
-      "id": "52f945032f3e6bfe4a07d744ddcbd691"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-CJV-SKR-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "Jasa Tirta I",
-        "city": "Sukoharjo Regency",
-        "name": "Lapangan Gateball Jasa Tirta Solo",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/HRuMpyQU3pXQ6Wup9",
-        "province": "Central Java",
-        "status": "",
-        "owner": "",
-        "address": "Banaran, Pabelan, Kec. Kartasura, Kabupaten Sukoharjo, Jawa Tengah 57169",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          110.768515,
-          -7.560171
-        ],
-        "type": "Point"
-      },
-      "id": "5811463bd2f9451b019c8e0276875f4c"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-BLI-BAR-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Badung Regency",
-        "name": "Lapangan Gateball Puspem Badung",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/KTYC6MFBryyEFsK38",
-        "province": "Bali",
-        "status": "",
-        "owner": "",
-        "address": "Jl. Raya Lukluk - Sempidi, Lukluk, Kec. Mengwi, Kabupaten Badung, Bali 80351",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          115.185951,
-          -8.604055
-        ],
-        "type": "Point"
-      },
-      "id": "597c520ac4753fe21ff3c9e9e2a92a16"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-CSL-BGR-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Banggai Regency",
-        "name": "Cafe Gateball Kab. Banggai",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/pX1gFVtUkzQCHUUE8",
-        "province": "Central Sulawesi",
-        "status": "",
-        "owner": "",
-        "address": "Jl. Sugiono, Soho, Luwuk, Kabupaten Banggai, Sulawesi Tengah",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          122.791755,
-          -0.951808
-        ],
-        "type": "Point"
-      },
-      "id": "5ef50332f6e217489b314ae300c911ca"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-WKM-PTC-02",
-        "courts": "3",
-        "verified": "TRUE",
-        "community": "Nusantara",
-        "city": "Pontianak City ",
-        "name": "Nusantara",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/D343FTWzuiEZrgtE8",
-        "province": "West Kalimantan",
-        "status": "Active",
-        "owner": "",
-        "address": "Gg. Purwodadi, Akcaya, Kec. Pontianak Sel., Kota Pontianak, Kalimantan Barat 78115",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          109.323963,
-          -0.056574
-        ],
-        "type": "Point"
-      },
-      "id": "6815369bc9dfa47724ec503a2b999ef8"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-CJV-SGR-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Sragen Regency",
-        "name": "GOR Diponegoro Sragen",
-        "surface": "",
-        "google_maps_url": "https://maps.app.goo.gl/JvX1sjLqnrUSPxAV9",
-        "province": "Central Java",
-        "status": "",
-        "owner": "",
-        "address": "Dusun Kebayanan Sragen Manggis, Sragen Wetan, Sragen, Sragen Regency, Central Java",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          111.037178,
-          -7.422296
-        ],
-        "type": "Point"
-      },
-      "id": "685d8cb1a32734a0aae23a6c16d4cae3"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-SLS-SJR-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Sinjai Regency",
-        "name": "Venue gateball sinjai",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/sKbVjXMdRfQWs4Nd6",
-        "province": "South Sulawesi",
-        "status": "",
-        "owner": "",
-        "address": "Bongki, Sinjai Utara, Sinjai Regency, South Sulawesi 92615",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          120.247647,
-          -5.11599
-        ],
-        "type": "Point"
-      },
-      "id": "6ad8acdd5cdd5cabfff46abe9cd09166"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-JKT-EJC-02",
-        "courts": "3",
-        "verified": "TRUE",
-        "community": "RGB",
-        "city": "East Jakarta City ",
-        "name": "GB8",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/v5TFdh1ABdpBsWf99",
-        "province": "DKI Jakarta",
-        "status": "Active",
-        "owner": "",
-        "address": "Jl. Pulo Mas Barat V, Kayu Putih, Kec. Pulo Gadung, Kota Jakarta Timur, DKI Jakarta",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          106.880073,
-          -6.173667
-        ],
-        "type": "Point"
-      },
-      "id": "6faba8e0fcd9b4d3e7986a4dc61409c3"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-WJV-BDC-08",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Bandung City",
-        "name": "POLMAN Gateball Cluba",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/SkG1nAKssK67nYXz9",
-        "province": "West Java",
-        "status": "",
-        "owner": "",
-        "address": "Kanayakan Timur, Dago, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          107.620601,
-          -6.876547
-        ],
-        "type": "Point"
-      },
-      "id": "734ea484f4c672ea7b0b3549dfaa8059"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-STG-BTN-01",
-        "courts": "1",
-        "verified": "TRUE",
-        "community": "Chilihut Gateball Club",
-        "city": "South Tangerang City",
-        "name": "CHILIHUT GATEBALL COURT",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/igkAWTza46ZhXBs28",
-        "province": "Banten",
-        "status": "Active",
-        "owner": "Puja Samedhi, SE. CES.",
-        "address": "Jl. Taman Pd. Cabe No.5 Blok B 14, Kedaung, Sawangan, Depok City, West Java 16516",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          106.753432,
-          -6.361145
-        ],
-        "type": "Point"
-      },
-      "id": "7400cbe5642c1b5b473e25bf65e23856"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-JMB-JBC-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Jambi City ",
-        "name": "Lapangan Gateball Balai Jalan Jambi",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/upTrNcKZPeZHzzMs8",
-        "province": "Jambi",
-        "status": "Inactive",
-        "owner": "",
-        "address": "Jl. RB. Siagian No.51, Pasir Putih, Kec. Jambi Sel., Kota Jambi, Jambi 36127",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          103.643211,
-          -1.623364
-        ],
-        "type": "Point"
-      },
-      "id": "76190cdf9bec3d3c7b9d4f2bfb329c2f"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-EJV-MLR-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Malang Regency",
-        "name": "Mulyoagung Gateball",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/4MSZ4eiPbsCGBt138",
-        "province": "East Java",
-        "status": "",
-        "owner": "",
-        "address": "Jl. TPST, Jetak Lor, Mulyoagung, Kec. Dau, Kabupaten Malang, Jawa Timur 65151",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          112.584083,
-          -7.923181
-        ],
-        "type": "Point"
-      },
-      "id": "7f435bfe3e4c043d03f5e54a2a19886b"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-WJV-BDC-04",
-        "courts": "2",
-        "verified": "TRUE",
-        "community": "ESSA Gateball CLub",
-        "city": "Bandung City",
-        "name": "ESSA Gateball Field",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/VnAs69nZtUqQE2AW9",
-        "province": "West Java",
-        "status": "Active",
-        "owner": "DRA. Metty Hendriatty, Ak",
-        "address": "Jl. Lemahnendeut No.7, Sukawarna, Kec. Sukajadi, Kota Bandung, Jawa Barat 40164",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          107.579821,
-          -6.884325
-        ],
-        "type": "Point"
-      },
-      "id": "80355fb75c60ec9b68f62cc20713ad21"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-PPA-JPC-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Jayapura City",
-        "name": "Gateball dan panahan",
-        "surface": "",
-        "google_maps_url": "https://maps.app.goo.gl/1uEWaprvhW94DNZE9",
-        "province": "Papua",
-        "status": "",
-        "owner": "",
-        "address": "8RWC+PF3, Unnamed Road, Central Koya, Muara Tami, Jayapura City, Papua 99351",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          140.821169,
-          -2.653227
-        ],
-        "type": "Point"
-      },
-      "id": "89b9d83a9dcf93718fc617d76eff20fd"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-JKT-EJC-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "East Jakarta City",
-        "name": "Lapangan Gateball Buperta",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/rkAhLgHbcjKhCQAX8",
-        "province": "DKI Jakarta",
-        "status": "",
-        "owner": "",
-        "address": "5, Pondok Ranggon, Cipayung, East Jakarta City, Jakarta",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          106.901233,
-          -6.364488
-        ],
-        "type": "Point"
-      },
-      "id": "8a73158f3140f691e9edccc42ef7a18d"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-ROY-SLR-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Sleman Regency",
-        "name": "Sarana Olahraga Luar Ruang",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/budvqaDBe9AQS71U8",
-        "province": "Special Region of Yogyakarta",
-        "status": "",
-        "owner": "",
-        "address": "Beran Kidul, Tridadi, Kec. Sleman, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55511",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          110.355955,
-          -7.719013
-        ],
-        "type": "Point"
-      },
-      "id": "8c4427098a034f16dbb3c06c874c97fc"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-NSL-NMR-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "Paniki Gateball Club",
-        "city": "North Minahasa Regency",
-        "name": "Gateball Club Residence",
-        "surface": "",
-        "google_maps_url": "https://maps.app.goo.gl/1qUbgCD89ucLSutv9",
-        "province": "North Sulawesi",
-        "status": "",
-        "owner": "",
-        "address": "Paniki Atas, Talawaan, North Minahasa Regency, North Sulawesi",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          124.921568,
-          1.49557
-        ],
-        "type": "Point"
-      },
-      "id": "8fbe5c632d3d6e46d3174a9202401bdf"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-EKL-EKR-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "East Kutai Regency",
-        "name": "Lapangan Gateball PUPR Kutim",
-        "surface": "Synthetic",
-        "google_maps_url": "https://maps.app.goo.gl/9Lbg7fWEr1g7LQni8",
-        "province": "East Kalimantan",
-        "status": "",
-        "owner": "",
-        "address": "Teluk Lingga, Sangatta Utara, East Kutai Regency, East Kalimantan 75683",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          117.60337,
-          0.520347
-        ],
-        "type": "Point"
-      },
-      "id": "9387ae17d2a316a65efb858f594d4e5b"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-BLI-DPS-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Denpasar City",
-        "name": "Lapangan Gateball PUPR.PERKIM Bali ( Kantor Ubung )",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/uimnCSckT36vvnDo7",
-        "province": "Bali",
-        "status": "",
-        "owner": "",
-        "address": "Cokroaminoto St, Ubung Kaja, Denpasar Utara, Denpasar City, Bali",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          115.205963,
-          -8.635938
-        ],
-        "type": "Point"
-      },
-      "id": "952d0bf5cef7acd26c58820f225936a3"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-ROY-YGC-01",
-        "courts": "1",
-        "verified": "FALSE",
-        "community": "Banaran Gateball Club",
-        "city": "Yogyakarta City",
-        "name": "BGC - Banaran Gateball Club",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/Xks2WZokTpm3yCfr8",
-        "province": "Special Region of Yogyakarta",
-        "status": "",
-        "owner": "",
-        "address": "Banaran IX, Banaran, Playen, Gunungkidul Regency, Special Region of Yogyakarta 55861",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          110.537777,
-          -7.926867
-        ],
-        "type": "Point"
-      },
-      "id": "9be2d2cde1eff39c56b9fcd0ce8c5305"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-CJV-PWR-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Purworejo Regency",
-        "name": "Lapangan Gateball Butuh",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/UdmdehX7tvTPuYQG8",
-        "province": "Central Java",
-        "status": "",
-        "owner": "",
-        "address": "Area Sawah/ Kebun, Dlangu, Butuh, Purworejo Regency, Central Java 54264",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          109.867863,
-          -7.723687
-        ],
-        "type": "Point"
-      },
-      "id": "9fc0f9fb599fb17610a23b3676cd591b"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-WJV-SBR-01",
-        "courts": "6",
-        "verified": "TRUE",
-        "community": "ESSA Gateball Club",
-        "city": "Subang Regency",
-        "name": "Sari Ater Hot Springs Ciater",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/vTyFKdr1DS7v7TFt5",
-        "province": "West Java",
-        "status": "Active",
-        "owner": "DRA. Metty Hendriatty, Ak",
-        "address": "Jl. Raya Ciater, Ciater, Kec. Ciater, Kabupaten Subang, Jawa Barat 41281",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          107.653163,
-          -6.738415
-        ],
-        "type": "Point"
-      },
-      "id": "a44bece0fa2cb1c4eb052f4046ea5ce9"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-CJV-PWR-02",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Purworejo Regency",
-        "name": "Lapangan Gateball Kutoarjo",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/wuv6inG4VEGnXiVu7",
-        "province": "Central Java",
-        "status": "",
-        "owner": "",
-        "address": "Jemb. Bandungan, Bandung, Kec. Kutoarjo, Kabupaten Purworejo, Jawa Tengah 54211",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          109.918668,
-          -7.713072
-        ],
-        "type": "Point"
-      },
-      "id": "a4bc98a311a58135918a3ef3458fa9b6"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-WJV-BDC-05",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Bandung City",
-        "name": "Hegarmanah Gateball Field",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/SWxSy3LJ4Vviusr16",
-        "province": "West Java",
-        "status": "",
-        "owner": "",
-        "address": "Jl. Hegarmanah No.10, Hegarmanah, Kec. Cidadap, Kota Bandung, Jawa Barat 40141",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          107.602294,
-          -6.881807
-        ],
-        "type": "Point"
-      },
-      "id": "a5e7cea4854ada9f9b800b8e5b0cd044"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-WNT-MTC-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Mataram City",
-        "name": "Lapangan Gateball Aula Irigasi",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/cpVkrMbb2Pd7fQyE9",
-        "province": "West Nusa Tenggara ",
-        "status": "Inactive",
-        "owner": "",
-        "address": "Kekalik Jaya, Sekarbela, Mataram City, West Nusa Tenggara 83115",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          116.099081,
-          -8.591985
-        ],
-        "type": "Point"
-      },
-      "id": "acbef03ebafd5ef5c4b9dc965e3c383f"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-BLI-BAR-03",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Badung Regency",
-        "name": "Lapangan Pratu Rai Madra Kekeran",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/GWXhgafw2xZhFB5M7",
-        "province": "Bali",
-        "status": "",
-        "owner": "",
-        "address": "Jl. Pratu Rai Madra No.28, Mengwitani, Kec. Mengwi, Kabupaten Badung, Bali 80351",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          115.164766,
-          -8.572146
-        ],
-        "type": "Point"
-      },
-      "id": "acea90ca584b33588aac8ae6e2f9768b"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-PPA-JPC-02",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Jayapura City",
-        "name": "Lapangan Gateball BPJN Jayapura",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/ee7a56uggogpum8WA",
-        "province": "Papua",
-        "status": "",
-        "owner": "",
-        "address": "Jl. Filadelfia, Asano, Kec. Abepura, Kota Jayapura, Papua 99351",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          140.681282,
-          -2.619556
-        ],
-        "type": "Point"
-      },
-      "id": "ada29cd2fafbe12847404472455fd883"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-STG-BTN-03",
-        "courts": "",
-        "verified": "TRUE",
-        "community": "",
-        "city": "South Tangerang City",
-        "name": "SARUAH GATEBALL COURT",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/R4FoC1qkhxYX1KXf8",
-        "province": "Banten",
-        "status": "Active",
-        "owner": "",
-        "address": "Jl. Suka Karya, Serua Indah, Kec. Ciputat, Kota Tangerang Selatan, Banten 15414",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          106.722134,
-          -6.320087
-        ],
-        "type": "Point"
-      },
-      "id": "afb34e57b8b697122bdc01a34aaff326"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-CJV-BNR-02",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Banyumas Regency",
-        "name": "Lapangan Gateball GOR Satria Purwokerto",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/ztf4KKPrdUt8EBu5A",
-        "province": "Central Java",
-        "status": "",
-        "owner": "",
-        "address": "Komplek stadion Satria, Limas Permai, Karangwangkal, Purwokerto Utara, Banyumas Regency, Central Java 53123",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          109.250773,
-          -7.414484
-        ],
-        "type": "Point"
-      },
-      "id": "b1ad925a9cee25f12cd28e8960a9862d"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-EKL-SMC-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Samarinda City",
-        "name": "LAPANGAN GATEBALL",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/Yr37chdzPihCf62Z8",
-        "province": "East Kalimantan",
-        "status": "",
-        "owner": "",
-        "address": "Jl. Wahid Hasyim, Sempaja Sel., Kec. Samarinda Utara, Kota Samarinda, Kalimantan Timur 75243",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          117.156479,
-          -0.454517
-        ],
-        "type": "Point"
-      },
-      "id": "b1af685aaabc3c794356db243f49345a"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-NSM-DSR-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Deli Serdang Regency",
-        "name": "Lapangan Pon Gateball",
-        "surface": "",
-        "google_maps_url": "https://maps.app.goo.gl/cpeaCKkcPT2vMyX5A",
-        "province": "North Sumatra",
-        "status": "",
-        "owner": "",
-        "address": "",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          98.721699,
-          3.522515
-        ],
-        "type": "Point"
-      },
-      "id": "b40c89dbc5c8e4c94abbd1ec9ddc8ae7"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-BLI-GNY-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Gianyar Regency",
-        "name": "Lapangan Gateball Kebo Iwa (Pergatsi Gianyar)",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/j2SZC3GmXJU5eaiU9",
-        "province": "Bali",
-        "status": "",
-        "owner": "",
-        "address": "Jl. Ambarawati No.13, Mas, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          115.265674,
-          -8.541602
-        ],
-        "type": "Point"
-      },
-      "id": "b631bb5ccfee128b95bcded262939c3b"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-WNT-WLR-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "West Lombok Regency",
-        "name": "Lapangan Gateball BWS NT.1",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/iXCGW6FrdoqE6zh37",
-        "province": "West Nusa Tenggara ",
-        "status": "",
-        "owner": "",
-        "address": "Gerimax Indah, Narmada, West Lombok Regency, West Nusa Tenggara 83371",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          116.170006,
-          -8.594759
-        ],
-        "type": "Point"
-      },
-      "id": "b9e28d2e440b39db5f7dee65b1c605c7"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-SKL-BKR-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Barito Kuala Regency",
-        "name": "lapangan gate ball batola",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/MaknRCnhfyVpKSMN6",
-        "province": "South Kalimantan",
-        "status": "",
-        "owner": "",
-        "address": "Ulu Benteng, Marabahan, Barito Kuala Regency, South Kalimantan 70513",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          114.742893,
-          -2.981841
-        ],
-        "type": "Point"
-      },
-      "id": "bc39fe7db63350f1f774b6b4d40808a1"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-WJV-BDC-07",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Bandung City",
-        "name": "Lapangan Gateball Turangga Club",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/5ybs5t3mvnoLLEcD6",
-        "province": "West Java",
-        "status": "",
-        "owner": "",
-        "address": "Jl. Rebab sebelah No.14, Turangga, Kec. Lengkong, Kota Bandung, Jawa Barat 40264",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          107.63356,
-          -6.935365
-        ],
-        "type": "Point"
-      },
-      "id": "bc5aadb85c707df29b7a749d964b2083"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-NSM-MDC-01",
-        "courts": "4",
-        "verified": "FALSE",
-        "community": "Pergatsi Sumut",
-        "city": "Medan City",
-        "name": "Lapangan Gateball PERGATSI Sumut",
-        "surface": "Synthetic",
-        "google_maps_url": "https://maps.app.goo.gl/vTjhvBcA6gaZF4eS8",
-        "province": "North Sumatra",
-        "status": "",
-        "owner": "",
-        "address": "Medan - Binjai Toll Rd, Tanjung Mulia, Medan Deli, Medan City, North Sumatra 20241",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          98.663122,
-          3.650814
-        ],
-        "type": "Point"
-      },
-      "id": "bf1b62b6bda01b0299c5def33b183a74"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-WJV-BDC-01",
-        "courts": "3",
-        "verified": "TRUE",
-        "community": "GB 5, SWR",
-        "city": "Bandung City",
-        "name": "Bikasoga Gateball 5 Stadium",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/okXNnD6Fqv9Hq9eK7",
-        "province": "West Java",
-        "status": "Active",
-        "owner": "Kery",
-        "address": "Jl. Suryalaya Indah No.1-3, Cijagra, Kec. Lengkong, Kota Bandung, Jawa Barat 40265",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          107.625135,
-          -6.944116
-        ],
-        "type": "Point"
-      },
-      "id": "bfc15d1394d5d851fe2ffb9094b71c2a"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-WJV-CRC-01",
-        "courts": "1",
-        "verified": "TRUE",
-        "community": "Grage",
-        "city": "Cirebon City",
-        "name": "Basecamp Grage Gateball Club",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/KAn6hKGhRe8nxGDm9",
-        "province": "West Java",
-        "status": "Active",
-        "owner": "",
-        "address": "Gg. Sigaran No.10, Karyamulya, Kec. Kesambi, Kota Cirebon, Jawa Barat 45131",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          108.542304,
-          -6.738821
-        ],
-        "type": "Point"
-      },
-      "id": "c4548d7378747914c413f3146d4f3710"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-WKM-PTC-03",
-        "courts": "1",
-        "verified": "TRUE",
-        "community": "BPJN",
-        "city": "Pontianak City ",
-        "name": "BPJN Kalbar",
-        "surface": "Synthetic",
-        "google_maps_url": "https://maps.app.goo.gl/UUJa2vVwrwJBcZwG8",
-        "province": "West Kalimantan",
-        "status": "Active",
-        "owner": "",
-        "address": "Benua Melayu Darat, South Pontianak, Pontianak, West Kalimantan",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          109.342058,
-          -0.046082
-        ],
-        "type": "Point"
-      },
-      "id": "c5b5360e400636096c3b96a6ca309a95"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-ROY-BTR-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "Pesisir Gateball Club",
-        "city": "Bantul Regency",
-        "name": "Lapangan Gateball Pesisir GC",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/4DV9pKxxPJKyrPCb7",
-        "province": "Special Region of Yogyakarta",
-        "status": "",
-        "owner": "",
-        "address": "Kalimundu,RT 05, Gadingharjo, Kec. Sanden, Kabupaten Bantul, Daerah Istimewa Yogyakarta 55763",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          110.269073,
-          -7.975508
-        ],
-        "type": "Point"
-      },
-      "id": "c64a9f1018d033059898b0eb4c9eeaef"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-WJV-BDC-06",
-        "courts": "1",
-        "verified": "TRUE",
-        "community": "Batu Mas Gateball Club",
-        "city": "Bandung City",
-        "name": "Lapangan Gateball Batumas",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/LwamjJYshgvsZhUk7",
-        "province": "West Java",
-        "status": "Active",
-        "owner": "",
-        "address": "Komplek Batumas, Ciseureuh, Regol, Bandung City, West Java 40255",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          107.615001,
-          -6.954572
-        ],
-        "type": "Point"
-      },
-      "id": "ce1539bde438e672ee408c28bca7cea1"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-WJV-BDR-01",
-        "courts": "1",
-        "verified": "TRUE",
-        "community": "Bal.A",
-        "city": "Bandung Regency",
-        "name": "Gateball BAL.A",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/6Bn8Ut4WvPpR9cyAA",
-        "province": "West Java",
-        "status": "Active",
-        "owner": "",
-        "address": "Jl. Cipondoh No.3, Cinunuk, Kec. Cileunyi, Kabupaten Bandung, Jawa Barat 40624",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          107.733175,
-          -6.934184
-        ],
-        "type": "Point"
-      },
-      "id": "cfee8aa830918f44683ce93faaf38488"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-CSL-PLC-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Palu City",
-        "name": "Lapangan Gateball Palu",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/WQmkmqa9ZQ5jmtwz8",
-        "province": "Central Sulawesi",
-        "status": "",
-        "owner": "",
-        "address": "Jl. Towua No.85, Tatura Sel., Kec. Palu Sel., Kota Palu, Sulawesi Tengah 94235",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          119.88298,
-          -0.926525
-        ],
-        "type": "Point"
-      },
-      "id": "d0084c29e0a6c3cc7175674730eccad6"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-SLS-MKC-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Makassar City",
-        "name": "Lapangan Hasanuddin",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/7Ftb1jNW3f23vQ5N8",
-        "province": "South Sulawesi",
-        "status": "",
-        "owner": "",
-        "address": "Jl. Jend. Sudirman No.10/14, Sawerigading, Kec. Ujung Pandang, Kota Makassar, Sulawesi Selatan 90115",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          119.415054,
-          -5.14209
-        ],
-        "type": "Point"
-      },
-      "id": "d26277c7a9a2b8750c11e9fd86807ca1"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-NSM-MDC-02",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Medan City",
-        "name": "Lapangan Gateball PUPR",
-        "surface": "Synthetic",
-        "google_maps_url": "https://maps.app.goo.gl/hgPn4Z5GpdPjj8HP7",
-        "province": "North Sumatra",
-        "status": "",
-        "owner": "",
-        "address": "MM4G+6JV, Tj. Mulia, Medan Deli, Medan City, North Sumatra 20241",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          98.676561,
-          3.655622
-        ],
-        "type": "Point"
-      },
-      "id": "db256df9914ac042f3adbf7ebc4ce783"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-CJV-PWR-03",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Purworejo Regency",
-        "name": "Paku Bumi Gateball",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/ajmi6h5hgKd9ZxLF9",
-        "province": "Central Java",
-        "status": "",
-        "owner": "",
-        "address": "Jl. Argorejo, Giri Rejo Timur, Kutoarjo, Kec. Kutoarjo, Kabupaten Purworejo, Jawa Tengah 54251",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          109.914823,
-          -7.714045
-        ],
-        "type": "Point"
-      },
-      "id": "dc699c1f6ff776a459a43b8df99a0717"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-NSM-TBR-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Toba Regency",
-        "name": "Lapangan GateBall Balige",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/M8tvDb234w2Dtvf16",
-        "province": "North Sumatra",
-        "status": "",
-        "owner": "",
-        "address": "Silalahi Pagar Batu, Balige, Toba, North Sumatra 22312",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          99.050893,
-          2.332063
-        ],
-        "type": "Point"
-      },
-      "id": "dd4ed883216b6f84735b3309ebb0fea3"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-WJV-BDC-03",
-        "courts": "2",
-        "verified": "TRUE",
-        "community": "",
-        "city": "Bandung City",
-        "name": "DSC (Dyah Saturnus Court)",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/HcNN4kgNiHVWkN7P9",
-        "province": "West Java",
-        "status": "Active",
-        "owner": "Dyah",
-        "address": "Jl. Saturnus Ujung No.19, Manjahlega, Kec. Rancasari, Kota Bandung, Jawa Barat 40286",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          107.668514,
-          -6.953422
-        ],
-        "type": "Point"
-      },
-      "id": "dda486e109e977416ca89d3a712becce"
+      "id": "028aae55e07fc5949a0e7ca65e212177"
     },
     {
       "type": "Feature",
@@ -1766,215 +76,111 @@
         ],
         "type": "Point"
       },
-      "id": "e0dd9b9b714d25e0116dc5253fc38790"
+      "id": "0b4f4bafb388c33ec01e1a133c5d7094"
     },
     {
       "type": "Feature",
       "properties": {
-        "field_id": "ID-STG-BTN-02",
-        "courts": "",
-        "verified": "TRUE",
-        "community": "",
-        "city": "South Tangerang City",
-        "name": "Jilunk Gateball Court",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/5wbYeiiVdTXUHbkEA",
-        "province": "Banten",
-        "status": "Active",
-        "owner": "",
-        "address": "Jl. Gelagah No.11, RT.2/RW.3, Pisangan, Kec. Ciputat Tim., Kota Tangerang Selatan, Banten 15419",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          106.769915,
-          -6.31728
-        ],
-        "type": "Point"
-      },
-      "id": "e2c819f5366d94129837d360f8a9cc30"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-JKT-EJC-03",
+        "field_id": "ID-WKM-PTC-03",
         "courts": "1",
         "verified": "TRUE",
-        "community": "Jabodetabek GB",
-        "city": "East Jakarta City ",
-        "name": "Elite KaGeCe",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/ztLx896NobnSUZUr6",
-        "province": "DKI Jakarta",
-        "status": "Active",
-        "owner": "",
-        "address": "Jl. Jambore No.1, RT.8/RW.7, Cibubur, Kec. Ciracas, Kota Jakarta Timur, Jawa Barat 13720",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          106.892789,
-          -6.368144
-        ],
-        "type": "Point"
-      },
-      "id": "e316c3b74cc39da273bf5b19a4ba1f35"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-BLI-BAR-02",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Badung Regency",
-        "name": "Rumah Gateball",
-        "surface": "",
-        "google_maps_url": "https://maps.app.goo.gl/scwJ8D6FsziSQzgL6",
-        "province": "Bali",
-        "status": "",
-        "owner": "",
-        "address": "Jl. Majapahit No.50, Blahkiuh, Kec. Abiansemal, Kabupaten Badung, Bali 80352",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          115.212917,
-          -8.510051
-        ],
-        "type": "Point"
-      },
-      "id": "e88958ca02a242d806ce7360f2d8ce80"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-JKT-CJK-01",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Central Jakarta City",
-        "name": "Lapangan Gateball GBK",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/Vw3pMwkbEx7m5Kr5A",
-        "province": "DKI Jakarta",
-        "status": "Inactive",
-        "owner": "",
-        "address": "Jl. Gerbang Pemuda No.3, RT.1/RW.3, Gelora, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10270",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          106.804153,
-          -6.213628
-        ],
-        "type": "Point"
-      },
-      "id": "e8b9e9988437d6fa7ad5f8ea76fec4e5"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-BLI-DPS-03",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Denpasar City ",
-        "name": "Istana Taman Jepun Bali",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/onvVnmPT7LLGLmAr8",
-        "province": "Bali",
-        "status": "",
-        "owner": "",
-        "address": "Jl. Hayam Wuruk Tanjung Bungkak No.104H, Sumerta Kelod, Kec. Denpasar Tim., Kota Denpasar, Bali 80235",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          115.24359,
-          -8.66732
-        ],
-        "type": "Point"
-      },
-      "id": "eb4146a61d4d649867b786646c5bd545"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-WJV-BDC-02",
-        "courts": "1",
-        "verified": "TRUE",
-        "community": "",
-        "city": "Bandung City",
-        "name": "DGA - Durma Gateball Area",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/MeywNhXVWWBrPYuP7",
-        "province": "West Java",
-        "status": "Active",
-        "owner": "",
-        "address": "Jl. Cigadung Raya Barat No.80, DGA, Cigadung, Kec. Cibeunying Kaler, Kota Bandung, Jawa Barat 40191",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          107.626131,
-          -6.88191
-        ],
-        "type": "Point"
-      },
-      "id": "ed150ee531d13f1df0b6f21987fd9db4"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-WSM-PDC-02",
-        "courts": "",
-        "verified": "FALSE",
-        "community": "",
-        "city": "Padang City",
-        "name": "Lapangan Gateball BPPW Sumbar",
-        "surface": "",
-        "google_maps_url": "https://maps.app.goo.gl/2zzp2d62gixxLpAP8",
-        "province": "West Sumatra",
-        "status": "",
-        "owner": "",
-        "address": "Kantor BPPW Sumbar, Berok Nipah, Kec. Padang Bar., Kota Padang, Sumatera Barat",
-        "country": "Indonesia"
-      },
-      "geometry": {
-        "coordinates": [
-          100.354314,
-          -0.965526
-        ],
-        "type": "Point"
-      },
-      "id": "f551357b83b126effbbbaef8537b198b"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "field_id": "ID-WKM-PTC-01",
-        "courts": "1",
-        "verified": "TRUE",
-        "community": "BWSK 1 PONTIANAK",
+        "community": "BPJN",
         "city": "Pontianak City ",
-        "name": "Kapuas",
-        "surface": "Grass",
-        "google_maps_url": "https://maps.app.goo.gl/kfQ3MBvUf9eWfMWE8",
+        "name": "Lapangan BPJN Kalbar ",
+        "surface": "Synthetic",
+        "google_maps_url": "https://maps.app.goo.gl/UUJa2vVwrwJBcZwG8",
         "province": "West Kalimantan",
         "status": "Active",
         "owner": "",
-        "address": "Jl. A Sood, Akcaya, Kec. Pontianak Sel., Kota Pontianak, Kalimantan Barat",
+        "address": "Benua Melayu Darat, South Pontianak, Pontianak, West Kalimantan",
         "country": "Indonesia"
       },
       "geometry": {
         "coordinates": [
-          109.334715,
-          -0.040742
+          109.342058,
+          -0.046082
         ],
         "type": "Point"
       },
-      "id": "f895c95fa590b622d002cd1247977de2"
+      "id": "0c084a6c1337ed42ca014039188d1e0e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-BLI-GNY-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Gianyar Regency",
+        "name": "Lapangan Gateball Kebo Iwa (Pergatsi Gianyar)",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/j2SZC3GmXJU5eaiU9",
+        "province": "Bali",
+        "status": "",
+        "owner": "",
+        "address": "Jl. Ambarawati No.13, Mas, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          115.265674,
+          -8.541602
+        ],
+        "type": "Point"
+      },
+      "id": "0e4f372949bb052c3539ccfa6d2a7ce1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-WJV-SBR-01",
+        "courts": "6",
+        "verified": "TRUE",
+        "community": "ESSA Gateball Club",
+        "city": "Subang Regency",
+        "name": "Sari Ater Hot Springs Ciater",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/vTyFKdr1DS7v7TFt5",
+        "province": "West Java",
+        "status": "Active",
+        "owner": "DRA. Metty Hendriatty, Ak",
+        "address": "Jl. Raya Ciater, Ciater, Kec. Ciater, Kabupaten Subang, Jawa Barat 41281",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          107.653163,
+          -6.738415
+        ],
+        "type": "Point"
+      },
+      "id": "0e9bf5dece977b3cc98cdce1d68bc372"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-WJV-WBR-01",
+        "courts": "4",
+        "verified": "TRUE",
+        "community": "DSX Gateball Club",
+        "city": "West Bandung Regency",
+        "name": "DSX Gateball Field",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/wTSB9VgUAW4mjkAD7",
+        "province": "West Java",
+        "status": "Active",
+        "owner": "",
+        "address": "Langensari, Lembang, West Bandung Regency, West Java 40391",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          107.64129,
+          -6.827707
+        ],
+        "type": "Point"
+      },
+      "id": "19513688d18404c62a7599bffce40301"
     },
     {
       "type": "Feature",
@@ -2000,7 +206,1073 @@
         ],
         "type": "Point"
       },
-      "id": "fdd6a1f9293a775168407e2b9f0299d5"
+      "id": "1da20ee3b81904bd26f8db0e0eb22244"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-EJV-BTC-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Batu City",
+        "name": "Lapangan gateball Panorama",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/PYc5EGnNdsaE9Kiv8",
+        "province": "East Java",
+        "status": "",
+        "owner": "",
+        "address": "Pesanggrahan, Batu, Batu City, East Java 65313",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          112.515901,
+          -7.866251
+        ],
+        "type": "Point"
+      },
+      "id": "1de5dcd6955f1a613fcb03a30510e72d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-BLI-BAR-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Badung Regency",
+        "name": "Lapangan Gateball Puspem Badung",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/KTYC6MFBryyEFsK38",
+        "province": "Bali",
+        "status": "",
+        "owner": "",
+        "address": "Jl. Raya Lukluk - Sempidi, Lukluk, Kec. Mengwi, Kabupaten Badung, Bali 80351",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          115.185951,
+          -8.604055
+        ],
+        "type": "Point"
+      },
+      "id": "1ebfc72b7f89fbfe3f9eb7ea83dfe7fd"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-BLI-BAR-02",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Badung Regency",
+        "name": "Rumah Gateball",
+        "surface": "",
+        "google_maps_url": "https://maps.app.goo.gl/scwJ8D6FsziSQzgL6",
+        "province": "Bali",
+        "status": "",
+        "owner": "",
+        "address": "Jl. Majapahit No.50, Blahkiuh, Kec. Abiansemal, Kabupaten Badung, Bali 80352",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          115.212917,
+          -8.510051
+        ],
+        "type": "Point"
+      },
+      "id": "285f0b29f1bd81384461a9d727934007"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-JKT-EJC-02",
+        "courts": "3",
+        "verified": "TRUE",
+        "community": "RGB",
+        "city": "East Jakarta City ",
+        "name": "Lapangan Gateball BMX Pulomas",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/v5TFdh1ABdpBsWf99",
+        "province": "DKI Jakarta",
+        "status": "Active",
+        "owner": "",
+        "address": "Jl. Pulo Mas Barat V, Kayu Putih, Kec. Pulo Gadung, Kota Jakarta Timur, DKI Jakarta",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          106.880073,
+          -6.173667
+        ],
+        "type": "Point"
+      },
+      "id": "295ef77cc80af054ad4fc39224c69772"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-WJV-BDR-01",
+        "courts": "1",
+        "verified": "TRUE",
+        "community": "Bal.A",
+        "city": "Bandung Regency",
+        "name": "Gateball BAL.A",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/6Bn8Ut4WvPpR9cyAA",
+        "province": "West Java",
+        "status": "Active",
+        "owner": "",
+        "address": "Jl. Cipondoh No.3, Cinunuk, Kec. Cileunyi, Kabupaten Bandung, Jawa Barat 40624",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          107.733175,
+          -6.934184
+        ],
+        "type": "Point"
+      },
+      "id": "2acd8a3ae1df8a602f69429b7984e037"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-WJV-BDC-09",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Bandung City",
+        "name": "Ponty Gateball Court",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/aL8iXHULv8K2NFAr6",
+        "province": "West Java",
+        "status": "",
+        "owner": "",
+        "address": "Jl. Dr. Setiabudi No.276, Ledeng, Kec. Cidadap, Kota Bandung, Jawa Barat 40143",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          107.594911,
+          -6.860235
+        ],
+        "type": "Point"
+      },
+      "id": "2c0ff057e493ab7601395bb3a8aff6ea"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-PPA-JPC-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Jayapura City",
+        "name": "Gateball dan panahan",
+        "surface": "",
+        "google_maps_url": "https://maps.app.goo.gl/1uEWaprvhW94DNZE9",
+        "province": "Papua",
+        "status": "",
+        "owner": "",
+        "address": "8RWC+PF3, Unnamed Road, Central Koya, Muara Tami, Jayapura City, Papua 99351",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          140.821169,
+          -2.653227
+        ],
+        "type": "Point"
+      },
+      "id": "304c8cd93c5e92361fd6f71842e4a469"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-WJV-BDC-07",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Bandung City",
+        "name": "Lapangan Gateball Turangga Club",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/5ybs5t3mvnoLLEcD6",
+        "province": "West Java",
+        "status": "",
+        "owner": "",
+        "address": "Jl. Rebab sebelah No.14, Turangga, Kec. Lengkong, Kota Bandung, Jawa Barat 40264",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          107.63356,
+          -6.935365
+        ],
+        "type": "Point"
+      },
+      "id": "3538f5e2abe4442519e828a9a0da7396"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-BLI-DPS-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Denpasar City",
+        "name": "Lapangan Gateball PUPR.PERKIM Bali ( Kantor Ubung )",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/uimnCSckT36vvnDo7",
+        "province": "Bali",
+        "status": "",
+        "owner": "",
+        "address": "Cokroaminoto St, Ubung Kaja, Denpasar Utara, Denpasar City, Bali",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          115.205963,
+          -8.635938
+        ],
+        "type": "Point"
+      },
+      "id": "3e81492716462c30d7a0a886d7c29a83"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-WSM-PDC-02",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Padang City",
+        "name": "Lapangan Gateball BPPW Sumbar",
+        "surface": "",
+        "google_maps_url": "https://maps.app.goo.gl/2zzp2d62gixxLpAP8",
+        "province": "West Sumatra",
+        "status": "",
+        "owner": "",
+        "address": "Kantor BPPW Sumbar, Berok Nipah, Kec. Padang Bar., Kota Padang, Sumatera Barat",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          100.354314,
+          -0.965526
+        ],
+        "type": "Point"
+      },
+      "id": "4191884385da3190b2737094d6b4507e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-WJV-BDC-10",
+        "courts": "3",
+        "verified": "TRUE",
+        "community": "",
+        "city": "Bandung City",
+        "name": "Pusbangkom SDA dan Permukiman, Kementerian PUPR",
+        "surface": "Multiple Surfaces",
+        "google_maps_url": "https://maps.app.goo.gl/ziFmbbCFB1FZRh2F8",
+        "province": "West Java",
+        "status": "Active",
+        "owner": "",
+        "address": "Jl. Abdul Hamid No.5A, Jatihandap, Kec. Mandalajati, Kota Bandung, Jawa Barat 40195",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          107.662916,
+          -6.899435
+        ],
+        "type": "Point"
+      },
+      "id": "41c6b6e4da81428656c8aeb74a876376"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-WNT-WLR-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "West Lombok Regency",
+        "name": "Lapangan Gateball BWS NT.1",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/iXCGW6FrdoqE6zh37",
+        "province": "West Nusa Tenggara ",
+        "status": "",
+        "owner": "",
+        "address": "Gerimax Indah, Narmada, West Lombok Regency, West Nusa Tenggara 83371",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          116.170006,
+          -8.594759
+        ],
+        "type": "Point"
+      },
+      "id": "4de6bf282595f119bab8d323dff9de94"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-WJV-BDC-06",
+        "courts": "1",
+        "verified": "TRUE",
+        "community": "Batu Mas Gateball Club",
+        "city": "Bandung City",
+        "name": "Lapangan Gateball Batumas",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/LwamjJYshgvsZhUk7",
+        "province": "West Java",
+        "status": "Active",
+        "owner": "",
+        "address": "Komplek Batumas, Ciseureuh, Regol, Bandung City, West Java 40255",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          107.615001,
+          -6.954572
+        ],
+        "type": "Point"
+      },
+      "id": "4e0ee50503e8cce16b4c7cfa25b51c70"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-WJV-BDC-02",
+        "courts": "1",
+        "verified": "TRUE",
+        "community": "",
+        "city": "Bandung City",
+        "name": "DGA - Durma Gateball Area",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/MeywNhXVWWBrPYuP7",
+        "province": "West Java",
+        "status": "Active",
+        "owner": "",
+        "address": "Jl. Cigadung Raya Barat No.80, DGA, Cigadung, Kec. Cibeunying Kaler, Kota Bandung, Jawa Barat 40191",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          107.626131,
+          -6.88191
+        ],
+        "type": "Point"
+      },
+      "id": "53b976fce8155d788bead46c5af530ec"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-JMB-JBC-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Jambi City ",
+        "name": "Lapangan Gateball Balai Jalan Jambi",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/upTrNcKZPeZHzzMs8",
+        "province": "Jambi",
+        "status": "Inactive",
+        "owner": "",
+        "address": "Jl. RB. Siagian No.51, Pasir Putih, Kec. Jambi Sel., Kota Jambi, Jambi 36127",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          103.643211,
+          -1.623364
+        ],
+        "type": "Point"
+      },
+      "id": "569bd0bbbe60a025965c2b4ad85d4c29"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-JKT-EJC-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "East Jakarta City",
+        "name": "Lapangan Gateball Buperta",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/rkAhLgHbcjKhCQAX8",
+        "province": "DKI Jakarta",
+        "status": "",
+        "owner": "",
+        "address": "5, Pondok Ranggon, Cipayung, East Jakarta City, Jakarta",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          106.901233,
+          -6.364488
+        ],
+        "type": "Point"
+      },
+      "id": "5750caa75dec37504b08f33c48b5acee"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-WJV-BDC-04",
+        "courts": "2",
+        "verified": "TRUE",
+        "community": "ESSA Gateball CLub",
+        "city": "Bandung City",
+        "name": "ESSA Gateball Field",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/VnAs69nZtUqQE2AW9",
+        "province": "West Java",
+        "status": "Active",
+        "owner": "DRA. Metty Hendriatty, Ak",
+        "address": "Jl. Lemahnendeut No.7, Sukawarna, Kec. Sukajadi, Kota Bandung, Jawa Barat 40164",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          107.579821,
+          -6.884325
+        ],
+        "type": "Point"
+      },
+      "id": "578bb0bff11c296d58bc317d8ca1900d"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-CSL-BGR-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Banggai Regency",
+        "name": "Cafe Gateball Kab. Banggai",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/pX1gFVtUkzQCHUUE8",
+        "province": "Central Sulawesi",
+        "status": "",
+        "owner": "",
+        "address": "Jl. Sugiono, Soho, Luwuk, Kabupaten Banggai, Sulawesi Tengah",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          122.791755,
+          -0.951808
+        ],
+        "type": "Point"
+      },
+      "id": "5b1621ecd83cb1090461425630fbe2fe"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-EKL-EKR-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "East Kutai Regency",
+        "name": "Lapangan Gateball PUPR Kutim",
+        "surface": "Synthetic",
+        "google_maps_url": "https://maps.app.goo.gl/9Lbg7fWEr1g7LQni8",
+        "province": "East Kalimantan",
+        "status": "",
+        "owner": "",
+        "address": "Teluk Lingga, Sangatta Utara, East Kutai Regency, East Kalimantan 75683",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          117.60337,
+          0.520347
+        ],
+        "type": "Point"
+      },
+      "id": "5b48f4ad278250b4079127e9827314ce"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-CJV-SGR-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Sragen Regency",
+        "name": "GOR Diponegoro Sragen",
+        "surface": "",
+        "google_maps_url": "https://maps.app.goo.gl/JvX1sjLqnrUSPxAV9",
+        "province": "Central Java",
+        "status": "",
+        "owner": "",
+        "address": "Dusun Kebayanan Sragen Manggis, Sragen Wetan, Sragen, Sragen Regency, Central Java",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          111.037178,
+          -7.422296
+        ],
+        "type": "Point"
+      },
+      "id": "5d2f79bb8e9b32f34d1d090e0a5962a7"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-CJV-BNR-02",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Banyumas Regency",
+        "name": "Lapangan Gateball GOR Satria Purwokerto",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/ztf4KKPrdUt8EBu5A",
+        "province": "Central Java",
+        "status": "",
+        "owner": "",
+        "address": "Komplek stadion Satria, Limas Permai, Karangwangkal, Purwokerto Utara, Banyumas Regency, Central Java 53123",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          109.250773,
+          -7.414484
+        ],
+        "type": "Point"
+      },
+      "id": "5ef10d91e8c9291c09f37fb82454dbbf"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-NSM-TBR-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Toba Regency",
+        "name": "Lapangan GateBall Balige",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/M8tvDb234w2Dtvf16",
+        "province": "North Sumatra",
+        "status": "",
+        "owner": "",
+        "address": "Silalahi Pagar Batu, Balige, Toba, North Sumatra 22312",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          99.050893,
+          2.332063
+        ],
+        "type": "Point"
+      },
+      "id": "608a1daf9074dc1ca31b378b15f8cf71"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-SLS-MKC-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Makassar City",
+        "name": "Lapangan Hasanuddin",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/7Ftb1jNW3f23vQ5N8",
+        "province": "South Sulawesi",
+        "status": "",
+        "owner": "",
+        "address": "Jl. Jend. Sudirman No.10/14, Sawerigading, Kec. Ujung Pandang, Kota Makassar, Sulawesi Selatan 90115",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          119.415054,
+          -5.14209
+        ],
+        "type": "Point"
+      },
+      "id": "615d066b2792db22fd233e16ca21d430"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-CSL-PLC-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Palu City",
+        "name": "Lapangan Gateball Palu",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/WQmkmqa9ZQ5jmtwz8",
+        "province": "Central Sulawesi",
+        "status": "",
+        "owner": "",
+        "address": "Jl. Towua No.85, Tatura Sel., Kec. Palu Sel., Kota Palu, Sulawesi Tengah 94235",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          119.88298,
+          -0.926525
+        ],
+        "type": "Point"
+      },
+      "id": "62590b35d15c50ab58b969082b1630a9"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-STG-BTN-01",
+        "courts": "1",
+        "verified": "TRUE",
+        "community": "Chilihut Gateball Club",
+        "city": "South Tangerang City",
+        "name": "CHILIHUT GATEBALL COURT",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/igkAWTza46ZhXBs28",
+        "province": "Banten",
+        "status": "Active",
+        "owner": "Puja Samedhi, SE. CES.",
+        "address": "Jl. Taman Pd. Cabe No.5 Blok B 14, Kedaung, Sawangan, Depok City, West Java 16516",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          106.753432,
+          -6.361145
+        ],
+        "type": "Point"
+      },
+      "id": "6317e73ba5dc99039bdcf77c18e62bb5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-CJV-PWR-03",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Purworejo Regency",
+        "name": "Paku Bumi Gateball",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/ajmi6h5hgKd9ZxLF9",
+        "province": "Central Java",
+        "status": "",
+        "owner": "",
+        "address": "Jl. Argorejo, Giri Rejo Timur, Kutoarjo, Kec. Kutoarjo, Kabupaten Purworejo, Jawa Tengah 54251",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          109.914823,
+          -7.714045
+        ],
+        "type": "Point"
+      },
+      "id": "64bf5fb206840defc32fdef3f92cf869"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-EJV-LMR-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Lumajang Regency",
+        "name": "Lapangan Gateball SMAN 2 Lumajang",
+        "surface": "",
+        "google_maps_url": "https://maps.app.goo.gl/nyc22KGyzSbQi899A",
+        "province": "East Java",
+        "status": "",
+        "owner": "",
+        "address": "Jl. H. O.S. Cokroaminoto No.159, Tompokersan, Kec. Lumajang, Kabupaten Lumajang, Jawa Timur 67316",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          113.218488,
+          -8.126066
+        ],
+        "type": "Point"
+      },
+      "id": "7313556a53a00ce37c947ecd82a0263e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-BLI-DPS-03",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Denpasar City ",
+        "name": "Istana Taman Jepun Bali",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/onvVnmPT7LLGLmAr8",
+        "province": "Bali",
+        "status": "",
+        "owner": "",
+        "address": "Jl. Hayam Wuruk Tanjung Bungkak No.104H, Sumerta Kelod, Kec. Denpasar Tim., Kota Denpasar, Bali 80235",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          115.24359,
+          -8.66732
+        ],
+        "type": "Point"
+      },
+      "id": "79f97a3c4dd7065052b4d2c68e18788a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-ROY-BTR-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "Pesisir Gateball Club",
+        "city": "Bantul Regency",
+        "name": "Lapangan Gateball Pesisir GC",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/4DV9pKxxPJKyrPCb7",
+        "province": "Special Region of Yogyakarta",
+        "status": "",
+        "owner": "",
+        "address": "Kalimundu,RT 05, Gadingharjo, Kec. Sanden, Kabupaten Bantul, Daerah Istimewa Yogyakarta 55763",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          110.269073,
+          -7.975508
+        ],
+        "type": "Point"
+      },
+      "id": "7e88476caee83e0e2b760b8201ea0b35"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-EKL-SMC-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Samarinda City",
+        "name": "LAPANGAN GATEBALL",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/Yr37chdzPihCf62Z8",
+        "province": "East Kalimantan",
+        "status": "",
+        "owner": "",
+        "address": "Jl. Wahid Hasyim, Sempaja Sel., Kec. Samarinda Utara, Kota Samarinda, Kalimantan Timur 75243",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          117.156479,
+          -0.454517
+        ],
+        "type": "Point"
+      },
+      "id": "810d8a00f215a602e4f7570a31c48068"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-SWP-SRC-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Sorong City",
+        "name": "LAPANGAN GATEBALL",
+        "surface": "",
+        "google_maps_url": "https://maps.app.goo.gl/BMWqjp55RNSgmvp38",
+        "province": "Southwest Papua",
+        "status": "",
+        "owner": "",
+        "address": "Jl. Sapta Taruna, Sawagumu, Kec. Sorong Utara, Kota Sorong, Papua Barat Daya 98416",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          131.321737,
+          -0.884344
+        ],
+        "type": "Point"
+      },
+      "id": "8171c8c35cd5318756e875c717aef011"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-CJV-PWR-02",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Purworejo Regency",
+        "name": "Lapangan Gateball Kutoarjo",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/wuv6inG4VEGnXiVu7",
+        "province": "Central Java",
+        "status": "",
+        "owner": "",
+        "address": "Jemb. Bandungan, Bandung, Kec. Kutoarjo, Kabupaten Purworejo, Jawa Tengah 54211",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          109.918668,
+          -7.713072
+        ],
+        "type": "Point"
+      },
+      "id": "84421fec6b2ca3bc4130009fd4326784"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-ROY-SLR-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Sleman Regency",
+        "name": "Sarana Olahraga Luar Ruang",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/budvqaDBe9AQS71U8",
+        "province": "Special Region of Yogyakarta",
+        "status": "",
+        "owner": "",
+        "address": "Beran Kidul, Tridadi, Kec. Sleman, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55511",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          110.355955,
+          -7.719013
+        ],
+        "type": "Point"
+      },
+      "id": "860a183c1b74298edd4820717fd2e7a8"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-BLI-BAR-03",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Badung Regency",
+        "name": "Lapangan Pratu Rai Madra Kekeran",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/GWXhgafw2xZhFB5M7",
+        "province": "Bali",
+        "status": "",
+        "owner": "",
+        "address": "Jl. Pratu Rai Madra No.28, Mengwitani, Kec. Mengwi, Kabupaten Badung, Bali 80351",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          115.164766,
+          -8.572146
+        ],
+        "type": "Point"
+      },
+      "id": "882c86df0430c0c281400c20f79d2bdd"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-CJV-KDR-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "Pergatsi Kudus",
+        "city": "Kudus Regency",
+        "name": "Seluna Gateball Center",
+        "surface": "",
+        "google_maps_url": "https://maps.app.goo.gl/B8jWy2yKKmYMboPE6",
+        "province": "Central Java",
+        "status": "",
+        "owner": "",
+        "address": "Area Perkebunan, Garung Lor, Kec. Kaliwungu, Kabupaten Kudus, Jawa Tengah 59332",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          110.806932,
+          -6.79881
+        ],
+        "type": "Point"
+      },
+      "id": "95652eceaf9536e9ea93f1d13043b500"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-NSM-MDC-01",
+        "courts": "4",
+        "verified": "FALSE",
+        "community": "Pergatsi Sumut",
+        "city": "Medan City",
+        "name": "Lapangan Gateball PERGATSI Sumut",
+        "surface": "Synthetic",
+        "google_maps_url": "https://maps.app.goo.gl/vTjhvBcA6gaZF4eS8",
+        "province": "North Sumatra",
+        "status": "",
+        "owner": "",
+        "address": "Medan - Binjai Toll Rd, Tanjung Mulia, Medan Deli, Medan City, North Sumatra 20241",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          98.663122,
+          3.650814
+        ],
+        "type": "Point"
+      },
+      "id": "992cb1d90f3bcc5462414ee89d633b78"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-JKT-EJC-03",
+        "courts": "1",
+        "verified": "TRUE",
+        "community": "Jabodetabek GB",
+        "city": "East Jakarta City ",
+        "name": "Elite KaGeCe Gateball Court",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/ztLx896NobnSUZUr6",
+        "province": "DKI Jakarta",
+        "status": "Active",
+        "owner": "",
+        "address": "Jl. Jambore No.1, RT.8/RW.7, Cibubur, Kec. Ciracas, Kota Jakarta Timur, Jawa Barat 13720",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          106.892789,
+          -6.368144
+        ],
+        "type": "Point"
+      },
+      "id": "9ff8dd59b7c4c4dc3438987bc2942b12"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-CJV-PWR-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Purworejo Regency",
+        "name": "Lapangan Gateball Butuh",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/UdmdehX7tvTPuYQG8",
+        "province": "Central Java",
+        "status": "",
+        "owner": "",
+        "address": "Area Sawah/ Kebun, Dlangu, Butuh, Purworejo Regency, Central Java 54264",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          109.867863,
+          -7.723687
+        ],
+        "type": "Point"
+      },
+      "id": "a04e00cf50ed41b90f02fd97859e3b0b"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-SKL-BKR-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Barito Kuala Regency",
+        "name": "lapangan gate ball batola",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/MaknRCnhfyVpKSMN6",
+        "province": "South Kalimantan",
+        "status": "",
+        "owner": "",
+        "address": "Ulu Benteng, Marabahan, Barito Kuala Regency, South Kalimantan 70513",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          114.742893,
+          -2.981841
+        ],
+        "type": "Point"
+      },
+      "id": "a3a1312654f24da72b8b7156ab93aef2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-NSL-NMR-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "Paniki Gateball Club",
+        "city": "North Minahasa Regency",
+        "name": "Gateball Club Residence",
+        "surface": "",
+        "google_maps_url": "https://maps.app.goo.gl/1qUbgCD89ucLSutv9",
+        "province": "North Sulawesi",
+        "status": "",
+        "owner": "",
+        "address": "Paniki Atas, Talawaan, North Minahasa Regency, North Sulawesi",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          124.921568,
+          1.49557
+        ],
+        "type": "Point"
+      },
+      "id": "a429e2cfec547cae438180d1a9b9c4ef"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-WJV-IDR-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Indramayu Regency",
+        "name": "Lapangan JAGE (Jatibarang Gateball)",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/okuLuxJ55tV6KW69A",
+        "province": "West Java",
+        "status": "",
+        "owner": "",
+        "address": "Jl. Letnan Joni, Jatibarang Baru, Kec. Jatibarang, Kabupaten Indramayu, Jawa Barat 45273",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          108.305388,
+          -6.481392
+        ],
+        "type": "Point"
+      },
+      "id": "b10dd0634e10ed4e323d8de2d1bbd522"
     },
     {
       "type": "Feature",
@@ -2026,7 +1298,735 @@
         ],
         "type": "Point"
       },
-      "id": "ff2b1b447ed85bceb058d3819e68a0b4"
+      "id": "b2caef440f7d2fdf8bc9dd08622ad8cc"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-SLS-SJR-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Sinjai Regency",
+        "name": "Venue gateball sinjai",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/sKbVjXMdRfQWs4Nd6",
+        "province": "South Sulawesi",
+        "status": "",
+        "owner": "",
+        "address": "Bongki, Sinjai Utara, Sinjai Regency, South Sulawesi 92615",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          120.247647,
+          -5.11599
+        ],
+        "type": "Point"
+      },
+      "id": "b435f1a592e06aaf5b63f448944ab567"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-PPA-JPC-02",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Jayapura City",
+        "name": "Lapangan Gateball BPJN Jayapura",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/ee7a56uggogpum8WA",
+        "province": "Papua",
+        "status": "",
+        "owner": "",
+        "address": "Jl. Filadelfia, Asano, Kec. Abepura, Kota Jayapura, Papua 99351",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          140.681282,
+          -2.619556
+        ],
+        "type": "Point"
+      },
+      "id": "b4a99bcd61f620648b4fe9e405c6c0b7"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-GRT-GRC-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Gorontalo City",
+        "name": "D\"WINNER GATEBALL",
+        "surface": "",
+        "google_maps_url": "https://maps.app.goo.gl/uSQ6m4hdUcqSJTsi6",
+        "province": "Gorontalo",
+        "status": "",
+        "owner": "",
+        "address": "Dulomo Selatan, Kota Utara, Kota Gorontalo, Gorontalo 96128",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          123.074551,
+          0.568523
+        ],
+        "type": "Point"
+      },
+      "id": "b8641320e53a9d0db1815d50d3e89042"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-NSM-MDC-02",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Medan City",
+        "name": "Lapangan Gateball PUPR",
+        "surface": "Synthetic",
+        "google_maps_url": "https://maps.app.goo.gl/hgPn4Z5GpdPjj8HP7",
+        "province": "North Sumatra",
+        "status": "",
+        "owner": "",
+        "address": "MM4G+6JV, Tj. Mulia, Medan Deli, Medan City, North Sumatra 20241",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          98.676561,
+          3.655622
+        ],
+        "type": "Point"
+      },
+      "id": "b93a240f44e38cee118ce6b9e1cdc4c3"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-STG-BTN-02",
+        "courts": "",
+        "verified": "TRUE",
+        "community": "",
+        "city": "South Tangerang City",
+        "name": "Jilunk Gateball Court",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/5wbYeiiVdTXUHbkEA",
+        "province": "Banten",
+        "status": "Active",
+        "owner": "",
+        "address": "Jl. Gelagah No.11, RT.2/RW.3, Pisangan, Kec. Ciputat Tim., Kota Tangerang Selatan, Banten 15419",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          106.769915,
+          -6.31728
+        ],
+        "type": "Point"
+      },
+      "id": "bb64d472ae826ab8658f5fd2d3fbb7e0"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-WNT-MTC-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Mataram City",
+        "name": "Lapangan Gateball Aula Irigasi",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/cpVkrMbb2Pd7fQyE9",
+        "province": "West Nusa Tenggara ",
+        "status": "Inactive",
+        "owner": "",
+        "address": "Kekalik Jaya, Sekarbela, Mataram City, West Nusa Tenggara 83115",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          116.099081,
+          -8.591985
+        ],
+        "type": "Point"
+      },
+      "id": "bbc03d1b3653b07a5623ce5a62d576ba"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-WJV-BDC-08",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Bandung City",
+        "name": "POLMAN Gateball Cluba",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/SkG1nAKssK67nYXz9",
+        "province": "West Java",
+        "status": "",
+        "owner": "",
+        "address": "Kanayakan Timur, Dago, Kecamatan Coblong, Kota Bandung, Jawa Barat 40135",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          107.620601,
+          -6.876547
+        ],
+        "type": "Point"
+      },
+      "id": "c300d915ec776414b469d3a7c28e53d4"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-WKM-PTC-01",
+        "courts": "1",
+        "verified": "TRUE",
+        "community": "BWSK 1 PONTIANAK",
+        "city": "Pontianak City ",
+        "name": "Kapuas Gateball Court",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/kfQ3MBvUf9eWfMWE8",
+        "province": "West Kalimantan",
+        "status": "Active",
+        "owner": "",
+        "address": "Jl. A Sood, Akcaya, Kec. Pontianak Sel., Kota Pontianak, Kalimantan Barat",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          109.334715,
+          -0.040742
+        ],
+        "type": "Point"
+      },
+      "id": "c52241c11160954307926f0fcbb30366"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-CSL-PMR-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Parigi Moutong Regency",
+        "name": "LAPANGAN GATEBALL BOLANO",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/7komEZQD4Mghre668",
+        "province": "Central Sulawesi",
+        "status": "",
+        "owner": "",
+        "address": "Jl. Trans Sulawesi, Bolano, Kec. Bolano Lambunu, Kabupaten Parigi Moutong, Sulawesi Tengah 94479",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          120.955086,
+          0.443227
+        ],
+        "type": "Point"
+      },
+      "id": "c7cfeb8f0ddbaab0d8a1bb12253d974c"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-ACH-BAC-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Banda Aceh City",
+        "name": "Lapangan Gateball BWS-SI",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/Pmrzqd9GPUKeAnvHA",
+        "province": "Aceh",
+        "status": "",
+        "owner": "",
+        "address": "Jln. Ir. Mohd. Thaher No.14, Lueng Bata, Banda Aceh City, Aceh 23123",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          95.337085,
+          5.540063
+        ],
+        "type": "Point"
+      },
+      "id": "c9ce5bd26081a93e6b8863fa47b3df98"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-WJV-BDC-03",
+        "courts": "2",
+        "verified": "TRUE",
+        "community": "",
+        "city": "Bandung City",
+        "name": "DSC (Dyah Saturnus Court)",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/HcNN4kgNiHVWkN7P9",
+        "province": "West Java",
+        "status": "Active",
+        "owner": "Dyah",
+        "address": "Jl. Saturnus Ujung No.19, Manjahlega, Kec. Rancasari, Kota Bandung, Jawa Barat 40286",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          107.668514,
+          -6.953422
+        ],
+        "type": "Point"
+      },
+      "id": "cece9a37886d48ad8564be3009134f8a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-EJV-MLR-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Malang Regency",
+        "name": "Mulyoagung Gateball",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/4MSZ4eiPbsCGBt138",
+        "province": "East Java",
+        "status": "",
+        "owner": "",
+        "address": "Jl. TPST, Jetak Lor, Mulyoagung, Kec. Dau, Kabupaten Malang, Jawa Timur 65151",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          112.584083,
+          -7.923181
+        ],
+        "type": "Point"
+      },
+      "id": "d0e45fe67b9a37de67916bc9dc89a3bf"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-WJV-BDC-05",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Bandung City",
+        "name": "Hegarmanah Gateball Field",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/SWxSy3LJ4Vviusr16",
+        "province": "West Java",
+        "status": "",
+        "owner": "",
+        "address": "Jl. Hegarmanah No.10, Hegarmanah, Kec. Cidadap, Kota Bandung, Jawa Barat 40141",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          107.602294,
+          -6.881807
+        ],
+        "type": "Point"
+      },
+      "id": "d717b723513a7531a392ab2527e58d94"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-WJV-BDC-01",
+        "courts": "3",
+        "verified": "TRUE",
+        "community": "GB 5, SWR",
+        "city": "Bandung City",
+        "name": "Bikasoga Gateball 5 Stadium",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/okXNnD6Fqv9Hq9eK7",
+        "province": "West Java",
+        "status": "Active",
+        "owner": "Kery",
+        "address": "Jl. Suryalaya Indah No.1-3, Cijagra, Kec. Lengkong, Kota Bandung, Jawa Barat 40265",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          107.625135,
+          -6.944116
+        ],
+        "type": "Point"
+      },
+      "id": "d73a2c13387ea3dd4fcd7b974d50a9e9"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-WJV-CRC-01",
+        "courts": "1",
+        "verified": "TRUE",
+        "community": "Grage",
+        "city": "Cirebon City",
+        "name": "Basecamp Grage Gateball Club",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/KAn6hKGhRe8nxGDm9",
+        "province": "West Java",
+        "status": "Active",
+        "owner": "",
+        "address": "Gg. Sigaran No.10, Karyamulya, Kec. Kesambi, Kota Cirebon, Jawa Barat 45131",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          108.542304,
+          -6.738821
+        ],
+        "type": "Point"
+      },
+      "id": "d9ede705d13dc45a6faf4f9f8410eb77"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-CPA-NBR-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "PJN VII PAPUA (NABIRE)",
+        "city": "Nabire Regency",
+        "name": "LAPANGAN GATEBALL DPUPR",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/GWQQBy1mPrhJUShC7",
+        "province": "Central Papua",
+        "status": "",
+        "owner": "",
+        "address": "Jl. Merdeka, Karang Mulia, Distrik Nabire, Kabupaten Nabire, Papua Tengah 98811",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          135.506798,
+          -3.370095
+        ],
+        "type": "Point"
+      },
+      "id": "dc3a867c0ba9c2ea68345c55b09c2820"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-ROY-YGC-01",
+        "courts": "1",
+        "verified": "FALSE",
+        "community": "Banaran Gateball Club",
+        "city": "Yogyakarta City",
+        "name": "BGC - Banaran Gateball Club",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/Xks2WZokTpm3yCfr8",
+        "province": "Special Region of Yogyakarta",
+        "status": "",
+        "owner": "",
+        "address": "Banaran IX, Banaran, Playen, Gunungkidul Regency, Special Region of Yogyakarta 55861",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          110.537777,
+          -7.926867
+        ],
+        "type": "Point"
+      },
+      "id": "e3ad26be5a79e4ee44960f4229b067f8"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-CJV-SKR-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "Jasa Tirta I",
+        "city": "Sukoharjo Regency",
+        "name": "Lapangan Gateball Jasa Tirta Solo",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/HRuMpyQU3pXQ6Wup9",
+        "province": "Central Java",
+        "status": "",
+        "owner": "",
+        "address": "Banaran, Pabelan, Kec. Kartasura, Kabupaten Sukoharjo, Jawa Tengah 57169",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          110.768515,
+          -7.560171
+        ],
+        "type": "Point"
+      },
+      "id": "e557980dc9e0de23bb79ff60088db9e2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-WSM-PDC-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Padang City",
+        "name": "Dinas Bina Marga Cipta Karya dan Tata Ruang Provinsi Sumatera Barat",
+        "surface": "",
+        "google_maps_url": "https://maps.app.goo.gl/eD7eJN5HgwtBRzjM7",
+        "province": "West Sumatra",
+        "status": "",
+        "owner": "",
+        "address": "Jl. Tamansiswa No.1A, Alai Parak Kopi, Kec. Padang Utara, Kota Padang, Sumatera Barat 25139",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          100.363658,
+          -0.929895
+        ],
+        "type": "Point"
+      },
+      "id": "ec1c9db667a024a1a2c396ddb0f2c93e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-ACH-ABR-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Aceh Besar Regency",
+        "name": "Lapangan Gate Ball",
+        "surface": "",
+        "google_maps_url": "https://maps.app.goo.gl/PkMj7hZxB4yFVCCa8",
+        "province": "Aceh",
+        "status": "",
+        "owner": "",
+        "address": "Lamcot, Darul Imarah, Aceh Besar Regency, Aceh 23242",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          95.329152,
+          5.524193
+        ],
+        "type": "Point"
+      },
+      "id": "ed6e66af1e0e2b1f1c7d03b5455812df"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-JKT-CJK-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Central Jakarta City",
+        "name": "Lapangan Gateball GBK",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/Vw3pMwkbEx7m5Kr5A",
+        "province": "DKI Jakarta",
+        "status": "Inactive",
+        "owner": "",
+        "address": "Jl. Gerbang Pemuda No.3, RT.1/RW.3, Gelora, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10270",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          106.804153,
+          -6.213628
+        ],
+        "type": "Point"
+      },
+      "id": "eed8dd130daac5c089714bf1b6541353"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-BLI-BLG-03",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Buleleng Regency",
+        "name": "Gate Ball Corner Lapangan Ngurah Rai",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/k2cyWkzgKntTYxJY7",
+        "province": "Bali",
+        "status": "",
+        "owner": "",
+        "address": "Singaraja, Banjar Jawa, Kec. Buleleng, Kabupaten Buleleng, Bali 81113",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          115.091067,
+          -8.116857
+        ],
+        "type": "Point"
+      },
+      "id": "f35635e9ecd9f5fb2825795dda48fb3e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-LPG-BLC-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Bandar Lampung City",
+        "name": "PERDANA GATEBALL CLUB",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/c5hYrnmh75gYTNHfA",
+        "province": "Lampung",
+        "status": "",
+        "owner": "",
+        "address": "Labuhan Dalam, Tanjung Senang, Bandar Lampung City, Lampung 35141",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          105.262246,
+          -5.351575
+        ],
+        "type": "Point"
+      },
+      "id": "f5921a83ed4b484c7fca34410849d018"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-STG-BTN-03",
+        "courts": "",
+        "verified": "TRUE",
+        "community": "",
+        "city": "South Tangerang City",
+        "name": "SARUAH GATEBALL COURT",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/R4FoC1qkhxYX1KXf8",
+        "province": "Banten",
+        "status": "Active",
+        "owner": "",
+        "address": "Jl. Suka Karya, Serua Indah, Kec. Ciputat, Kota Tangerang Selatan, Banten 15414",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          106.722134,
+          -6.320087
+        ],
+        "type": "Point"
+      },
+      "id": "f6de8dec93046c8accf3714e9044b1a0"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-JKT-NJK-01",
+        "courts": "5",
+        "verified": "TRUE",
+        "community": "GGC",
+        "city": "North Jakarta",
+        "name": "Gading Gateball Centre (GGC)",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.google.com/?cid=14482586330208753459",
+        "province": "DKI Jakarta",
+        "status": "Active",
+        "owner": "",
+        "address": "Komplek Imperial Gading blok D1 no 23, RT08, RW.08, Sukapura, Cilincing, North Jakarta City, Jakarta 14140",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          106.926902,
+          -6.158599
+        ],
+        "type": "Point"
+      },
+      "id": "f79a6594610d8b263588e828b4c4f403"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-SLS-GWR-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Gowa Regency",
+        "name": "Taman Sultan Hasanuddin",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/uaZBDAFB3r9Mt8UF6",
+        "province": "South Sulawesi",
+        "status": "",
+        "owner": "",
+        "address": "Jl. Tumanurung Raya, Pandang Pandang, Kec. Somba Opu, Kabupaten Gowa, Sulawesi Selatan 92114",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          119.448876,
+          -5.19931
+        ],
+        "type": "Point"
+      },
+      "id": "fbbbacf1d9d47c66b493f64d62ae1ab1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-NSM-DSR-01",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Deli Serdang Regency",
+        "name": "Lapangan Pon Gateball",
+        "surface": "",
+        "google_maps_url": "https://maps.app.goo.gl/cpeaCKkcPT2vMyX5A",
+        "province": "North Sumatra",
+        "status": "",
+        "owner": "",
+        "address": "",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          98.721699,
+          3.522515
+        ],
+        "type": "Point"
+      },
+      "id": "fc5eb23fd336c4a96828c7e8b252abae"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "field_id": "ID-ROY-YGC-02",
+        "courts": "",
+        "verified": "FALSE",
+        "community": "",
+        "city": "Yogyakarta City",
+        "name": "LAPANGAN NGAWU",
+        "surface": "Grass",
+        "google_maps_url": "https://maps.app.goo.gl/G1iPcE5NvMPZPxyf9",
+        "province": "Special Region of Yogyakarta",
+        "status": "",
+        "owner": "",
+        "address": "Tumpak, Ngawu, Kec. Playen, Kabupaten Gunungkidul, Daerah Istimewa Yogyakarta 55861",
+        "country": "Indonesia"
+      },
+      "geometry": {
+        "coordinates": [
+          110.548693,
+          -7.940411
+        ],
+        "type": "Point"
+      },
+      "id": "ff40e186972b8510a836bf1573c7f4d3"
     }
   ],
   "type": "FeatureCollection"
