@@ -529,9 +529,13 @@ const map = new mapboxgl.Map({
     // block long press & selection on MAP ONLY
     ["touchstart", "touchmove", "touchend"].forEach(evt => {
       canvas.addEventListener(evt, e => {
-        if (!e.target.closest("#agari-sheet")) {
-          e.preventDefault();
-        }
+      if (
+        !document.getElementById("disclaimer-overlay") &&
+        !e.target.closest("#agari-sheet")
+      ) {
+        e.preventDefault();
+      }
+
       }, { passive: false });
     });
 
