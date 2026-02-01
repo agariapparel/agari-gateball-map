@@ -53,18 +53,44 @@
       -webkit-touch-callout: none !important;
     }
 
-
-
-    /* ===== AGARI ===== */
+    /* ===== MARKER CORE ===== */
     .agari-marker {
-      width: 50px;
-      height: 50px;
-      background-image: url("public/markers/agari-pin-10kb.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      cursor: pointer;
-      filter: drop-shadow(0 2px 3px rgba(0,0,0,0.25));
+      transition:
+        transform .25s cubic-bezier(.2,.8,.2,1),
+        filter .25s ease,
+        opacity .25s ease;
     }
+    
+    /* hover affordance */
+    .agari-marker:hover {
+      transform: translateY(-6px) scale(1.05);
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,.35));
+    }
+    
+    /* active (selected) */
+    .agari-marker.active {
+      transform: translateY(-12px) scale(1.18);
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,.45));
+      z-index: 10;
+    }
+    
+    /* verified pulse */
+    .agari-marker.verified::after {
+      content:"";
+      position:absolute;
+      inset:-6px;
+      border-radius:50%;
+      background: rgba(15,122,74,.25);
+      animation: agari-pulse 2.2s infinite;
+      z-index:-1;
+    }
+    
+    @keyframes agari-pulse {
+      0%   { transform: scale(.7); opacity:.6 }
+      70%  { opacity:.15 }
+      100% { transform: scale(1.8); opacity:0 }
+    }
+
 
     /* ===== BOTTOM SHEET ===== */
     .sheet {
@@ -597,6 +623,11 @@ if (navigator.geolocation) {
 
     sheet.classList.remove("show");
     document.body.classList.remove("sheet-open");
+
+        // 🔥 reset active marker
+  document
+    .querySelectorAll(".agari-marker")
+    .forEach(m => m.classList.remove("active"));
   }
 
 // ===== LOAD GEOJSON =====
@@ -608,6 +639,19 @@ fetch("./public/gateball-fields.geojson")
    data.features.forEach((feature) => {
     const el = document.createElement("div");
     el.className = "agari-marker";
+
+     data.features.forEach((feature) => {
+  const el = document.createElement("div");
+  el.className = "agari-marker";
+
+  // ✅ TAMBAHAN: verified pulse
+  if (
+    feature.properties.verified === true ||
+    feature.properties.verified === "true"
+  ) {
+    el.classList.add("verified");
+  }
+
   
     // hover cursor
     el.addEventListener("mouseenter", () => {
@@ -628,7 +672,15 @@ fetch("./public/gateball-fields.geojson")
   
     el.addEventListener("click", (e) => {
       e.stopPropagation();
-  
+    
+      // 🔥 TAMBAHAN: reset semua marker
+      document
+        .querySelectorAll(".agari-marker")
+        .forEach(m => m.classList.remove("active"));
+    
+      // 🔥 TAMBAHAN: aktifin marker ini
+      el.classList.add("active");
+    
       map.flyTo({
         center: feature.geometry.coordinates,
         zoom: Math.max(map.getZoom(), 12),
@@ -636,9 +688,10 @@ fetch("./public/gateball-fields.geojson")
         offset: [0, -200],
         essential: true
       });
-  
+    
       openBottomSheet(feature);
     });
+
   });
 });
   
