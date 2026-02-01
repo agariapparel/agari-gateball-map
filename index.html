@@ -889,10 +889,11 @@ searchInput.addEventListener("input", () => {
       li.addEventListener("click", () => {
         map.flyTo({
           center: feature.geometry.coordinates,
-          zoom: 12,
-          speed: 0.9,
+          zoom: Math.max(map.getZoom(), 12),
+          speed: 0.8,
+          offset: [0, -200],
           essential: true
-        });
+          });
 
         openBottomSheet(feature);
 
