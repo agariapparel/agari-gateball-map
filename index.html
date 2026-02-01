@@ -838,6 +838,7 @@ searchInput.addEventListener("input", () => {
 
   searchDebounceTimer = setTimeout(() => {
     const rawQuery = searchInput.value.trim();
+    const safeQuery = escapeHTML(rawQuery);
     const query = normalize(rawQuery);
     searchResults.innerHTML = "";
 
@@ -862,7 +863,7 @@ searchInput.addEventListener("input", () => {
       const li = document.createElement("li");
 
     li.innerHTML = `
-      <strong>Can’t find “${rawQuery}”?</strong><br>
+      <strong>Can’t find “${safeQuery}”?</strong><br>
       <span style="font-size:12px;color:#666;">
         Contribute now →
       </span>
@@ -916,6 +917,16 @@ searchInput.addEventListener("blur", () => {
   map.scrollZoom.enable();
   map.touchZoomRotate.enable();
 });
+
+function escapeHTML(str = "") {
+  return str.replace(/[&<>"']/g, m => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  }[m]));
+}
 
 </script>
 
