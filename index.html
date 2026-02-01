@@ -346,6 +346,12 @@ color: #777;
     width: calc(100vw - 24px);
   }
 }
+@media (max-width: 640px) {
+  #agari-search-input {
+    font-size: 16px; /* 🚨 prevent iOS auto zoom */
+  }
+}
+
 
   </style>
 
@@ -900,6 +906,16 @@ searchInput.addEventListener("input", () => {
 
 // close result when clicking map
 map.on("click", closeSearchResults);
+
+searchInput.addEventListener("focus", () => {
+  map.scrollZoom.disable();
+  map.touchZoomRotate.disable();
+});
+
+searchInput.addEventListener("blur", () => {
+  map.scrollZoom.enable();
+  map.touchZoomRotate.enable();
+});
 
 </script>
 
