@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AGARI | Gateball Map®</title>
+  <title>Gateball Map® | AGARI</title>
+
+  <meta name="description"
+  content="A growing interactive map of Gateball courts and communities. Managed by AGARI to support the growth of Gateball nationwide." />
+  
+  <link rel="canonical" href="https://map.agari.id/" />
 
   <!-- favicon -->
   <link rel="icon" href="public/favicon.ico" />
@@ -288,6 +293,22 @@
     }
 
   </style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Gateball Map of Indonesia",
+  "description": "Interactive map of Gateball courts and communities across Indonesia, powered by AGARI.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "AGARI",
+    "url": "https://www.agari.id"
+  },
+  "url": "https://map.agari.id/"
+}
+</script>
+
 </head>
 
 <body>
@@ -331,6 +352,39 @@
 </div>
 
 <div id="map"></div>
+
+  <!-- ===== SEO CONTENT (VISIBLE TO CRAWLERS) ===== -->
+<section id="seo-content" style="
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0.01;
+  pointer-events: none;
+">
+
+  <h1>Gateball Map of Indonesia</h1>
+
+  <p>
+    This interactive map shows Gateball courts, clubs, and communities across Indonesia.
+    It is maintained by AGARI to document and support the growth of Gateball nationwide.
+  </p>
+
+  <h2>Gateball Communities Across Provinces</h2>
+  <p>
+    Gateball was introduced to Indonesia in 2013 and has since expanded to multiple provinces.
+    This map helps players, organizers, and newcomers discover Gateball locations and verified courts.
+  </p>
+
+  <h2>About AGARI Gateball Map</h2>
+  <p>
+    AGARI Gateball Map is a community-driven project.
+    Some locations are verified by AGARI, while others rely on public submissions.
+  </p>
+</section>
+
 
 <div id="agari-sheet" class="sheet">
   <div class="sheet-handle"></div>
