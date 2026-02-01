@@ -10,287 +10,287 @@
   
   <link rel="canonical" href="https://map.agari.id/" />
 
-  <!-- favicon -->
-  <link rel="icon" href="public/favicon.ico" />
+<!-- favicon -->
+<link rel="icon" href="public/favicon.ico" />
 
-  <!-- MAPBOX -->
-  <link
-    href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css"
-    rel="stylesheet"
-  />
-  <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+<!-- MAPBOX -->
+<link
+href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css"
+rel="stylesheet"
+/>
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
 
-  <style>
-    body { margin: 0; font-family: "Noto Sans JP", system-ui, sans-serif; }
-    #map { position: fixed; inset: 0; }
+<style>
+body { margin: 0; font-family: "Noto Sans JP", system-ui, sans-serif; }
+#map { position: fixed; inset: 0; }
 
-        /* ===== PREVENT PULL TO REFRESH ===== */
-    html, body {
-      overscroll-behavior-y: none;
-    }
+/* ===== PREVENT PULL TO REFRESH ===== */
+html, body {
+overscroll-behavior-y: none;
+}
 
-    /* ===== LOCK SCROLL WHEN SHEET OPEN ===== */
-    body.sheet-open {
-      overflow: hidden;
-      touch-action: none;
-    }
-        /* ===== DRAG PREP ===== */
-    .sheet {
-      will-change: transform;
-      touch-action: pan-y;
-    }
-    .sheet-handle {
-      touch-action: pan-y;
-    }
+/* ===== LOCK SCROLL WHEN SHEET OPEN ===== */
+body.sheet-open {
+overflow: hidden;
+touch-action: none;
+}
+/* ===== DRAG PREP ===== */
+.sheet {
+will-change: transform;
+touch-action: pan-y;
+}
+.sheet-handle {
+touch-action: pan-y;
+}
 
-    .sheet.dragging {
-      transition: none; /* finger-follow */
-    }
-    /* ===== HARD BLOCK iOS CALLOUT ON MAPBOX CANVAS ===== */
-    .mapboxgl-canvas {
-      -webkit-user-select: none !important;
-      user-select: none !important;
-      -webkit-touch-callout: none !important;
-    }
+.sheet.dragging {
+transition: none; /* finger-follow */
+}
+/* ===== HARD BLOCK iOS CALLOUT ON MAPBOX CANVAS ===== */
+.mapboxgl-canvas {
+-webkit-user-select: none !important;
+user-select: none !important;
+-webkit-touch-callout: none !important;
+}
 
 
 
-    /* ===== AGARI ===== */
-    .agari-marker {
-      width: 50px;
-      height: 50px;
-      background-image: url("public/markers/agari-pin-10kb.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      cursor: pointer;
-      filter: drop-shadow(0 2px 3px rgba(0,0,0,0.25));
-    }
+/* ===== AGARI ===== */
+.agari-marker {
+width: 50px;
+height: 50px;
+background-image: url("public/markers/agari-pin-10kb.png");
+background-size: contain;
+background-repeat: no-repeat;
+cursor: pointer;
+filter: drop-shadow(0 2px 3px rgba(0,0,0,0.25));
+}
 
-    /* ===== BOTTOM SHEET ===== */
-    .sheet {
-      position: fixed;
-      left: 0; right: 0; bottom: 0;
-      background: #fff;
-      border-radius: 20px 20px 0 0;
-      padding: 12px 20px 20px;
-      transform: translateY(100%);
-      transition: transform .35s ease;
-      box-shadow: 0 -10px 30px rgba(0,0,0,.15);
-      z-index: 20;
-    }
-    /* 👉 BIAR BUTTON & LINK GAK KETARIK DRAG */
-    .sheet a,
-    .sheet button {
-      touch-action: manipulation;
-    }
-    .sheet-header {
-      position: relative;
-      padding-top: 2px;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 6px 8px;
-      align-items: start;
-    }
-    .sheet-header h2 {
-      font-size: 20px;
-      font-weight: 600;
-      margin: 0;
-      line-height: 1.25;
-      max-width: 100%;
-      word-break: break-word;
-    }
-    .sheet.show { transform: translateY(0);
-    }
-    .sheet-handle {
-      width: 40px; height: 4px;
-      background: #ccc;
-      margin: 0 auto 12px;
-      border-radius: 2px;
-    }
-    /* ===== BADGES ===== */
-    .sheet-badges {
-      flex-direction: column;
-      display: flex;
-      gap: 6px;
-      align-items: flex-end;
-    }
-    .status-badge, .verified-badge, .unverified-badge {
-      display: inline-block;
-      font-size: 11px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-weight: 500;
-    }
-    .status-active { background:#e6f6ee;color:#0f7a4a; }
-    .status-inactive { background:#fdecec;color:#a02a2a; }
-    .verified-badge { background:#e8f8ef;color:#1e7f4f; }
-    .unverified-badge { background:#f2f2f2;color:#666; }
+/* ===== BOTTOM SHEET ===== */
+.sheet {
+position: fixed;
+left: 0; right: 0; bottom: 0;
+background: #fff;
+border-radius: 20px 20px 0 0;
+padding: 12px 20px 20px;
+transform: translateY(100%);
+transition: transform .35s ease;
+box-shadow: 0 -10px 30px rgba(0,0,0,.15);
+z-index: 20;
+}
+/* 👉 BIAR BUTTON & LINK GAK KETARIK DRAG */
+.sheet a,
+.sheet button {
+touch-action: manipulation;
+}
+.sheet-header {
+position: relative;
+padding-top: 2px;
+display: grid;
+grid-template-columns: minmax(0, 1fr) auto;
+gap: 6px 8px;
+align-items: start;
+}
+.sheet-header h2 {
+font-size: 20px;
+font-weight: 600;
+margin: 0;
+line-height: 1.25;
+max-width: 100%;
+word-break: break-word;
+}
+.sheet.show { transform: translateY(0);
+}
+.sheet-handle {
+width: 40px; height: 4px;
+background: #ccc;
+margin: 0 auto 12px;
+border-radius: 2px;
+}
+/* ===== BADGES ===== */
+.sheet-badges {
+flex-direction: column;
+display: flex;
+gap: 6px;
+align-items: flex-end;
+}
+.status-badge, .verified-badge, .unverified-badge {
+display: inline-block;
+font-size: 11px;
+padding: 4px 10px;
+border-radius: 999px;
+font-weight: 500;
+}
+.status-active { background:#e6f6ee;color:#0f7a4a; }
+.status-inactive { background:#fdecec;color:#a02a2a; }
+.verified-badge { background:#e8f8ef;color:#1e7f4f; }
+.unverified-badge { background:#f2f2f2;color:#666; }
 
-        /* ===== ADDRESS ===== */
-    .sheet-address {
-      font-size: 13px;
-      color: #666;
-      line-height: 1.4;
-      margin: 8px 0 16px;
-      max-width: 100%;
-      word-break: break-word;
-    }
-    
-    /* ===== META GRID ===== */
-    .sheet-meta {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px 16px;
-      margin-bottom: 18px;
-    }
-    
-    .sheet-meta span {
-      font-size: 12px;
-      color: #999;
-    }
-    
-    .sheet-meta strong {
-      display: block;
-      margin-top: 2px;
-      font-size: 14px;
-      font-weight: 500;
-      color: #111;
-    }
-    
-    /* ===== VERIFY LINK ===== */
-    .sheet-verify-wrap {
-      display: flex;
-      justify-content: center;
-      margin: 8px 0 14px;
-    }
-    
-    .sheet-verify {
-      display: inline-block;
-      font-size: 13px;
-      color: #555;
-      text-decoration: underline;
-    }
+/* ===== ADDRESS ===== */
+.sheet-address {
+font-size: 13px;
+color: #666;
+line-height: 1.4;
+margin: 8px 0 16px;
+max-width: 100%;
+word-break: break-word;
+}
 
-    body.sheet-open #agari-global-cta-wrapper { opacity:.25 }
-    #agari-global-cta-wrapper {
-      position: fixed; top: 16px; right: 12px;
-      pointer-events: none; z-index: 50;
-    }
+/* ===== META GRID ===== */
+.sheet-meta {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 14px 16px;
+margin-bottom: 18px;
+}
 
-    /* ===== CTA ===== */
-    .sheet-cta-wrap {
-      display: flex;
-      justify-content: center;
-    }
-    
-    .sheet-button {
-      width: 100%;
-      text-align: center;
-      padding: 14px;
-      background: #111;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 12px;
-      font-size: 15px;
-    }
+.sheet-meta span {
+font-size: 12px;
+color: #999;
+}
 
-    #agari-global-cta {
-      pointer-events: auto;
-      padding: 6px 12px;
-      background: rgba(0,0,0,.35);
-      color: #fff;
-      border-radius: 999px;
-      text-decoration: none;
-      backdrop-filter: blur(6px);
-      font-size: 12px;
-    }
-    .mapboxgl-ctrl-attrib a {
-      display: none !important;
-    }
+.sheet-meta strong {
+display: block;
+margin-top: 2px;
+font-size: 14px;
+font-weight: 500;
+color: #111;
+}
+
+/* ===== VERIFY LINK ===== */
+.sheet-verify-wrap {
+display: flex;
+justify-content: center;
+margin: 8px 0 14px;
+}
+
+.sheet-verify {
+display: inline-block;
+font-size: 13px;
+color: #555;
+text-decoration: underline;
+}
+
+body.sheet-open #agari-global-cta-wrapper { opacity:.25 }
+#agari-global-cta-wrapper {
+position: fixed; top: 16px; right: 12px;
+pointer-events: none; z-index: 50;
+}
+
+/* ===== CTA ===== */
+.sheet-cta-wrap {
+display: flex;
+justify-content: center;
+}
+
+.sheet-button {
+width: 100%;
+text-align: center;
+padding: 14px;
+background: #111;
+color: #fff;
+text-decoration: none;
+border-radius: 12px;
+font-size: 15px;
+}
+
+#agari-global-cta {
+pointer-events: auto;
+padding: 6px 12px;
+background: rgba(0,0,0,.35);
+color: #fff;
+border-radius: 999px;
+text-decoration: none;
+backdrop-filter: blur(6px);
+font-size: 12px;
+}
+.mapboxgl-ctrl-attrib a {
+display: none !important;
+}
 /* ===== OVERLAY ROOT ===== */
-    #overlay-root {
-      position: fixed;
-      inset: 0;
-      z-index: 15;        /* di atas map (0), di bawah sheet (20) */
-      pointer-events: none;
-    }
-    
-    /* ===== POWERED BY AGARI ===== */
-    #agari-powered {
-      position: absolute;
-      right: 16px;
-      bottom: 12px;
-    
-      font-size: 14px;
-      letter-spacing: 0.04em;
-      color: rgba(255,255,255,0.8);
-      white-space: nowrap;
-    }
-    /* ===== DISCLAIMER OVERLAY ===== */
+#overlay-root {
+position: fixed;
+inset: 0;
+z-index: 15;        /* di atas map (0), di bawah sheet (20) */
+pointer-events: none;
+}
 
-    #disclaimer-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 999;
-      background: rgba(0,0,0,0.45);
-      backdrop-filter: blur(6px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+/* ===== POWERED BY AGARI ===== */
+#agari-powered {
+position: absolute;
+right: 16px;
+bottom: 12px;
 
-    .disclaimer-card {
-      background: #fff;
-      max-width: 420px;
-      width: calc(100% - 32px);
-      padding: 24px;
-      border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,.2);
-    }
+font-size: 14px;
+letter-spacing: 0.04em;
+color: rgba(255,255,255,0.8);
+white-space: nowrap;
+}
+/* ===== DISCLAIMER OVERLAY ===== */
 
-    .disclaimer-card h2 {
-      margin: 0 0 12px;
-      font-size: 20px;
-      font-weight: 600;
-    }
+#disclaimer-overlay {
+position: fixed;
+inset: 0;
+z-index: 999;
+background: rgba(0,0,0,0.45);
+backdrop-filter: blur(6px);
+display: flex;
+align-items: center;
+justify-content: center;
+}
 
-    .disclaimer-card p {
-      font-size: 14px;
-      color: #444;
-      line-height: 1.5;
-      margin-bottom: 14px;
-    }
+.disclaimer-card {
+background: #fff;
+max-width: 420px;
+width: calc(100% - 32px);
+padding: 24px;
+border-radius: 20px;
+text-align: center;
+box-shadow: 0 20px 40px rgba(0,0,0,.2);
+}
 
-    .disclaimer-card ul {
-      text-align: left;
-      padding-left: 18px;
-      margin: 0 0 18px;
-      font-size: 13px;
-      color: #555;
-    }
+.disclaimer-card h2 {
+margin: 0 0 12px;
+font-size: 20px;
+font-weight: 600;
+}
 
-    .disclaimer-card li {
-      margin-bottom: 6px;
-    }
+.disclaimer-card p {
+font-size: 14px;
+color: #444;
+line-height: 1.5;
+margin-bottom: 14px;
+}
 
-    .disclaimer-card button {
-      width: 100%;
-      padding: 14px;
-      border-radius: 12px;
-      border: none;
-      background: #111;
-      color: #fff;
-      font-size: 15px;
-      font-weight: 500;
-    }
+.disclaimer-card ul {
+text-align: left;
+padding-left: 18px;
+margin: 0 0 18px;
+font-size: 13px;
+color: #555;
+}
 
-    .disclaimer-card small {
-      display: block;
-      margin-top: 12px;
-      font-size: 12px;
-      color: #777;
-    }
+.disclaimer-card li {
+margin-bottom: 6px;
+}
+
+.disclaimer-card button {
+width: 100%;
+padding: 14px;
+border-radius: 12px;
+border: none;
+background: #111;
+color: #fff;
+font-size: 15px;
+font-weight: 500;
+}
+
+.disclaimer-card small {
+display: block;
+margin-top: 12px;
+font-size: 12px;
+color: #777;
+}
 
   </style>
 
@@ -315,40 +315,40 @@
 
 <!-- ===== DISCLAIMER OVERLAY ===== -->
 <div id="disclaimer-overlay">
-  <div class="disclaimer-card">
-    <h2>AGARI Gateball Map</h2>
+<div class="disclaimer-card">
+<h2>AGARI Gateball Map</h2>
 
-    <p>
-      Community-driven map of everything Gateball-related. 
-      Some court data may be incomplete or not yet verified.
-    </p>
+<p>
+Community-driven map of everything Gateball-related. 
+Some court data may be incomplete or not yet verified.
+</p>
 
-    <ul>
-      <li>✔ AGARI Verified courts are reviewed</li>
-      <li>📍 Locations may change over time</li>
-      <li>⚠ Always confirm availability before visiting</li>
-    </ul>
+<ul>
+<li>✔ AGARI Verified courts are reviewed</li>
+<li>📍 Locations may change over time</li>
+<li>⚠ Always confirm availability before visiting</li>
+</ul>
 
-    <button id="disclaimer-accept">
-      Enter Map
-    </button>
+<button id="disclaimer-accept">
+Enter Map
+</button>
 
-    <small>
-      Want to help improve this map?
-    </small>
-  </div>
+<small>
+Want to help improve this map?
+</small>
+</div>
 </div>
 
-  <div id="overlay-root">
-  <div id="agari-powered">
-    Powered by AGARI © 2026
-  </div>
+<div id="overlay-root">
+<div id="agari-powered">
+Powered by AGARI © 2026
+</div>
 </div>
 
 <div id="agari-global-cta-wrapper">
-  <a id="agari-global-cta" href="https://www.agari.id/submit-your-location" target="_blank">
-    + Contribute
-  </a>
+<a id="agari-global-cta" href="https://www.agari.id/submit-your-location" target="_blank">
++ Contribute
+</a>
 </div>
 
 <div id="map"></div>
@@ -387,360 +387,360 @@
 
 
 <div id="agari-sheet" class="sheet">
-  <div class="sheet-handle"></div>
+<div class="sheet-handle"></div>
 
-  <div class="sheet-header">
-    <h2 id="sheet-name"></h2>
+<div class="sheet-header">
+<h2 id="sheet-name"></h2>
 
-    <div class="sheet-badges">
-      <span id="sheet-status" class="status-badge"></span>
-      <span id="sheet-verified" class="verified-badge">✔ AGARI Verified</span>
-      <span id="sheet-unverified" class="unverified-badge">Unverified</span>
-    </div>
-  </div>
+<div class="sheet-badges">
+<span id="sheet-status" class="status-badge"></span>
+<span id="sheet-verified" class="verified-badge">✔ AGARI Verified</span>
+<span id="sheet-unverified" class="unverified-badge">Unverified</span>
+</div>
+</div>
 
-  <p id="sheet-address" class="sheet-address"></p>
+<p id="sheet-address" class="sheet-address"></p>
 
-  <div class="sheet-meta">
-    <div>
-      <span>Community</span>
-      <strong id="sheet-community"></strong>
-    </div>
-    <div>
-      <span>Courts</span>
-      <strong id="sheet-courts"></strong>
-    </div>
-    <div>
-      <span>Surface</span>
-      <strong id="sheet-surface"></strong>
-    </div>
-    <div>
-      <span>Location</span>
-      <strong id="sheet-location"></strong>
-    </div>
-  </div>
+<div class="sheet-meta">
+<div>
+<span>Community</span>
+<strong id="sheet-community"></strong>
+</div>
+<div>
+<span>Courts</span>
+<strong id="sheet-courts"></strong>
+</div>
+<div>
+<span>Surface</span>
+<strong id="sheet-surface"></strong>
+</div>
+<div>
+<span>Location</span>
+<strong id="sheet-location"></strong>
+</div>
+</div>
 
-  <div class="sheet-verify-wrap">
-    <a id="sheet-verify-cta"
-       class="sheet-verify"
-       target="_blank"
-       href="https://www.agari.id/submit-your-location">
-       Help us verify this court
-    </a>
-  </div>
+<div class="sheet-verify-wrap">
+<a id="sheet-verify-cta"
+class="sheet-verify"
+target="_blank"
+href="https://www.agari.id/submit-your-location">
+Help us verify this court
+</a>
+</div>
 
-  <div class="sheet-cta-wrap">
-    <a id="sheet-directions" class="sheet-button" target="_blank">
-      Get Directions
-    </a>
-  </div>
+<div class="sheet-cta-wrap">
+<a id="sheet-directions" class="sheet-button" target="_blank">
+Get Directions
+</a>
+</div>
 
 <script>
-  // ===== DISCLAIMER LOGIC =====
-  const overlay = document.getElementById("disclaimer-overlay");
-  const acceptBtn = document.getElementById("disclaimer-accept");
+// ===== DISCLAIMER LOGIC =====
+const overlay = document.getElementById("disclaimer-overlay");
+const acceptBtn = document.getElementById("disclaimer-accept");
 
-  // cek apakah user udah pernah accept
-  const hasAccepted = localStorage.getItem("agari-map-disclaimer");
+// cek apakah user udah pernah accept
+const hasAccepted = localStorage.getItem("agari-map-disclaimer");
 
-  if (hasAccepted === "true") {
-    overlay.style.display = "none";
-  } else {
-    // lock body + map sementara
-    document.body.style.overflow = "hidden";
-  }
+if (hasAccepted === "true") {
+overlay.style.display = "none";
+} else {
+// lock body + map sementara
+document.body.style.overflow = "hidden";
+}
 
-  acceptBtn.addEventListener("click", () => {
-    localStorage.setItem("agari-map-disclaimer", "true");
-    overlay.style.display = "none";
-    document.body.style.overflow = "";
-  });
+acceptBtn.addEventListener("click", () => {
+localStorage.setItem("agari-map-disclaimer", "true");
+overlay.style.display = "none";
+document.body.style.overflow = "";
+});
 
 mapboxgl.accessToken = "pk.eyJ1IjoiYWdhcmlhcHBhcmVsIiwiYSI6ImNta2VmM2g4eDA2MnQzZ3F3bzl1a3dldjcifQ.O0kAhVcu1M_ujwu4NxmOXA";
 
 const map = new mapboxgl.Map({
-  container: "map",
-  style: "mapbox://styles/agariapparel/cmksk3qy2004001seatdvd9sz",
-  center: [116, -2.7],
-  zoom: 3
+container: "map",
+style: "mapbox://styles/agariapparel/cmksk3qy2004001seatdvd9sz",
+center: [116, -2.7],
+zoom: 3
 });
 
-  if (!localStorage.getItem("agari-map-disclaimer")) {
-    map.boxZoom.disable();
-    map.doubleClickZoom.disable();
-    map.dragPan.disable();
-    map.dragRotate.disable();
-    map.keyboard.disable();
-    map.scrollZoom.disable();
-    map.touchZoomRotate.disable();
-  }
+if (!localStorage.getItem("agari-map-disclaimer")) {
+map.boxZoom.disable();
+map.doubleClickZoom.disable();
+map.dragPan.disable();
+map.dragRotate.disable();
+map.keyboard.disable();
+map.scrollZoom.disable();
+map.touchZoomRotate.disable();
+}
 
-  document.getElementById("disclaimer-accept").addEventListener("click", () => {
-    map.boxZoom.enable();
-    map.doubleClickZoom.enable();
-    map.dragPan.enable();
-    map.dragRotate.enable();
-    map.keyboard.enable();
-    map.scrollZoom.enable();
-    map.touchZoomRotate.enable();
-  });
-
-  map.on("load", () => {
-    console.log("Map loaded");
-  
-    // 🔥 HIDE MARKER & LABEL BAWAAN MAPBOX
-    if (map.getLayer("Icon")) {
-      map.setLayoutProperty("Icon", "visibility", "none");
-    }
-  
-    if (map.getLayer("Label")) {
-      map.setLayoutProperty("Label", "visibility", "visible");
-    }
+document.getElementById("disclaimer-accept").addEventListener("click", () => {
+map.boxZoom.enable();
+map.doubleClickZoom.enable();
+map.dragPan.enable();
+map.dragRotate.enable();
+map.keyboard.enable();
+map.scrollZoom.enable();
+map.touchZoomRotate.enable();
 });
 
-    const canvas = map.getCanvas();
+map.on("load", () => {
+console.log("Map loaded");
 
-    // block long press & selection on MAP ONLY
-    ["touchstart", "touchmove", "touchend"].forEach(evt => {
-      canvas.addEventListener(evt, e => {
-        if (!e.target.closest("#agari-sheet")) {
-          e.preventDefault();
-        }
-      }, { passive: false });
-    });
+// 🔥 HIDE MARKER & LABEL BAWAAN MAPBOX
+if (map.getLayer("Icon")) {
+map.setLayoutProperty("Icon", "visibility", "none");
+}
 
-    canvas.addEventListener("contextmenu", e => e.preventDefault());
+if (map.getLayer("Label")) {
+map.setLayoutProperty("Label", "visibility", "visible");
+}
+});
+
+const canvas = map.getCanvas();
+
+// block long press & selection on MAP ONLY
+["touchstart", "touchmove", "touchend"].forEach(evt => {
+canvas.addEventListener(evt, e => {
+if (!e.target.closest("#agari-sheet")) {
+e.preventDefault();
+}
+}, { passive: false });
+});
+
+canvas.addEventListener("contextmenu", e => e.preventDefault());
 
 
 
 // ===== GEOLOCATION =====
 if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(
-    pos => {
-      map.flyTo({
-        center: [pos.coords.longitude, pos.coords.latitude],
-        zoom: 5,
-        essential: true
-      });
-    }
-  );
+navigator.geolocation.getCurrentPosition(
+pos => {
+map.flyTo({
+center: [pos.coords.longitude, pos.coords.latitude],
+zoom: 5,
+essential: true
+});
+}
+);
 }
 
-  function openBottomSheet(feature) {
-    const p = feature.properties;
-  
-    const sheet = document.getElementById("agari-sheet");
-  
-    const nameEl = document.getElementById("sheet-name");
-    const addressEl = document.getElementById("sheet-address");
-    const communityEl = document.getElementById("sheet-community");
-    const courtsEl = document.getElementById("sheet-courts");
-    const surfaceEl = document.getElementById("sheet-surface");
-    const locationEl = document.getElementById("sheet-location");
-  
-    const statusEl = document.getElementById("sheet-status");
-    const verifiedEl = document.getElementById("sheet-verified");
-    const unverifiedEl = document.getElementById("sheet-unverified");
-    const verifyCTA = document.getElementById("sheet-verify-cta");
-    const directionsEl = document.getElementById("sheet-directions");
-  
-    nameEl.innerText = p.name || "";
-    addressEl.innerText = p.address || "";
-    communityEl.innerText = p.community || "-";
-    courtsEl.innerText = p.courts || "-";
-    surfaceEl.innerText = p.surface || "-";
-    locationEl.innerText =
-      (p.city || "") +
-      (p.province ? ", " + p.province : "") +
-      (p.country ? ", " + p.country : "");
-  
-    directionsEl.href = p.google_maps_url || "#";
-  
-    // ===== STATUS =====
-    statusEl.style.display = "none";
-    statusEl.className = "status-badge";
-  
-    if (p.status) {
-      const s = p.status.toLowerCase();
-      statusEl.innerText = p.status;
-      statusEl.style.display = "inline-block";
-  
-      if (s === "active") statusEl.classList.add("status-active");
-      if (s === "inactive" || s === "closed")
-        statusEl.classList.add("status-inactive");
-    }
-  
-    // ===== VERIFIED =====
-    verifiedEl.style.display = "none";
-    unverifiedEl.style.display = "none";
-    verifyCTA.style.display = "";
-  
-    const isVerified =
-      p.verified === true ||
-      p.verified === "true" ||
-      p.verified === "TRUE";
-    
-    if (isVerified) {
-      verifiedEl.style.display = "inline-block";
-    } else {
-      unverifiedEl.style.display = "inline-block";
-      verifyCTA.style.display = "inline";
-    }
-    
-    sheet.classList.add("show");
-    document.body.classList.add("sheet-open");
-  }
+function openBottomSheet(feature) {
+const p = feature.properties;
 
-    function closeBottomSheet() {
-    const sheet = document.getElementById("agari-sheet");
-    if (!sheet.classList.contains("show")) return;
+const sheet = document.getElementById("agari-sheet");
 
-    sheet.classList.remove("show");
-    document.body.classList.remove("sheet-open");
-  }
+const nameEl = document.getElementById("sheet-name");
+const addressEl = document.getElementById("sheet-address");
+const communityEl = document.getElementById("sheet-community");
+const courtsEl = document.getElementById("sheet-courts");
+const surfaceEl = document.getElementById("sheet-surface");
+const locationEl = document.getElementById("sheet-location");
+
+const statusEl = document.getElementById("sheet-status");
+const verifiedEl = document.getElementById("sheet-verified");
+const unverifiedEl = document.getElementById("sheet-unverified");
+const verifyCTA = document.getElementById("sheet-verify-cta");
+const directionsEl = document.getElementById("sheet-directions");
+
+nameEl.innerText = p.name || "";
+addressEl.innerText = p.address || "";
+communityEl.innerText = p.community || "-";
+courtsEl.innerText = p.courts || "-";
+surfaceEl.innerText = p.surface || "-";
+locationEl.innerText =
+(p.city || "") +
+(p.province ? ", " + p.province : "") +
+(p.country ? ", " + p.country : "");
+
+directionsEl.href = p.google_maps_url || "#";
+
+// ===== STATUS =====
+statusEl.style.display = "none";
+statusEl.className = "status-badge";
+
+if (p.status) {
+const s = p.status.toLowerCase();
+statusEl.innerText = p.status;
+statusEl.style.display = "inline-block";
+
+if (s === "active") statusEl.classList.add("status-active");
+if (s === "inactive" || s === "closed")
+statusEl.classList.add("status-inactive");
+}
+
+// ===== VERIFIED =====
+verifiedEl.style.display = "none";
+unverifiedEl.style.display = "none";
+verifyCTA.style.display = "";
+
+const isVerified =
+p.verified === true ||
+p.verified === "true" ||
+p.verified === "TRUE";
+
+if (isVerified) {
+verifiedEl.style.display = "inline-block";
+} else {
+unverifiedEl.style.display = "inline-block";
+verifyCTA.style.display = "inline";
+}
+
+sheet.classList.add("show");
+document.body.classList.add("sheet-open");
+}
+
+function closeBottomSheet() {
+const sheet = document.getElementById("agari-sheet");
+if (!sheet.classList.contains("show")) return;
+
+sheet.classList.remove("show");
+document.body.classList.remove("sheet-open");
+}
 
 // ===== LOAD GEOJSON =====
 fetch("./public/gateball-fields.geojson")
-  .then(res => res.json())
-  .then(data => {
-    console.log("TOTAL FEATURES:", data.features.length);
+.then(res => res.json())
+.then(data => {
+console.log("TOTAL FEATURES:", data.features.length);
 
-   data.features.forEach((feature) => {
-    const el = document.createElement("div");
-    el.className = "agari-marker";
-  
-    // hover cursor
-    el.addEventListener("mouseenter", () => {
-      map.getCanvas().style.cursor = "pointer";
-    });
-  
-    el.addEventListener("mouseleave", () => {
-      map.getCanvas().style.cursor = "";
-    });
-  
-    new mapboxgl.Marker({
-      element: el,
-      anchor: "bottom"
-    })
-    .setLngLat(feature.geometry.coordinates)
-    .addTo(map);
+data.features.forEach((feature) => {
+const el = document.createElement("div");
+el.className = "agari-marker";
 
-  
-    el.addEventListener("click", (e) => {
-      e.stopPropagation();
-  
-      map.flyTo({
-        center: feature.geometry.coordinates,
-        zoom: Math.max(map.getZoom(), 12),
-        speed: 0.8,
-        offset: [0, -200],
-        essential: true
-      });
-  
-      openBottomSheet(feature);
-    });
-  });
-});
-  
-  // 👉 klik area map kosong → tutup sheet
-    ["dragstart", "zoomstart", "rotatestart"].forEach(evt => {
-    map.on(evt, closeBottomSheet);
+// hover cursor
+el.addEventListener("mouseenter", () => {
+map.getCanvas().style.cursor = "pointer";
 });
 
+el.addEventListener("mouseleave", () => {
+map.getCanvas().style.cursor = "";
+});
 
-      function isTextSelecting() {
-      const selection = window.getSelection();
-      return selection && selection.toString().length > 0;
-    }
-      function haptic(type = "light") {
-        if (!("vibrate" in navigator)) return;
-
-        if (type === "light") {
-          navigator.vibrate(10);      // tick kecil
-        } else if (type === "medium") {
-          navigator.vibrate([15, 10, 15]); // tick lebih kerasa
-        }
-    }
+new mapboxgl.Marker({
+element: el,
+anchor: "bottom"
+})
+.setLngLat(feature.geometry.coordinates)
+.addTo(map);
 
 
-    // ===== DRAG BOTTOM SHEET (VELOCITY + INTENT SAFE) =====
-    const sheet = document.getElementById("agari-sheet");
+el.addEventListener("click", (e) => {
+e.stopPropagation();
 
-    let startY = 0;
-    let currentY = 0;
-    let startTime = 0;
+map.flyTo({
+center: feature.geometry.coordinates,
+zoom: Math.max(map.getZoom(), 12),
+speed: 0.8,
+offset: [0, -200],
+essential: true
+});
 
-    let dragging = false;
-    let isDraggingIntent = false;
+openBottomSheet(feature);
+});
+});
+});
 
-    const DRAG_INTENT_THRESHOLD = 10;   // px
-    const CLOSE_DISTANCE = 120;         // px
-    const CLOSE_VELOCITY = 0.6;         // px per ms (≈ flick)
+// 👉 klik area map kosong → tutup sheet
+["dragstart", "zoomstart", "rotatestart"].forEach(evt => {
+map.on(evt, closeBottomSheet);
+});
 
 
-    // touch start
-    sheet.addEventListener("touchstart", (e) => {
-      if (e.target.closest("a, button")) return;
+function isTextSelecting() {
+const selection = window.getSelection();
+return selection && selection.toString().length > 0;
+}
+function haptic(type = "light") {
+if (!("vibrate" in navigator)) return;
 
-      startY = e.touches[0].clientY;
-      currentY = startY;
-      startTime = Date.now();
+if (type === "light") {
+navigator.vibrate(10);      // tick kecil
+} else if (type === "medium") {
+navigator.vibrate([15, 10, 15]); // tick lebih kerasa
+}
+}
 
-      dragging = true;
-      isDraggingIntent = false;
-    });
 
-    // touch move
-    sheet.addEventListener("touchmove", (e) => {
-      if (!dragging) return;
+// ===== DRAG BOTTOM SHEET (VELOCITY + INTENT SAFE) =====
+const sheet = document.getElementById("agari-sheet");
 
-      // 🔒 jangan ganggu text selection
-      if (isTextSelecting()) return;
+let startY = 0;
+let currentY = 0;
+let startTime = 0;
 
-      currentY = e.touches[0].clientY;
-      const delta = currentY - startY;
+let dragging = false;
+let isDraggingIntent = false;
 
-      if (!isDraggingIntent) {
-        if (Math.abs(delta) < DRAG_INTENT_THRESHOLD) return;
+const DRAG_INTENT_THRESHOLD = 10;   // px
+const CLOSE_DISTANCE = 120;         // px
+const CLOSE_VELOCITY = 0.6;         // px per ms (≈ flick)
 
-        isDraggingIntent = true;
-        sheet.classList.add("dragging");
-      }
 
-      e.preventDefault();
+// touch start
+sheet.addEventListener("touchstart", (e) => {
+if (e.target.closest("a, button")) return;
 
-      if (delta > 0) {
-        sheet.style.transform = `translateY(${delta}px)`;
-      }
-    }, { passive: false });
+startY = e.touches[0].clientY;
+currentY = startY;
+startTime = Date.now();
 
-    // touch end
-    sheet.addEventListener("touchend", () => {
-      if (!dragging) return;
+dragging = true;
+isDraggingIntent = false;
+});
 
-      sheet.classList.remove("dragging");
+// touch move
+sheet.addEventListener("touchmove", (e) => {
+if (!dragging) return;
 
-      const distance = currentY - startY;
-      const duration = Date.now() - startTime;
-      const velocity = distance / duration; // px/ms
+// 🔒 jangan ganggu text selection
+if (isTextSelecting()) return;
 
-      const shouldClose =
-        (distance > CLOSE_DISTANCE) ||
-        (velocity > CLOSE_VELOCITY);
+currentY = e.touches[0].clientY;
+const delta = currentY - startY;
 
-      if (isDraggingIntent && shouldClose) {
-        haptic("medium");
-        sheet.classList.remove("show");
-        document.body.classList.remove("sheet-open");
-      }
-        else if (isDraggingIntent) {
-          haptic("light"); // 🔔 snap back feedback
-      }
+if (!isDraggingIntent) {
+if (Math.abs(delta) < DRAG_INTENT_THRESHOLD) return;
 
-      sheet.style.transform = "";
-      dragging = false;
-      isDraggingIntent = false;
-    });
+isDraggingIntent = true;
+sheet.classList.add("dragging");
+}
+
+e.preventDefault();
+
+if (delta > 0) {
+sheet.style.transform = `translateY(${delta}px)`;
+}
+}, { passive: false });
+
+// touch end
+sheet.addEventListener("touchend", () => {
+if (!dragging) return;
+
+sheet.classList.remove("dragging");
+
+const distance = currentY - startY;
+const duration = Date.now() - startTime;
+const velocity = distance / duration; // px/ms
+
+const shouldClose =
+(distance > CLOSE_DISTANCE) ||
+(velocity > CLOSE_VELOCITY);
+
+if (isDraggingIntent && shouldClose) {
+haptic("medium");
+sheet.classList.remove("show");
+document.body.classList.remove("sheet-open");
+}
+else if (isDraggingIntent) {
+haptic("light"); // 🔔 snap back feedback
+}
+
+sheet.style.transform = "";
+dragging = false;
+isDraggingIntent = false;
+});
 
 </script>
 
