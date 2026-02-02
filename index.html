@@ -88,12 +88,8 @@ z-index: 20;
 touch-action: manipulation;
 }
 .sheet-header {
-position: relative;
-padding-top: 2px;
-display: grid;
-grid-template-columns: minmax(0, 1fr) auto;
-gap: 6px 8px;
-align-items: start;
+  position: relative;
+  padding-top: 2px;
 }
 .sheet-header h2 {
 font-size: 20px;
@@ -193,7 +189,6 @@ justify-content: center;
 }
 
 .sheet-button {
-width: 100%;
 text-align: center;
 padding: 14px;
 background: #111;
@@ -201,6 +196,52 @@ color: #fff;
 text-decoration: none;
 border-radius: 12px;
 font-size: 15px;
+}
+
+/* CTA ROW */
+.sheet-cta-row {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+/* GET DIRECTIONS — SATU-SATUNYA YANG BOLEH MELEBAR */
+.sheet-button.primary {
+  flex: 1;
+  min-width: 0;
+  background: #111;
+  color: #fff;
+}
+
+/* BOOK — SEMI FLEX */
+.sheet-button.secondary {
+  flex: 0 1 22%;
+  min-width: 96px;
+  max-width: 160px;
+  padding: 14px 16px;
+  background: #eaeaea;
+  color: #111;
+  font-size: 14px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* THUMBS UP — FIXED ICON */
+.sheet-button.icon {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #eaeaea;
+  font-size: 18px;
+  padding: 0;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mapboxgl-ctrl-attrib a {
@@ -384,6 +425,98 @@ color: #777;
   }
 }
 
+.sheet-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  width: 100%;
+  line-height: 1.25;
+  word-break: break-word;
+}
+
+.sheet-submeta {
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 12px;
+  color: #555;
+}
+
+.submeta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* STYLE PER ITEM */
+.submeta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+/* VERIFIED */
+.submeta.verified {
+  background: #e6f6ee;
+  color: #0f7a4a;
+}
+
+/* UNVERIFIED */
+.submeta.unverified {
+  background: #fff3cd;
+  color: #8a6d00;
+}
+
+/* STATUS */
+.submeta.status.active {
+  background: #e6f6ee;
+  color: #0f7a4a;
+}
+
+.submeta.status.inactive {
+  background: #fdecec;
+  color: #a02a2a;
+}
+
+.submeta.like {
+  background: #f2f2f2;
+  color: #111;
+}
+
+.sheet-title-row {
+  display: block;
+}
+
+
+.sheet-title-row h2 {
+  flex: 1;
+  min-width: 0;
+}
+
+.like-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  line-height: 1;          /* 🔑 ini penting */
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #f2f2f2;
+  color: #111;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.sheet-button.icon.liked {
+  background: #111;
+  color: #fff;
+}
+
+
+
   </style>
 
   <script type="application/ld+json">
@@ -490,64 +623,169 @@ Powered by AGARI © 2026
 
 
 <div id="agari-sheet" class="sheet">
-<div class="sheet-handle"></div>
 
-<div class="sheet-header">
-<h2 id="sheet-name"></h2>
+  <div class="sheet-handle"></div>
 
-<div class="sheet-badges">
-<span id="sheet-status" class="status-badge"></span>
-<span id="sheet-verified" class="verified-badge">✔ AGARI Verified</span>
-<span id="sheet-unverified" class="unverified-badge">Unverified</span>
-</div>
+  <div class="sheet-header">
+
+  <div class="sheet-header">
+  <h2 id="sheet-name" class="sheet-title"></h2>
 </div>
 
-<p id="sheet-address" class="sheet-address"></p>
+<div class="sheet-submeta">
+  <span id="sheet-verified" class="submeta verified" style="display:none;">
+    ✔ AGARI Verified
+  </span>
 
-<div class="sheet-meta">
-<div>
-<span>Community</span>
-<strong id="sheet-community"></strong>
-</div>
-<div>
-<span>Courts</span>
-<strong id="sheet-courts"></strong>
-</div>
-<div>
-<span>Surface</span>
-<strong id="sheet-surface"></strong>
-</div>
-<div>
-<span>Location</span>
-<strong id="sheet-location"></strong>
-</div>
+  <span id="sheet-unverified" class="submeta unverified" style="display:none;">
+    ⚠ Unverified
+  </span>
+
+  <span id="sheet-status" class="submeta status" style="display:none;">
+    Active
+  </span>
+
+  <span id="sheet-like-count" class="submeta like" style="display:none;">
+    👍 0
+  </span>
 </div>
 
-<div class="sheet-verify-wrap">
-<a id="sheet-verify-cta"
-class="sheet-verify"
-target="_blank"
-href="https://www.agari.id/submit-your-location">
-Help us verify this court
-</a>
-</div>
 
-<div class="sheet-cta-wrap">
-<a id="sheet-directions" class="sheet-button" target="_blank">
-Get Directions
-</a>
+
+  <p id="sheet-address" class="sheet-address"></p>
+
+  <div class="sheet-meta">
+    <div>
+      <span>Community</span>
+      <strong id="sheet-community"></strong>
+    </div>
+
+    <div>
+      <span>Courts</span>
+      <strong id="sheet-courts"></strong>
+    </div>
+
+    <div>
+      <span>Surface</span>
+      <strong id="sheet-surface"></strong>
+    </div>
+
+    <div>
+      <span>Location</span>
+      <strong id="sheet-location"></strong>
+    </div>
+  </div>
+
+  <div class="sheet-verify-wrap">
+    <a id="sheet-verify-cta"
+       class="sheet-verify"
+       target="_blank"
+       href="https://www.agari.id/submit-your-location">
+      Help us verify this court
+    </a>
+  </div>
+
+  <div class="sheet-cta-row">
+    <a id="sheet-directions"
+       class="sheet-button primary"
+       target="_blank">
+      Get Directions
+    </a>
+
+    <a id="sheet-book"
+       class="sheet-button secondary"
+       target="_blank">
+      Book
+    </a>
+
+    <button id="sheet-like"
+            class="sheet-button icon"
+            aria-label="Like this court">
+      👍
+    </button>
+  </div>
+
 </div>
 
 <script>
 
 // ===== SUPABASE CLIENT =====
 const SUPABASE_URL = "https://ocavvmkaeypwzcegvtuo.supabase.co";
-const SUPABASE_PUBLISHABLE_KEY = "Ysb_publishable_rjs1fxeOnmYj4DwMIP1EAA_n41DDzcq";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_rjs1fxeOnmYj4DwMIP1EAA_n41DDzcq";
 
 const supabaseClient = supabase.createClient(
   SUPABASE_URL,
   SUPABASE_PUBLISHABLE_KEY
 );
+
+function getDeviceId() {
+  let id = localStorage.getItem("agari_device_id");
+  if (!id) {
+    id = crypto.randomUUID();
+    localStorage.setItem("agari_device_id", id);
+  }
+  return id;
+}
+
+async function hasUserLiked(fieldId) {
+  if (!canUseBackendFeatures()) return false;
+
+  const deviceId = getDeviceId();
+
+  const { data, error } = await supabaseClient
+    .from("votes")
+    .select("id")
+    .eq("field_id", fieldId)
+    .eq("device_id", deviceId)
+    .limit(1);
+
+  if (error) {
+    console.warn("[hasUserLiked error]", error);
+    return false;
+  }
+
+  return data.length > 0;
+}
+
+async function toggleLike(fieldId) {
+  const deviceId = getDeviceId();
+
+  const liked = await hasUserLiked(fieldId);
+
+  if (liked) {
+    // UNLIKE
+    await supabaseClient
+      .from("votes")
+      .delete()
+      .eq("field_id", fieldId)
+      .eq("device_id", deviceId);
+  } else {
+    // LIKE
+    await supabaseClient
+      .from("votes")
+      .insert({
+        field_id: fieldId,
+        device_id: deviceId
+      });
+  }
+
+  return !liked; // state baru
+}
+
+async function fetchLikeCount(fieldId) {
+  if (!canUseBackendFeatures()) return null;
+
+  const { data, error } = await supabaseClient
+  .rpc("get_like_count", { fid: fieldId });
+
+
+  if (error) {
+    console.warn("[Like count error]", error);
+    return null;
+  }
+
+  return data;
+}
 
 async function safeSupabaseCall(fn) {
   try {
@@ -557,6 +795,7 @@ async function safeSupabaseCall(fn) {
     return null;
   }
 }
+
 let isBackendAvailable = true;
 
 async function checkBackendAvailability() {
@@ -703,22 +942,55 @@ essential: true
 function openBottomSheet(feature) {
 const p = feature.properties;
 
-const sheet = document.getElementById("agari-sheet");
+const sheet      = document.getElementById("agari-sheet");
+const nameEl     = document.getElementById("sheet-name");
+const verifiedEl = document.getElementById("sheet-verified");
+const statusEl   = document.getElementById("sheet-status");
+const likeEl     = document.getElementById("sheet-like-count");
+const unverifiedEl = document.getElementById("sheet-unverified");
 
-const nameEl = document.getElementById("sheet-name");
-const addressEl = document.getElementById("sheet-address");
-const communityEl = document.getElementById("sheet-community");
-const courtsEl = document.getElementById("sheet-courts");
-const surfaceEl = document.getElementById("sheet-surface");
+const addressEl  = document.getElementById("sheet-address");
+const communityEl= document.getElementById("sheet-community");
+const courtsEl   = document.getElementById("sheet-courts");
+const surfaceEl  = document.getElementById("sheet-surface");
 const locationEl = document.getElementById("sheet-location");
 
-const statusEl = document.getElementById("sheet-status");
-const verifiedEl = document.getElementById("sheet-verified");
-const unverifiedEl = document.getElementById("sheet-unverified");
-const verifyCTA = document.getElementById("sheet-verify-cta");
+const verifyCTA  = document.getElementById("sheet-verify-cta");
 const directionsEl = document.getElementById("sheet-directions");
+const bookEl     = document.getElementById("sheet-book");
+const likeBtn    = document.getElementById("sheet-like");
 
-nameEl.innerText = p.name || "";
+  if (p.field_id && canUseBackendFeatures()) {
+    hasUserLiked(p.field_id).then(liked => {
+      likeBtn.classList.toggle("liked", liked);
+    });
+  }
+
+  likeBtn.onclick = async () => {
+  if (!p.field_id) return;
+
+  likeBtn.disabled = true;
+
+  try {
+    const likedNow = await toggleLike(p.field_id);
+
+    likeBtn.classList.toggle("liked", likedNow);
+
+    // refresh count
+    const count = await fetchLikeCount(p.field_id);
+    if (typeof count === "number") {
+      likeEl.textContent = `👍 ${count}`;
+      likeEl.style.display = "inline-flex";
+    }
+  } catch (err) {
+    console.error("Like toggle failed", err);
+  }
+
+  likeBtn.disabled = false;
+};
+
+
+nameEl.textContent = p.name || "";
 addressEl.innerText = p.address || "";
 communityEl.innerText = p.community || "-";
 courtsEl.innerText = p.courts || "-";
@@ -730,23 +1002,26 @@ locationEl.innerText =
 
 directionsEl.href = p.google_maps_url || "#";
 
-// ===== STATUS =====
-statusEl.style.display = "none";
-statusEl.className = "status-badge";
-
-if (p.status) {
-const s = p.status.toLowerCase();
-statusEl.innerText = p.status;
-statusEl.style.display = "inline-block";
-
-if (s === "active") statusEl.classList.add("status-active");
-if (s === "inactive" || s === "closed")
-statusEl.classList.add("status-inactive");
+// ===== BOOK LOGIC =====
+if (p.booking_url) {
+  bookEl.href = p.booking_url;
+  bookEl.style.display = "inline-flex";
+} else {
+  bookEl.style.display = "none";
+}
+// ===== LIKE BUTTON LOGIC =====
+if (p.field_id && canUseBackendFeatures()) {
+  likeBtn.style.display = "inline-flex";
+  likeBtn.dataset.fieldId = p.field_id;
+} else {
+  likeBtn.style.display = "none";
 }
 
 // ===== VERIFIED =====
 verifiedEl.style.display = "none";
 unverifiedEl.style.display = "none";
+statusEl.style.display   = "none";
+likeEl.style.display     = "none";
 verifyCTA.style.display = "";
 
 const isVerified =
@@ -755,10 +1030,37 @@ p.verified === "true" ||
 p.verified === "TRUE";
 
 if (isVerified) {
-verifiedEl.style.display = "inline-block";
+verifiedEl.style.display = "inline-flex";
 } else {
-unverifiedEl.style.display = "inline-block";
+unverifiedEl.style.display = "inline-flex";
 verifyCTA.style.display = "inline";
+}
+if (p.status) {
+  const status = p.status.toLowerCase();
+
+  // set teks
+  statusEl.textContent = p.status;
+
+  // bersihin state lama
+  statusEl.classList.remove("active", "inactive");
+
+  // tentuin state baru
+  if (status === "active") {
+    statusEl.classList.add("active");
+  } else {
+    statusEl.classList.add("inactive");
+  }
+
+  // tampilkan sebagai badge
+  statusEl.style.display = "inline-flex";
+}
+if (p.field_id && canUseBackendFeatures()) {
+  fetchLikeCount(p.field_id).then(count => {
+    if (typeof count === "number") {
+      likeEl.textContent = `👍 ${count}`;
+      likeEl.style.display = "inline";
+    }
+  });
 }
 
 sheet.classList.add("show");
@@ -766,12 +1068,15 @@ document.body.classList.add("sheet-open");
 }
 
 function closeBottomSheet() {
-const sheet = document.getElementById("agari-sheet");
-if (!sheet.classList.contains("show")) return;
+  const sheet = document.getElementById("agari-sheet");
 
-sheet.classList.remove("show");
-document.body.classList.remove("sheet-open");
+  if (!sheet) return; // ⬅️ INI PENTING
+  if (!sheet.classList.contains("show")) return;
+
+  sheet.classList.remove("show");
+  document.body.classList.remove("sheet-open");
 }
+
 
 // ===== LOAD GEOJSON =====
 fetch("./public/gateball-fields.geojson")
