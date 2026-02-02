@@ -331,6 +331,7 @@ color: #777;
   width: auto;
   z-index: 60;
   font-family: inherit;
+  transition: opacity 0.25s ease;
 }
 
 #agari-search-results {
@@ -363,13 +364,11 @@ color: #777;
 @media (max-width: 640px) {
   #agari-search {
     width: calc(100vw - 24px);
+  }
+
   #agari-search-input {
-    font-size: 16px; /* 🚨 prevent iOS auto zoom */
+    font-size: 16px; /* prevent iOS zoom */
   }
-  }
-}
-#agari-search {
-  transition: opacity 0.25s ease;
 }
 /* ===== DESKTOP TOP BAR WIDTH ===== */
 @media (min-width: 768px) {
@@ -624,7 +623,15 @@ const canvas = map.getCanvas();
 const searchBar = document.getElementById("agari-search");
 
 searchInput.addEventListener("focus", () => {
+  // 🔒 Tutup bottom sheet kalau lagi kebuka
+  closeBottomSheet();
+
+  // 🔆 Pastikan search bar aktif & jelas
   searchBar.classList.remove("is-dimmed");
+
+  // 🗺️ Hindari map gerak pas ngetik
+  map.scrollZoom.disable();
+  map.touchZoomRotate.disable();
 });
 
 searchInput.addEventListener("blur", () => {
