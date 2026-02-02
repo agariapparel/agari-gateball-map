@@ -487,6 +487,20 @@ color: #777;
   background: #f2f2f2;
   color: #111;
 }
+/* LIKE BADGE ANIMATION */
+.submeta.like {
+  opacity: 0;
+  transform: scale(0.9);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+
+/* saat visible */
+.submeta.like.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
 
 .sheet-title-row {
   display: block;
@@ -510,11 +524,17 @@ color: #777;
   white-space: nowrap;
   flex-shrink: 0;
 }
-.sheet-button.icon.liked {
-  background: #111;
-  color: #fff;
+.sheet-button.icon {
+  transition:
+    background-color 0.25s ease,
+    transform 0.18s ease,
+    box-shadow 0.25s ease;
 }
-
+.sheet-button.icon.liked {
+  background: #22c55e;
+  color: #fff;
+  transform: scale(1.05);
+}
 
 
   </style>
@@ -645,7 +665,7 @@ Powered by AGARI © 2026
     Active
   </span>
 
-  <span id="sheet-like-count" class="submeta like" style="display:none;">
+  <span id="sheet-like-count" class="submeta like">
     👍 0
   </span>
 </div>
@@ -797,6 +817,9 @@ async function safeSupabaseCall(fn) {
 }
 
 let isBackendAvailable = true;
+let likeFetchToken = 0;
+let activeFieldId = null;
+
 
 async function checkBackendAvailability() {
   const result = await safeSupabaseCall(() =>
@@ -946,7 +969,21 @@ const sheet      = document.getElementById("agari-sheet");
 const nameEl     = document.getElementById("sheet-name");
 const verifiedEl = document.getElementById("sheet-verified");
 const statusEl   = document.getElementById("sheet-status");
-const likeEl     = document.getElementById("sheet-like-count");
+
+const likeEl = document.getElementById("sheet-like-count");
+
+// 🔑 RESET HANYA JIKA FIELD BERBEDA
+if (activeFieldId !== p.field_id) {
+  likeEl.classList.remove("is-visible");
+  likeEl.textContent = "👍 0";
+}
+// tandai field aktif
+activeFieldId = p.field_id;
+// 🔐 TOKEN BUAT CEGAH RACE CONDITION
+const currentLikeToken = ++likeFetchToken;
+if (currentLikeToken !== likeFetchToken) return;
+
+
 const unverifiedEl = document.getElementById("sheet-unverified");
 
 const addressEl  = document.getElementById("sheet-address");
@@ -973,15 +1010,18 @@ const likeBtn    = document.getElementById("sheet-like");
 
   try {
     const likedNow = await toggleLike(p.field_id);
-
     likeBtn.classList.toggle("liked", likedNow);
 
     // refresh count
     const count = await fetchLikeCount(p.field_id);
-    if (typeof count === "number") {
+
+    if (typeof count === "number" && count > 0) {
       likeEl.textContent = `👍 ${count}`;
-      likeEl.style.display = "inline-flex";
+      likeEl.classList.add("is-visible");
+    } else {
+      likeEl.classList.remove("is-visible");
     }
+
   } catch (err) {
     console.error("Like toggle failed", err);
   }
@@ -1021,7 +1061,6 @@ if (p.field_id && canUseBackendFeatures()) {
 verifiedEl.style.display = "none";
 unverifiedEl.style.display = "none";
 statusEl.style.display   = "none";
-likeEl.style.display     = "none";
 verifyCTA.style.display = "";
 
 const isVerified =
@@ -1056,12 +1095,19 @@ if (p.status) {
 }
 if (p.field_id && canUseBackendFeatures()) {
   fetchLikeCount(p.field_id).then(count => {
-    if (typeof count === "number") {
+
+    // ❌ JIKA BUKAN REQUEST TERAKHIR → ABAIKAN
+    if (currentLikeToken !== likeFetchToken) return;
+
+    if (typeof count === "number" && count > 0) {
       likeEl.textContent = `👍 ${count}`;
-      likeEl.style.display = "inline";
+      likeEl.classList.add("is-visible");
+    } else {
+      likeEl.classList.remove("is-visible");
     }
   });
 }
+
 
 sheet.classList.add("show");
 document.body.classList.add("sheet-open");
