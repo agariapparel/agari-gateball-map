@@ -847,7 +847,8 @@
         "status": "Active",
         "owner": "Puja Samedhi, SE. CES.",
         "address": "Jl. Taman Pd. Cabe No.5 Blok B 14, Kedaung, Sawangan, Depok City, West Java 16516",
-        "country": "Indonesia"
+        "country": "Indonesia",
+        "booking_url": "https://agari.id/book/booking-lapangan-gateball"
       },
       "geometry": {
         "coordinates": [
