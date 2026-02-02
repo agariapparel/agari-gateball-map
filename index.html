@@ -13,6 +13,10 @@
 <!-- favicon -->
 <link rel="icon" href="public/favicon.ico" />
 
+<!-- supabase/backend -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
 <!-- MAPBOX -->
 <link
 href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css"
@@ -535,6 +539,36 @@ Get Directions
 </div>
 
 <script>
+
+// ===== SUPABASE CLIENT =====
+const SUPABASE_URL = "https://ocavvmkaeypwzcegvtuo.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "Ysb_publishable_rjs1fxeOnmYj4DwMIP1EAA_n41DDzcq";
+
+const supabaseClient = supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_PUBLISHABLE_KEY
+);
+
+async function safeSupabaseCall(fn) {
+  try {
+    return await fn();
+  } catch (err) {
+    console.warn("[Supabase unavailable]", err);
+    return null;
+  }
+}
+let isBackendAvailable = true;
+
+async function checkBackendAvailability() {
+  const result = await safeSupabaseCall(() =>
+    supabaseClient.auth.getSession()
+  );
+
+  isBackendAvailable = result !== null;
+
+  console.log("Backend available:", isBackendAvailable);
+}
+
 // ===== DISCLAIMER LOGIC =====
 const overlay = document.getElementById("disclaimer-overlay");
 const acceptBtn = document.getElementById("disclaimer-accept");
@@ -981,6 +1015,14 @@ function escapeHTML(str = "") {
     "'": "&#39;"
   }[m]));
 }
+
+function canUseBackendFeatures() {
+  return isBackendAvailable === true;
+}
+
+setTimeout(() => {
+  checkBackendAvailability();
+}, 1500);
 
 </script>
 
