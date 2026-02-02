@@ -171,10 +171,15 @@ color: #555;
 text-decoration: underline;
 }
 
-body.sheet-open #agari-global-cta-wrapper { opacity:.25 }
-#agari-global-cta-wrapper {
-position: fixed; top: 24px; right: 12px;
-pointer-events: none; z-index: 50;
+body.sheet-open #agari-search {
+  opacity: 0.4;
+}
+
+body.sheet-open #agari-search-plus {
+  background: rgba(0,0,0,0.5);
+}
+#agari-search.is-dimmed {
+  opacity: 0.4;
 }
 
 /* ===== CTA ===== */
@@ -193,16 +198,6 @@ text-decoration: none;
 border-radius: 12px;
 font-size: 15px;
 }
-
-#agari-global-cta {
-pointer-events: auto;
-padding: 12px 12px;
-background: rgba(0,0,0,.35);
-color: #fff;
-border-radius: 999px;
-text-decoration: none;
-backdrop-filter: blur(6px);
-font-size: 13px}
 
 .mapboxgl-ctrl-attrib a {
 display: none !important;
@@ -293,25 +288,49 @@ color: #777;
 }
 
 /* ===== SEARCH BAR ===== */
+.agari-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#agari-search-input {
+  flex: 1;
+  padding: 14px 16px;
+  font-size: 16px;
+  border-radius: 16px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.92);
+  box-shadow: 0 6px 18px rgba(0,0,0,.18);
+}
+
+
+#agari-search-plus {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+}
+
+#agari-search-plus:active {
+  transform: scale(0.94);
+}
+
 #agari-search {
   position: fixed;
   top: 16px;
   left: 12px;
-  width: 420px;              /* default desktop */
-  max-width: calc(100vw - 180px); /* jaga jarak dari CTA kanan */
+  width: auto;
   z-index: 60;
   font-family: inherit;
-}
-
-#agari-search-input {
-  width: 100%;
-  padding: 12px 14px;
-  border-radius: 14px;
-  border: none;
-  outline: none;
-  font-size: 14px;
-  background: rgba(255,255,255,0.92);
-  box-shadow: 0 6px 18px rgba(0,0,0,.18);
 }
 
 #agari-search-results {
@@ -344,14 +363,23 @@ color: #777;
 @media (max-width: 640px) {
   #agari-search {
     width: calc(100vw - 24px);
-  }
-}
-@media (max-width: 640px) {
   #agari-search-input {
     font-size: 16px; /* 🚨 prevent iOS auto zoom */
   }
+  }
 }
+#agari-search {
+  transition: opacity 0.25s ease;
+}
+/* ===== DESKTOP TOP BAR WIDTH ===== */
+@media (min-width: 768px) {
+  #agari-search {
+    left: 24px;
+    right: auto;
 
+    width: min(25vw, 520px);
+  }
+}
 
   </style>
 
@@ -406,22 +434,22 @@ Powered by AGARI © 2026
 </div>
 </div>
 
-<div id="agari-global-cta-wrapper">
-<a id="agari-global-cta" href="https://www.agari.id/submit-your-location" target="_blank">
-+ Contribute
-</a>
-</div>
-
 <!-- ===== SEARCH BAR ===== -->
 <div id="agari-search">
-  <input
-    id="agari-search-input"
-    type="search"
-    placeholder="Search Gateball Map®"
-    autocomplete="off"
-  />
+  <div class="agari-search-bar">
+    <input
+      id="agari-search-input"
+      type="search"
+      placeholder="Search Gateball Map®"
+      autocomplete="off"
+    />
+    <button id="agari-search-plus" aria-label="Contribute">
+      +
+    </button>
+  </div>
   <ul id="agari-search-results"></ul>
 </div>
+
 
 <div id="map"></div>
 
@@ -541,6 +569,12 @@ zoom: 3
 const searchInput = document.getElementById("agari-search-input");
 const searchResults = document.getElementById("agari-search-results");
 const CONTRIBUTE_URL = "https://agari.id/submit-your-location";
+const plusBtn = document.getElementById("agari-search-plus");
+
+plusBtn.addEventListener("click", () => {
+  haptic("light");
+  window.open(CONTRIBUTE_URL, "_blank");
+});
 
 
 function normalize(str = "") {
@@ -587,6 +621,19 @@ map.setLayoutProperty("Label", "visibility", "visible");
 
 const canvas = map.getCanvas();
 
+const searchBar = document.getElementById("agari-search");
+
+searchInput.addEventListener("focus", () => {
+  searchBar.classList.remove("is-dimmed");
+});
+
+searchInput.addEventListener("blur", () => {
+  if (document.body.classList.contains("sheet-open")) {
+    searchBar.classList.add("is-dimmed");
+  }
+});
+
+
 // block long press & selection on MAP ONLY
 ["touchstart", "touchmove", "touchend"].forEach(evt => {
 canvas.addEventListener(evt, e => {
@@ -597,7 +644,6 @@ e.preventDefault();
 });
 
 canvas.addEventListener("contextmenu", e => e.preventDefault());
-
 
 
 // ===== GEOLOCATION =====
