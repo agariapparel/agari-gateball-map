@@ -1410,7 +1410,7 @@
         "field_id": "ID-STG-BTN-01",
         "courts": "1",
         "verified": "TRUE",
-        "booking_url": "https://agari.odoo.com/book/chili-hut-gateball-court",
+        "booking_url": "",
         "community": "Chilihut Gateball Club",
         "city": "South Tangerang City",
         "name": "Chilihut Gateball Court",
