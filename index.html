@@ -30,13 +30,18 @@ body { margin: 0; font-family: "Noto Sans JP", system-ui, sans-serif; }
 
 /* ===== PREVENT PULL TO REFRESH ===== */
 html, body {
-overscroll-behavior-y: none;
+  height: 100%;
+}
+
+body {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
 }
 
 /* ===== LOCK SCROLL WHEN SHEET OPEN ===== */
 body.sheet-open {
 overflow: hidden;
-touch-action: none;
 }
 /* ===== DRAG PREP ===== */
 .sheet {
@@ -56,7 +61,23 @@ transition: none; /* finger-follow */
 user-select: none !important;
 -webkit-touch-callout: none !important;
 }
+/* ===== iOS SAFARI HARD KILL TEXT SELECTION ON MAP ===== */
 
+#map {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* ===== RE-ENABLE TEXT FOR UI ONLY ===== */
+#agari-search,
+#agari-search *,
+#agari-sheet,
+#agari-sheet * {
+  -webkit-user-select: text;
+  user-select: text;
+  -webkit-touch-callout: default;
+}
 
 
 /* ===== AGARI ===== */
@@ -555,7 +576,6 @@ color: #777;
   width: 60%;
 }
 
-
   </style>
 
   <script type="application/ld+json">
@@ -873,11 +893,30 @@ document.body.style.overflow = "";
 mapboxgl.accessToken = "pk.eyJ1IjoiYWdhcmlhcHBhcmVsIiwiYSI6ImNta2VmM2g4eDA2MnQzZ3F3bzl1a3dldjcifQ.O0kAhVcu1M_ujwu4NxmOXA";
 
 const map = new mapboxgl.Map({
-container: "map",
-style: "mapbox://styles/agariapparel/cmksk3qy2004001seatdvd9sz",
-center: [116, -2.7],
-zoom: 3
+  container: "map",
+  style: "mapbox://styles/agariapparel/cmksk3qy2004001seatdvd9sz",
+  center: [116, -2.7],
+  zoom: 3
 });
+
+// ===== LABEL VISIBILITY CONTROL =====
+function setLabelVisibility(visible) {
+  if (!map.getLayer("gateball-point")) return;
+
+  map.setPaintProperty(
+    "gateball-point",
+    "text-opacity",
+    visible ? 1 : 0
+  );
+
+  // collision logic
+  map.setLayoutProperty(
+    "gateball-point",
+    "text-ignore-placement",
+    !visible
+  );
+}
+
 
 function showSearchSkeleton() {
   searchResults.innerHTML = "";
@@ -936,16 +975,209 @@ map.touchZoomRotate.enable();
 });
 
 map.on("load", () => {
-console.log("Map loaded");
+  console.log("Map loaded");
 
-// 🔥 HIDE MARKER & LABEL BAWAAN MAPBOX
-if (map.getLayer("Icon")) {
-map.setLayoutProperty("Icon", "visibility", "none");
-}
+  // 1. ADD SOURCE
+  map.addSource("gateball", {
+    type: "geojson",
+    data: "./public/gateball-fields.geojson",
+    cluster: true,
+    clusterRadius: 50,
+    clusterMaxZoom: 7
+  });
 
-if (map.getLayer("Label")) {
-map.setLayoutProperty("Label", "visibility", "visible");
-}
+  // 2. LOAD PIN BIASA
+  map.loadImage("public/markers/agari-pin-10kb.png", (err, pinImg) => {
+    if (err) throw err;
+    if (!map.hasImage("agari-pin")) {
+      map.addImage("agari-pin", pinImg);
+    }
+
+    // 3. LOAD PIN CLUSTER (NESTED)
+    map.loadImage("public/markers/agari-cluster-pin-10kb.png", (err, clusterImg) => {
+      if (err) throw err;
+      if (!map.hasImage("agari-cluster-pin")) {
+        map.addImage("agari-cluster-pin", clusterImg);
+      }
+
+      // ===============================
+      // 4. CLUSTER ICON
+      // ===============================
+      map.addLayer({
+        id: "gateball-cluster",
+        type: "symbol",
+        source: "gateball",
+        filter: ["has", "point_count"],
+        layout: {
+          "icon-image": "agari-cluster-pin",
+          "icon-allow-overlap": false,
+          "icon-ignore-placement": false,
+          "symbol-sort-key": 100,
+          "icon-anchor": "center",
+          "icon-size": [
+            "interpolate",
+            ["linear"],
+            ["get", "point_count"],
+            1, 0.5,
+            5, 0.55,
+            20, 0.6]
+        },
+        paint: {
+          "icon-opacity": 1,
+          "icon-opacity-transition": {
+            duration: 220,
+            delay: 40
+          }
+        }
+      });
+
+      // ===============================
+      // 6. SINGLE PIN + LABEL (MERGED)
+      // ===============================
+      map.addLayer({
+        id: "gateball-point",
+        type: "symbol",
+        source: "gateball",
+        filter: ["!", ["has", "point_count"]],
+        minzoom: 5,
+
+        layout: {
+          // ===== ICON =====
+          "icon-image": "agari-pin",
+          "icon-anchor": "bottom",
+          "icon-allow-overlap": true,
+          "icon-ignore-placement": false,
+
+          "icon-size": [
+            "interpolate",
+            ["linear"],
+            ["zoom"],
+            3, 0.35,
+            6, 0.45,
+            10, 0.5
+          ],
+
+          // ===== TEXT =====
+          "text-field": ["get", "name"],
+          "text-anchor": "top",
+          "text-offset": [0, 0],
+          "text-size": 11,
+
+          // 🔑 KUNCI UTAMA
+          "text-optional": true,          // label BOLEH hilang
+          "text-allow-overlap": false,    // label ga saling tabrakan
+          "text-transform": "uppercase",
+
+          // PRIORITAS ICON > TEXT
+          "symbol-sort-key": 50
+        },
+
+        paint: {
+          "icon-opacity": 1,
+          "icon-opacity-transition": {
+            duration: 220,
+            delay: 40
+          },
+
+          "text-color": "#111",
+          "text-halo-color": "#111",
+          "text-halo-width": 0.3,
+          "text-opacity": 1,
+          "text-opacity-transition": {
+            duration: 220,
+            delay: 0
+          }
+        }
+      });
+
+
+      // ===============================
+      // 8. CLICK CLUSTER → ZOOM
+      // ===============================
+      map.on("click", "gateball-cluster", (e) => {
+        const clusterFeature = e.features[0];
+        const clusterId = clusterFeature.properties.cluster_id;
+        const source = map.getSource("gateball");
+
+        source.getClusterLeaves(clusterId, 50, 0, (err, leaves) => {
+          if (err || !leaves.length) return;
+
+          // hitung bounds dari semua point di cluster
+          const bounds = leaves.reduce(
+            (b, f) => b.extend(f.geometry.coordinates),
+            new mapboxgl.LngLatBounds(
+              leaves[0].geometry.coordinates,
+              leaves[0].geometry.coordinates
+            )
+          );
+
+          const targetZoom = Math.min(
+            map.cameraForBounds(bounds, { padding: 80 }).zoom,
+            12
+          );
+
+          map.flyTo({
+            center: bounds.getCenter(),
+            zoom: targetZoom,
+            speed: 0.8,          // 🔑 SAMA KAYA SEARCH
+            curve: 1.42,         // smooth glide (default flyTo curve)
+            essential: true
+          });
+        });
+      });
+
+
+
+      // ===============================
+      // 9. CLICK PIN → OPEN SHEET
+      // ===============================
+      map.on("click", "gateball-point", (e) => {
+        const feature = e.features[0];
+        map.flyTo({
+          center: feature.geometry.coordinates,
+          zoom: Math.max(map.getZoom(), 12),
+          offset: [0, -200]
+        });
+        openBottomSheet(feature);
+      });
+    });
+  });
+
+
+
+fetch("./public/gateball-fields.geojson")
+  .then(res => res.json())
+  .then(data => {
+    window.AGARI_FEATURES = data.features;
+  });
+});
+
+map.on("movestart", () => {
+  setLabelVisibility(false);
+});
+
+map.on("moveend", () => {
+  setTimeout(() => {
+    const shouldShow = !document.body.classList.contains("sheet-open");
+    setLabelVisibility(shouldShow);
+  }, 120);
+});
+
+
+map.on("mouseenter", "gateball-point", () => {
+  map.getCanvas().style.cursor = "pointer";
+});
+
+map.on("mouseleave", "gateball-point", () => {
+  map.getCanvas().style.cursor = "";
+});
+
+map.on("mouseenter", "gateball-cluster", () => {
+  map.getCanvas().style.cursor = "pointer";
+});
+
+map.on("mouseleave", "gateball-cluster", () => {
+  map.getCanvas().style.cursor = "";
 });
 
 const canvas = map.getCanvas();
@@ -968,16 +1200,6 @@ searchInput.addEventListener("blur", () => {
   if (document.body.classList.contains("sheet-open")) {
     searchBar.classList.add("is-dimmed");
   }
-});
-
-
-// block long press & selection on MAP ONLY
-["touchstart", "touchmove", "touchend"].forEach(evt => {
-canvas.addEventListener(evt, e => {
-if (!e.target.closest("#agari-sheet")) {
-e.preventDefault();
-}
-}, { passive: false });
 });
 
 canvas.addEventListener("contextmenu", e => e.preventDefault());
@@ -1095,7 +1317,7 @@ if (p.field_id && canUseBackendFeatures()) {
 verifiedEl.style.display = "none";
 unverifiedEl.style.display = "none";
 statusEl.style.display   = "none";
-verifyCTA.style.display = "";
+verifyCTA.style.display = "none";
 
 const isVerified =
 p.verified === true ||
@@ -1106,7 +1328,7 @@ if (isVerified) {
 verifiedEl.style.display = "inline-flex";
 } else {
 unverifiedEl.style.display = "inline-flex";
-verifyCTA.style.display = "inline";
+verifyCTA.style.display = "inline-flex";
 }
 if (p.status) {
   const status = p.status.toLowerCase();
@@ -1157,51 +1379,6 @@ function closeBottomSheet(force = false) {
   }
 }
 
-
-// ===== LOAD GEOJSON =====
-fetch("./public/gateball-fields.geojson")
-.then(res => res.json())
-.then(data => {
-console.log("TOTAL FEATURES:", data.features.length);
-
-window.AGARI_FEATURES = data.features;
-
-data.features.forEach((feature) => {
-const el = document.createElement("div");
-el.className = "agari-marker";
-
-// hover cursor
-el.addEventListener("mouseenter", () => {
-map.getCanvas().style.cursor = "pointer";
-});
-
-el.addEventListener("mouseleave", () => {
-map.getCanvas().style.cursor = "";
-});
-
-new mapboxgl.Marker({
-element: el,
-anchor: "bottom"
-})
-.setLngLat(feature.geometry.coordinates)
-.addTo(map);
-
-
-el.addEventListener("click", (e) => {
-e.stopPropagation();
-
-map.flyTo({
-center: feature.geometry.coordinates,
-zoom: Math.max(map.getZoom(), 12),
-speed: 0.8,
-offset: [0, -200],
-essential: true
-});
-
-openBottomSheet(feature);
-});
-});
-});
 
 // 👉 klik area map kosong → tutup sheet
 ["dragstart", "zoomstart", "rotatestart"].forEach(evt => {
