@@ -487,6 +487,12 @@ color: #777;
   color: #0f7a4a;
 }
 
+/* COMMUNITY VERIFIED */
+.submeta.community {
+  background: #e0f2ff;
+  color: #0369a1;
+}
+
 /* UNVERIFIED */
 .submeta.unverified {
   background: #fff3cd;
@@ -502,6 +508,15 @@ color: #777;
 .submeta.status.inactive {
   background: #fdecec;
   color: #a02a2a;
+}
+.submeta.status.temporary {
+  background: #fff3cd;
+  color: #8a6d00;
+}
+
+.submeta.status.occasion {
+  background: #e0f2ff;
+  color: #0369a1;
 }
 
 .submeta.like {
@@ -1313,42 +1328,56 @@ if (p.field_id && canUseBackendFeatures()) {
   likeBtn.style.display = "none";
 }
 
-// ===== VERIFIED =====
+// ===== VERIFIED (NEW SYSTEM) =====
 verifiedEl.style.display = "none";
 unverifiedEl.style.display = "none";
 statusEl.style.display   = "none";
-verifyCTA.style.display = "none";
+verifyCTA.style.display  = "none";
 
-const isVerified =
-p.verified === true ||
-p.verified === "true" ||
-p.verified === "TRUE";
+const verifiedStatus = (p.verified || "").toLowerCase();
 
-if (isVerified) {
-verifiedEl.style.display = "inline-flex";
-} else {
-unverifiedEl.style.display = "inline-flex";
-verifyCTA.style.display = "inline-flex";
+if (verifiedStatus === "verified") {
+  verifiedEl.textContent = "✔ AGARI Verified";
+  verifiedEl.className = "submeta verified";
+  verifiedEl.style.display = "inline-flex";
 }
+else if (verifiedStatus === "community_verified") {
+  verifiedEl.textContent = "👥 Community Verified";
+  verifiedEl.className = "submeta community";
+  verifiedEl.style.display = "inline-flex";
+}
+else {
+  unverifiedEl.textContent = "⚠ Unverified";
+  unverifiedEl.style.display = "inline-flex";
+  verifyCTA.style.display = "inline-flex";
+}
+
+// ===== STATUS (NEW SYSTEM) =====
 if (p.status) {
-  const status = p.status.toLowerCase();
 
-  // set teks
-  statusEl.textContent = p.status;
+  const status = p.status.toLowerCase().replace("_", " ");
 
-  // bersihin state lama
-  statusEl.classList.remove("active", "inactive");
+  statusEl.className = "submeta status";
+  statusEl.style.display = "inline-flex";
 
-  // tentuin state baru
   if (status === "active") {
+    statusEl.textContent = "Active";
     statusEl.classList.add("active");
-  } else {
+  }
+  else if (status === "inactive") {
+    statusEl.textContent = "Inactive";
     statusEl.classList.add("inactive");
   }
-
-  // tampilkan sebagai badge
-  statusEl.style.display = "inline-flex";
+  else if (status === "temporarily closed") {
+    statusEl.textContent = "Temporarily Closed";
+    statusEl.classList.add("temporary");
+  }
+  else if (status === "on occasion") {
+    statusEl.textContent = "On Occasion";
+    statusEl.classList.add("occasion");
+  }
 }
+
 if (p.field_id && canUseBackendFeatures()) {
   fetchLikeCount(p.field_id).then(count => {
 
