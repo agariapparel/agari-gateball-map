@@ -5215,7 +5215,7 @@
       "properties": {
         "field_id": "ID-NSL-NMR-01",
         "courts": "",
-        "verified": "Unverified",
+        "verified": "Community_verified",
         "booking_url": "",
         "community": "Paniki Gateball Club",
         "city": "North Minahasa Regency",
@@ -5223,7 +5223,7 @@
         "surface": "Grass",
         "google_maps_url": "https://maps.app.goo.gl/1qUbgCD89ucLSutv9",
         "province": "North Sulawesi",
-        "status": "",
+        "status": "Active",
         "owner": "",
         "address": "Paniki Atas, Talawaan, North Minahasa Regency, North Sulawesi",
         "country": "Indonesia"
